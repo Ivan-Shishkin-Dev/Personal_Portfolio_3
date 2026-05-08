@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ivan Shishkin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Computer Science student at UC Irvine. AI and safe systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'light')}catch(e){}</script>
+</head>
+<body>
+<main class="page" data-screen-label="Home">
+
+  <header class="site-head">
+    <span class="name">Ivan Shishkin</span>
+    <span class="meta"></span>
+  </header>
+
+  <section class="hero">
+    <div class="portrait-carousel" data-portrait>
+      <div class="portrait-viewport">
+        <div class="portrait-track">
+          <div class="portrait-slide s1" data-caption="Move-in day, freshman year. Already lost on Ring Road." data-date="Sep 2023">[ photo 1 ]</div>
+          <div class="portrait-slide s2" data-caption="Re-reading Bishop, chapter 1. Again." data-date="Winter 2025">[ photo 2 ]</div>
+          <div class="portrait-slide s3" data-caption="Sunrise run on the strand. The marine layer never lifted." data-date="May 2025">[ photo 3 ]</div>
+          <div class="portrait-slide s4" data-caption="First poster session. Survived." data-date="Oct 2025">[ photo 4 ]</div>
+        </div>
+      </div>
+      <div class="portrait-controls">
+        <button class="portrait-nav prev" type="button" aria-label="Previous photo">←</button>
+        <span class="portrait-counter">1 / 4</span>
+        <button class="portrait-nav next" type="button" aria-label="Next photo">→</button>
+      </div>
+      <div class="portrait-caption"></div>
+    </div>
+    <div class="hero-text">
+      <div>
+        <div class="eyebrow">An introduction</div>
+        <h1 class="title">Ivan<br><em>Shishkin.</em></h1>
+        <p class="hero-bio">
+          I study computer science at <em>UC Irvine</em>, but my real interest is personal progression &mdash; whatever gets me better than I was before. Right now, it's probably the field of AI. I care; that's a good summary.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <p class="lede" hidden>
+    Computer-science student at <em>UC Irvine</em>, working on AI systems that behave the way we expect them to.
+  </p>
+
+  <!-- Sparklines -->
+  <section class="sparks" aria-label="Recent activity">
+    <div class="spark">
+      <div class="label">Git commits</div>
+      <svg viewBox="0 0 160 36" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M2,29 L7.85,22 L13.7,16.4 L19.55,25.2 L25.41,9.6 L31.26,18.4 L37.11,23 L42.96,12.6 L48.81,2 L54.67,16.4 L60.52,22 L66.37,18.4 L72.22,9.6 L78.07,16.4 L83.93,25.2 L89.78,12.6 L95.63,18.4 L101.48,22 L107.33,16.4 L113.19,9.6 L119.04,12.6 L124.89,18.4 L130.74,22 L136.59,16.4 L142.44,9.6 L148.3,18.4 L154.15,12.6 L160,22 L160,36 L2,36 Z" fill="var(--accent)" opacity="0.08"/>
+        <path d="M2,29 L7.85,22 L13.7,16.4 L19.55,25.2 L25.41,9.6 L31.26,18.4 L37.11,23 L42.96,12.6 L48.81,2 L54.67,16.4 L60.52,22 L66.37,18.4 L72.22,9.6 L78.07,16.4 L83.93,25.2 L89.78,12.6 L95.63,18.4 L101.48,22 L107.33,16.4 L113.19,9.6 L119.04,12.6 L124.89,18.4 L130.74,22 L136.59,16.4 L142.44,9.6 L148.3,18.4 L154.15,12.6 L160,22" fill="none" stroke="var(--ink)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" vector-effect="non-scaling-stroke"/>
+        <circle cx="160" cy="22" r="2.2" fill="var(--accent)"/>
+      </svg>
+      <div class="row"><span class="stat">142</span><span class="period">28 days</span></div>
+      <div class="sub">+18 this week</div>
+    </div>
+    <div class="spark">
+      <div class="label">Papers read</div>
+      <svg viewBox="0 0 160 36" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M2,29.6 L7.85,22 L13.7,25.6 L19.55,14.5 L25.41,18.2 L31.26,22 L37.11,11 L42.96,14.5 L48.81,22 L54.67,18.2 L60.52,11 L66.37,14.5 L72.22,18.2 L78.07,14.5 L83.93,22 L89.78,11 L95.63,18.2 L101.48,14.5 L107.33,7.5 L113.19,14.5 L119.04,18.2 L124.89,11 L130.74,14.5 L136.59,18.2 L142.44,11 L148.3,14.5 L154.15,18.2 L160,14.5 L160,36 L2,36 Z" fill="var(--accent)" opacity="0.08"/>
+        <path d="M2,29.6 L7.85,22 L13.7,25.6 L19.55,14.5 L25.41,18.2 L31.26,22 L37.11,11 L42.96,14.5 L48.81,22 L54.67,18.2 L60.52,11 L66.37,14.5 L72.22,18.2 L78.07,14.5 L83.93,22 L89.78,11 L95.63,18.2 L101.48,14.5 L107.33,7.5 L113.19,14.5 L119.04,18.2 L124.89,11 L130.74,14.5 L136.59,18.2 L142.44,11 L148.3,14.5 L154.15,18.2 L160,14.5" fill="none" stroke="var(--ink)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" vector-effect="non-scaling-stroke"/>
+        <circle cx="160" cy="14.5" r="2.2" fill="var(--accent)"/>
+      </svg>
+      <div class="row"><span class="stat">9</span><span class="period">28 days</span></div>
+      <div class="sub">2 in progress</div>
+    </div>
+    <div class="spark">
+      <div class="label">Hours slept</div>
+      <svg viewBox="0 0 160 36" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M2,15 L7.85,22 L13.7,11 L19.55,18 L25.41,15 L31.26,25 L37.11,8 L42.96,18 L48.81,15 L54.67,11 L60.52,22 L66.37,15 L72.22,18 L78.07,15 L83.93,18 L89.78,11 L95.63,22 L101.48,15 L107.33,18 L113.19,15 L119.04,18 L124.89,11 L130.74,22 L136.59,15 L142.44,18 L148.3,15 L154.15,18 L160,15 L160,36 L2,36 Z" fill="var(--accent)" opacity="0.08"/>
+        <path d="M2,15 L7.85,22 L13.7,11 L19.55,18 L25.41,15 L31.26,25 L37.11,8 L42.96,18 L48.81,15 L54.67,11 L60.52,22 L66.37,15 L72.22,18 L78.07,15 L83.93,18 L89.78,11 L95.63,22 L101.48,15 L107.33,18 L113.19,15 L119.04,18 L124.89,11 L130.74,22 L136.59,15 L142.44,18 L148.3,15 L154.15,18 L160,15" fill="none" stroke="var(--ink)" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.85" vector-effect="non-scaling-stroke"/>
+        <circle cx="160" cy="15" r="2.2" fill="var(--accent)"/>
+      </svg>
+      <div class="row"><span class="stat">6.4h</span><span class="period">28 days</span></div>
+      <div class="sub">trending up</div>
+    </div>
+  </section>
+
+  <!-- Contents -->
+  <section class="contents" aria-label="Site contents">
+    <h2>Contents</h2>
+    <a class="row" href="about.html"><span class="num">I.</span><span><span>About</span><span class="desc">Background, where I come from, what I'm chasing.</span></span><span class="arrow">→</span></a>
+    <a class="row" href="now.html"><span class="num">II.</span><span><span>Now</span><span class="desc">What I'm working on this quarter.</span></span><span class="arrow">→</span></a>
+    <a class="row" href="projects.html"><span class="num">III.</span><span><span>Projects</span><span class="desc">Things I've built — class, club, and side.</span></span><span class="arrow">→</span></a>
+    <a class="row" href="experience.html"><span class="num">IV.</span><span><span>Experience</span><span class="desc">Internships, research, and TA work.</span></span><span class="arrow">→</span></a>
+    <a class="row" href="education.html"><span class="num">V.</span><span><span>Education</span><span class="desc">UC Irvine — CS, B.S.</span></span><span class="arrow">→</span></a>
+    <a class="row" href="courses.html"><span class="num">VI.</span><span><span>Hobbies</span><span class="desc">What do I do?</span></span><span class="arrow">→</span></a>
+    <a class="row" href="skills.html"><span class="num">VII.</span><span><span>Skills</span><span class="desc">Languages, tools, math.</span></span><span class="arrow">→</span></a>
+    <a class="row" href="reading.html"><span class="num">VIII.</span><span><span>Media</span><span class="desc">Stuff I enjoy consuming.</span></span><span class="arrow">→</span></a>
+    <a class="row" href="contact.html"><span class="num">IX.</span><span><span>Contact</span><span class="desc">Email and elsewhere.</span></span><span class="arrow">→</span></a>
+  </section>
+
+  <footer class="colophon home">
+    <div class="rights">© 2026 Ivan Shishkin. All rights reserved.</div>
+  </footer>
+
+</main>
+<script src="site.js"></script>
+</body>
+</html>
