@@ -16,10 +16,6 @@
   --portrait-stripe: rgba(0,0,0,0.04);
   --maxw: 640px;
   --gap: 60px;
-
-  --ser: "Spectral", "Newsreader", Georgia, serif;
-  --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
 }
 
 html[data-theme="dark"] {
