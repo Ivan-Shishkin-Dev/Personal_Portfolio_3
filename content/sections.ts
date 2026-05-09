@@ -29,8 +29,8 @@ export const sections: Section[] = [
     numeral: "III",
     slug: "experience",
     title: "Experience",
-    eyebrow: "Internships, research, and TA work.",
-    description: "Internships, research, and TA work.",
+    eyebrow: "Jobs, internships, and volunteer work.",
+    description: "Jobs, internships, and volunteer work.",
   },
   {
     index: 4,

@@ -59,7 +59,8 @@ em { font-style: italic; }
 
 /* ── Body prose links — swelling underline ─── */
 article p a,
-article li a {
+article li a,
+.entries .body a {
   color: var(--accent);
   background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
@@ -69,7 +70,8 @@ article li a {
   padding-bottom: 1px;
 }
 article p a:hover,
-article li a:hover { background-size: 100% 1.5px; }
+article li a:hover,
+.entries .body a:hover { background-size: 100% 1.5px; }
 
 /* ── First-paint stagger (respects reduced-motion) ── */
 @keyframes rise {
@@ -665,6 +667,15 @@ article h2 {
   line-height: 1.65;
   color: var(--muted);
   margin-top: 8px;
+}
+.entries .group-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 40px 0 14px;
 }
 
 /* ── Project list ───────────────────────────── */
