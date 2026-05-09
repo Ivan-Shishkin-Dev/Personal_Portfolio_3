@@ -51,34 +51,18 @@ export const sections: Section[] = [
   {
     index: 6,
     numeral: "VI",
-    slug: "hobbies",
-    title: "Hobbies",
-    eyebrow: "What do I do?",
-    description: "What do I do?",
-  },
-  {
-    index: 7,
-    numeral: "VII",
     slug: "skills",
     title: "Skills",
     eyebrow: "Languages, tools, math.",
     description: "Languages, tools, math.",
   },
   {
-    index: 8,
-    numeral: "VIII",
+    index: 7,
+    numeral: "VII",
     slug: "media",
     title: "Media",
     eyebrow: "Stuff I enjoy consuming.",
     description: "Stuff I enjoy consuming.",
-  },
-  {
-    index: 9,
-    numeral: "IX",
-    slug: "contact",
-    title: "Contact",
-    eyebrow: "Email and elsewhere.",
-    description: "Email and elsewhere.",
   },
 ];
 

@@ -1,7 +1,7 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import PortraitCarousel from "@/components/PortraitCarousel";
-import Sparks from "@/components/Sparks";
+import Contacts from "@/components/Contacts";
 import Contents from "@/components/Contents";
 
 export default function Home() {
@@ -18,17 +18,26 @@ export default function Home() {
               Ivan<br /><em>Shishkin.</em>
             </h1>
             <p className="hero-bio">
-              I study computer science at <em>UC Irvine</em>, but my real interest is personal progression — whatever gets me better than I was before. Right now, it&apos;s probably the field of AI. I care; that&apos;s a good summary.
+              My name is Ivan Shishkin, and I study computer science at the{" "}
+              <a
+                className="uci-mark"
+                href="https://uci.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                University of California, Irvine
+              </a>
+              , with a specialization in intelligent systems.
+            </p>
+            <p className="hero-principle">
+              My main focus actually revolves around this simple principle:{" "}
+              <em>Do the hard thing and be the best at the many things I care for.</em>
             </p>
           </div>
         </div>
       </section>
 
-      <p className="lede" hidden>
-        Computer-science student at <em>UC Irvine</em>, working on AI systems that behave the way we expect them to.
-      </p>
-
-      <Sparks />
+      <Contacts />
 
       <Contents />
 

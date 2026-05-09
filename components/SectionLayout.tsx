@@ -21,9 +21,9 @@ export default function SectionLayout({
         <span>{s.numeral}. {s.title}</span>
       </nav>
       <header className="section-head">
-        <span className="num">{s.numeral}.</span>
-        <div>
-          <div className="eyebrow">{s.eyebrow}</div>
+        <div className="eyebrow">{s.eyebrow}</div>
+        <div className="title-row">
+          <span className="num">{s.numeral}.</span>
           <h1>{s.title}</h1>
         </div>
       </header>
