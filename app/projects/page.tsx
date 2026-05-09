@@ -5,7 +5,7 @@ import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "Things I've built — class, club, and side.",
+  description: "Things I've built.",
 };
 
 export default function ProjectsPage() {
@@ -18,7 +18,7 @@ export default function ProjectsPage() {
               <h3>{p.title}</h3>
               <span className="year">{p.year}</span>
             </div>
-            <div className="blurb">{p.blurb}</div>
+            <p className="blurb">{p.blurb}</p>
             <div className="meta-row">
               <div className="tags">
                 {p.tags.map((t) => (

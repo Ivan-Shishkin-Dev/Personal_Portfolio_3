@@ -21,8 +21,8 @@ export const sections: Section[] = [
     numeral: "II",
     slug: "projects",
     title: "Projects",
-    eyebrow: "Things I've built — class, club, and side.",
-    description: "Things I've built — class, club, and side.",
+    eyebrow: "Things I've built.",
+    description: "Things I've built.",
   },
   {
     index: 3,
