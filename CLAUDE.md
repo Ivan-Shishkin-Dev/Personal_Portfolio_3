@@ -9,7 +9,7 @@ Ivan Shishkin's personal portfolio — a UC Irvine CS student site with a typogr
 - Next.js 16 (App Router) + React 19 + TypeScript
 - Fonts via `next/font/google` exposed as `--ser`, `--sans`, `--mono` in `app/layout.tsx`
 - Plain CSS in `app/globals.css` — no Tailwind, no CSS Modules
-- Static content modules under `content/` (`sections.ts`, `portraits.ts`, `sparks.ts`, `projects.ts`)
+- Static content modules under `content/` (`sections.ts`, `projects.ts`, `contacts.ts`)
 - Deployed on Vercel
 
 ## Architecture
@@ -33,11 +33,7 @@ The home page (`app/page.tsx`) is its own composition. Every sub-page is just `<
 
 ## Routes
 
-`/`, `/about`, `/now`, `/projects`, `/experience`, `/education`, `/hobbies`, `/skills`, `/media`, `/contact`
-
-## Portraits
-
-`PortraitCarousel` slides have CSS pattern backgrounds (`s1`..`s4`) painting geometric fallbacks. `next/image` overlays the real photo from `public/portraits/portrait-N.jpg`. If a file is missing, `onError` hides the broken image and the CSS pattern shows through — the site works before any photos exist.
+`/`, `/about`, `/projects`, `/experience`, `/education`, `/skills`, `/media`
 
 ## Deploy
 

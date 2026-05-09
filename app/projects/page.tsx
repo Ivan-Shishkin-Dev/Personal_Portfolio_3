@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
 import { projects } from "@/content/projects";
 
@@ -13,36 +14,41 @@ export default function ProjectsPage() {
       <div className="entries">
         {projects.map((p) => (
           <article className="project" key={p.title}>
-            <div>
+            <div className="project-head">
               <h3>{p.title}</h3>
-              <div className="blurb">{p.blurb}</div>
-              <div className="meta-row">
-                <div className="tags">
-                  {p.tags.map((t) => (
-                    <span className="tag" key={t}>{t}</span>
-                  ))}
-                </div>
+              <span className="year">{p.year}</span>
+            </div>
+            <div className="blurb">{p.blurb}</div>
+            <div className="meta-row">
+              <div className="tags">
+                {p.tags.map((t) => (
+                  <span className="tag" key={t}>{t}</span>
+                ))}
+              </div>
+              <div className="links">
                 {p.links.map((l) => {
                   const isExternal = /^(https?:|mailto:)/.test(l.href);
-                  return isExternal ? (
-                    <a
-                      className="link"
-                      key={l.label}
-                      href={l.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                  if (isExternal) {
+                    return (
+                      <a
+                        className="link"
+                        key={l.label}
+                        href={l.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {l.label}
+                      </a>
+                    );
+                  }
+                  return (
+                    <Link className="link" key={l.label} href={l.href}>
                       {l.label}
-                    </a>
-                  ) : (
-                    <a className="link" key={l.label} href={l.href}>
-                      {l.label}
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
             </div>
-            <div className="year">{p.year}</div>
           </article>
         ))}
       </div>

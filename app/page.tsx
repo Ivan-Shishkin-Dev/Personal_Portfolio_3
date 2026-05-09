@@ -1,6 +1,5 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import PortraitCarousel from "@/components/PortraitCarousel";
 import Contacts from "@/components/Contacts";
 import Contents from "@/components/Contents";
 
@@ -10,7 +9,6 @@ export default function Home() {
       <SiteHeader nameAsLink={false} />
 
       <section className="hero">
-        <PortraitCarousel />
         <div className="hero-text">
           <div>
             <div className="eyebrow">An introduction</div>
@@ -18,7 +16,7 @@ export default function Home() {
               Ivan<br /><em>Shishkin.</em>
             </h1>
             <p className="hero-bio">
-              My name is Ivan Shishkin, and I study computer science at the{" "}
+              I study computer science at the{" "}
               <a
                 className="uci-mark"
                 href="https://uci.edu"
@@ -27,10 +25,10 @@ export default function Home() {
               >
                 University of California, Irvine
               </a>
-              , with a specialization in intelligent systems.
+              , with a specialization in intelligent systems. This site is here for you to get to know me — please, look around.
             </p>
             <p className="hero-principle">
-              My main focus actually revolves around this simple principle:{" "}
+              My main focus revolves around this simple principle:{" "}
               <em>Do the hard thing and be the best at the many things I care for.</em>
             </p>
           </div>
