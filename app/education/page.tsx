@@ -11,9 +11,9 @@ export default function EducationPage() {
     <SectionLayout slug="education">
       <div className="entries">
         <div className="entry">
-          <div className="who"><em>University of California, Irvine</em></div>
-          <div className="body" style={{ color: "var(--ink)", fontStyle: "normal" }}>B.S. in Computer Science · 2023 — 2027 (expected)</div>
-          <div className="body">Concentration in Intelligent Systems. GPA: 3.8. Dean's Honor List, Fall 2024 & Spring 2025. Member of the AI Safety Reading Group and ACM @ UCI.</div>
+          <div className="when">Aug 2024 - Jun 2028</div>
+          <div className="who">B.S. in Computer Science, <em>UC Irvine, Donald Bren School of Information and Computer Sciences</em></div>
+          <div className="body">Sophomore. GPA: 3.8. Dean's Honor's List (5 times). Sigma Pi (Eta-Upsilon Chapter), AI Safety @ UCI, ICS Student Council Mentorship Program, CLAOC Mentorship.</div>
         </div>
         <div className="entry">
           <div className="who">Selected awards</div>
