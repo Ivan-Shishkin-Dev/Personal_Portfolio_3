@@ -2,14 +2,14 @@
 
 ## What this is
 
-Ivan Shishkin's personal portfolio — a UC Irvine CS student site with a typography-forward, Anthropic Claude-inspired editorial aesthetic. Cream paper palette (#fbf6ea bg, rust accent #7a3d1d), Spectral serif body, Inter sans labels, JetBrains Mono counters, single 640px column, numerated sections I–IX.
+Ivan Shishkin's personal portfolio — a UC Irvine CS student site with a typography-forward, Anthropic Claude-inspired editorial aesthetic. Cream paper palette (#fbf6ea bg, rust accent #7a3d1d), Spectral serif body, Inter sans labels, JetBrains Mono counters, single 640px column, numerated sections I–VI.
 
 ## Stack
 
 - Next.js 16 (App Router) + React 19 + TypeScript
 - Fonts via `next/font/google` exposed as `--ser`, `--sans`, `--mono` in `app/layout.tsx`
 - Plain CSS in `app/globals.css` — no Tailwind, no CSS Modules
-- Static content modules under `content/` (`sections.ts`, `projects.ts`, `contacts.ts`)
+- Static content modules under `content/` (`sections.ts`, `projects.tsx`, `contacts.ts`). `projects.tsx` because project blurbs accept inline JSX (e.g. cross-link from Construction-Verification into `/experience`)
 - Deployed on Vercel
 
 ## Architecture
@@ -27,7 +27,7 @@ The home page (`app/page.tsx`) is its own composition. Every sub-page is just `<
 
 - Replace plain CSS with Tailwind or CSS-in-JS
 - Redesign typography — Spectral / Inter / JetBrains Mono are deliberate
-- Add a state library, CMS, or testing framework. This is a 10-page static portfolio.
+- Add a state library, CMS, or testing framework. This is a small static portfolio (home + six section pages).
 - Add a contact form. Mailto links are intentional.
 - Widen `--maxw` (640px) or change `--gap` (60px) casually
 

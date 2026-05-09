@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-Personal portfolio for Ivan Shishkin. Live at https://example.com (set me).
+Personal portfolio for Ivan Shishkin. Live at https://ivanshishkin.com.
 
 ## Stack
 
@@ -26,9 +26,8 @@ Push to `main`. Vercel auto-deploys.
 
 - Section copy (prose) — `app/<slug>/page.tsx`
 - Section order, numerals, Contents-list descriptions — `content/sections.ts`
-- Portrait photos — drop `portrait-1.jpg` … `portrait-4.jpg` into `public/portraits/`. Captions and dates live in `content/portraits.ts`
-- Sparkline data — `content/sparks.ts`
-- Project entries — `content/projects.ts`
+- Project entries — `content/projects.tsx` (blurbs accept inline JSX so prose can carry links)
+- Contact rows — `content/contacts.ts`
 
 ## Design system
 
