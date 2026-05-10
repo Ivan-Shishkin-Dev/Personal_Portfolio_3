@@ -20,8 +20,8 @@ html[data-theme="dark"] {
   --bg: #1a1814;
   --paper: #221e18;
   --ink: #ede4d3;
-  --muted: #8a8170;
-  --subtle: #5e574c;
+  --muted: #b0a290;
+  --subtle: #6f675a;
   --rule: rgba(255, 255, 255, 0.10);
   --rule-strong: rgba(255, 255, 255, 0.45);
   --accent: #d18a5c;
