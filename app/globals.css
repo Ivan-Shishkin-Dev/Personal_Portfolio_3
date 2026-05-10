@@ -160,6 +160,16 @@ article li a:hover,
 }
 .hero-bio em { color: var(--muted); font-style: italic; }
 
+.hero-centered { text-align: center; }
+.hero-centered .hero-bio,
+.hero-centered .hero-principle { margin-left: auto; margin-right: auto; }
+.hero-centered .hero-principle {
+  border-left: none;
+  border-top: 0.5px solid var(--accent);
+  border-bottom: 0.5px solid var(--accent);
+  padding: 14px 20px;
+}
+
 /* UCI inline link — italic Spectral medium, accent, swelling underline */
 .hero-bio .uci-mark {
   font-family: var(--ser);

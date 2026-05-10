@@ -8,7 +8,7 @@ export default function Home() {
     <main className="page" data-screen-label="Home">
       <SiteHeader nameAsLink={false} />
 
-      <section className="hero">
+      <section className="hero hero-centered">
         <div className="hero-text">
           <div>
             <div className="eyebrow">An introduction</div>
