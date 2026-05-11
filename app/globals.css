@@ -807,7 +807,7 @@ article h2 {
 
 /* ── Pager (between section pages) ──────────── */
 .pager {
-  margin-top: 80px;
+  margin-top: 40px;
   padding-top: 28px;
   border-top: 1.5px solid var(--ink);
   display: grid;
