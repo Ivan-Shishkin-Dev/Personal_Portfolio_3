@@ -14,7 +14,7 @@ export default function SectionLayout({
   const s = getSection(slug);
   return (
     <main className="page" data-screen-label={`${s.numeral} ${s.title}`}>
-      <SiteHeader nameAsLink />
+      <SiteHeader currentSlug={slug} />
       <nav className="subnav">
         <Link className="home" href="/">← Home</Link>
         <span className="sep">/</span>
