@@ -1044,6 +1044,95 @@ article h2 {
   margin: 0;
 }
 
+/* ── Media (blogroll) ───────────────────────── */
+.media .hobby-category { margin-top: 14px; }
+.media .hobby-category:first-of-type {
+  margin-top: 8px;
+}
+.media .hobby-category:first-of-type .hobby-category-title {
+  border-top: none;
+  padding-top: 0;
+}
+.media .media-item:last-child { padding-bottom: 4px; }
+.media-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.media-item {
+  padding: 14px 0;
+  border-top: 0.5px solid var(--rule);
+}
+.media-item:first-child {
+  border-top: none;
+  padding-top: 8px;
+}
+.media-name {
+  font-family: var(--ser);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--ink);
+  background-image: none;
+  padding-bottom: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--rule-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color .2s ease, text-decoration-color .2s ease, text-decoration-thickness .2s ease;
+}
+button.media-name {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  background-color: transparent;
+  font: inherit;
+}
+.media-name::after {
+  content: "↗";
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--sans);
+  font-size: 0.6em;
+  color: var(--subtle);
+  margin-left: 5px;
+  vertical-align: 0.35em;
+  transition: color .2s ease;
+}
+.media-name:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.5px;
+}
+.media-name:hover::after {
+  color: var(--accent);
+}
+.media-note {
+  font-family: var(--ser);
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+.media-stub {
+  font-family: var(--ser);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--subtle);
+  margin: 8px 0 0;
+}
+.media-coda {
+  font-family: var(--ser);
+  font-style: italic;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--subtle);
+  text-align: center;
+  margin: 32px 0 0;
+  padding-top: 24px;
+  border-top: 0.5px solid var(--rule);
+}
+
 /* ── Coursework grid ────────────────────────── */
 .courses {
   display: grid;
