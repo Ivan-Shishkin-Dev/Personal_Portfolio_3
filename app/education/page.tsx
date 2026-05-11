@@ -13,8 +13,23 @@ export default function EducationPage() {
         <div className="entry">
           <div className="when">Aug 2024 - Jun 2028</div>
           <div className="who">B.S. in Computer Science, <em>UC Irvine</em></div>
-          <div className="body">GPA: 3.8. Dean's Honor's List (5 times).</div>
-          <div className="body">Activities: Sigma Pi (Eta-Upsilon Chapter), AI Safety @ UCI, ICS Student Council Mentorship Program, and <a href="https://claoc.org/" target="_blank" rel="noopener noreferrer">CLAOC Mentorship</a>.</div>
+          <dl className="entry-fields">
+            <div>
+              <dt>GPA</dt>
+              <dd>3.8</dd>
+            </div>
+            <div>
+              <dt>Awards</dt>
+              <dd>Dean's Honor's List (5×)</dd>
+            </div>
+            <div>
+              <dt>Activities</dt>
+              <dd>
+                Sigma Pi (Eta-Upsilon Chapter), AI Safety @ UCI, ICS Student Council Mentorship Program, and{" "}
+                <a href="https://claoc.org/" target="_blank" rel="noopener noreferrer">CLAOC Mentorship</a>.
+              </dd>
+            </div>
+          </dl>
         </div>
       </div>
 
