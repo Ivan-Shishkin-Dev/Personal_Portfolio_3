@@ -20,7 +20,7 @@ The home page (`app/page.tsx`) is its own composition. Every sub-page is just `<
 
 - Design tokens in `app/globals.css` are stable. Adjust them; don't fight them with per-component overrides.
 - Section pages should be just prose inside `<SectionLayout>`. Don't add layout chrome.
-- Theme is driven by `data-theme` on `<html>`. The inline script in `app/layout.tsx` runs before paint to prevent FOUC — don't remove it. `ThemeToggle.tsx` reads/writes it and persists to localStorage.
+- Light-mode only. No theme toggle, no `data-theme` switching — the `:root` tokens in `app/globals.css` are the sole palette.
 - No code comments unless the *why* is non-obvious. Don't narrate WHAT the code does — well-named identifiers handle that.
 
 ## Don't (without asking)
@@ -29,6 +29,7 @@ The home page (`app/page.tsx`) is its own composition. Every sub-page is just `<
 - Redesign typography — Spectral / Inter / JetBrains Mono are deliberate
 - Add a state library, CMS, or testing framework. This is a small static portfolio (home + six section pages).
 - Add a contact form. Mailto links are intentional.
+- Reintroduce a dark mode or theme toggle — site is intentionally light-only.
 - Widen `--maxw` (640px) or change `--gap` (60px) casually
 
 ## Routes
