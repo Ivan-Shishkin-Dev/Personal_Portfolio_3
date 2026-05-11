@@ -39,8 +39,6 @@ export const metadata: Metadata = {
   icons: { icon: "/icon.svg" },
 };
 
-const themeInit = `try{document.documentElement.setAttribute('data-theme',localStorage.getItem('theme')||'light')}catch(e){}`;
-
 export default function RootLayout({
   children,
 }: {
@@ -50,11 +48,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${spectral.variable} ${inter.variable} ${mono.variable}`}
-      suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-      </head>
       <body>{children}</body>
     </html>
   );

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
 
 export default function SiteHeader({ nameAsLink }: { nameAsLink: boolean }) {
   return (
@@ -9,7 +8,6 @@ export default function SiteHeader({ nameAsLink }: { nameAsLink: boolean }) {
       ) : (
         <span className="name">Ivan Shishkin</span>
       )}
-      <span className="meta"><ThemeToggle /></span>
     </header>
   );
 }
