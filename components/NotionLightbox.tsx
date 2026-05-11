@@ -47,21 +47,21 @@ export default function NotionLightbox({
       onMouseEnter={() => onHoverChange?.(true)}
       onMouseLeave={() => onHoverChange?.(false)}
     >
-      <button
-        type="button"
-        className="notion-lightbox-close"
-        aria-label="Close"
-        onClick={(e) => {
-          e.stopPropagation();
-          onClose();
-        }}
-      >
-        ×
-      </button>
       <div
         className="notion-lightbox-frame"
         onClick={(e) => e.stopPropagation()}
       >
+        <button
+          type="button"
+          className="notion-lightbox-close"
+          aria-label="Close"
+          onClick={(e) => {
+            e.stopPropagation();
+            onClose();
+          }}
+        >
+          ×
+        </button>
         <iframe src={url} title={title} loading="lazy" />
       </div>
     </div>,

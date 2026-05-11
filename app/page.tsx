@@ -6,15 +6,13 @@ import Contents from "@/components/Contents";
 export default function Home() {
   return (
     <main className="page" data-screen-label="Home">
-      <SiteHeader nameAsLink={false} />
+      <SiteHeader />
 
       <section className="hero hero-centered">
         <div className="hero-text">
           <div>
             <div className="eyebrow">An introduction</div>
-            <h1 className="title">
-              Ivan<br /><em>Shishkin.</em>
-            </h1>
+            <h1 className="title">Ivan Shishkin</h1>
             <p className="hero-bio">
               I study computer science at the{" "}
               <a
@@ -25,11 +23,20 @@ export default function Home() {
               >
                 University of California, Irvine
               </a>
-              , with a specialization in intelligent systems. This site is here for you to get to know me — please, look around.
+              , with a specialization in Artificial Intelligence. This site is here for you to get to know me — please, look around.
             </p>
             <p className="hero-principle">
-              My main focus revolves around this simple principle:{" "}
-              <em>Do the hard thing and be the best at the many things I care for.</em>
+              <em>
+                Do more,{" "}
+                <a
+                  href="https://www.benkuhn.net/abyss/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  do the hard thing
+                </a>
+                , until I'm the best at the things I care for.
+              </em>
             </p>
           </div>
         </div>
