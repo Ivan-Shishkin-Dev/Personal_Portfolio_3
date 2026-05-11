@@ -25,7 +25,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ivanshishkin.dev"),
+  metadataBase: new URL("https://ivanshishkin.com"),
   title: { default: "Ivan Shishkin", template: "%s — Ivan Shishkin" },
   description: "Computer Science student at UC Irvine. AI and safe systems.",
   openGraph: {

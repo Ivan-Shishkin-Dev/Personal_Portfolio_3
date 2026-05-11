@@ -2,6 +2,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Contacts from "@/components/Contacts";
 import Contents from "@/components/Contents";
+import FeedbackForm from "@/components/FeedbackForm";
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
                 , until I'm the best at the things I care for.
               </em>
             </p>
+            <FeedbackForm />
           </div>
         </div>
       </section>
