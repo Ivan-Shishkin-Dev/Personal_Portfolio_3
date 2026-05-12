@@ -34,7 +34,7 @@ export default function ExperiencePage() {
         <div className="entry">
           <div className="when">Oct 2024 - Sep 2025</div>
           <div className="who">Director of Housing, <em>Sigma Pi Fraternity</em></div>
-          <div className="body">Oversaw housing operations for a 100+ member chapter, managing landlord, realtor, and student-group relationships across multiple properties.</div>
+          <div className="body">Oversaw housing operations for a 100+ member chapter, managing landlord, realtor, and student-group relationships across multiple properties. Represented the chapter at the Tony Siress Leadership Summit in Lanier Islands, GA.</div>
         </div>
         <div className="entry">
           <div className="when">Oct 2022 - Oct 2024</div>
