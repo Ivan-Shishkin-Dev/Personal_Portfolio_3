@@ -31,4 +31,4 @@ Push to `main`. Vercel auto-deploys.
 
 ## Design system
 
-Tokens live in `app/globals.css` under `:root` and `html[data-theme="dark"]`. Adjust the tokens; don't override per component.
+Tokens live in `app/globals.css` under `:root`. Adjust the tokens; don't override per component. Site is light-only — no theme toggle.
