@@ -11,6 +11,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Bingo (Informatics 43 Project)",
+    blurb:
+      "A mobile social discovery app for meeting nearby people with shared interests, with strong privacy controls and an Interest Bingo mode that nudges users toward communities outside their bubble. Quarter-long team project for UCI's Informatics 43 (Introduction to Software Engineering).",
+    tags: ["TypeScript", "Supabase", "Next.js"],
+    links: [
+      {
+        label: "inf43-project-bingo.vercel.app ↗",
+        href: "https://inf43-project-bingo.vercel.app",
+      },
+    ],
+    year: "2026",
+  },
+  {
     title: "Personal_Portfolio_3",
     blurb:
       "The site you're on. Editorial, typography-forward, in Next.js 16. Third iteration of my personal page.",
