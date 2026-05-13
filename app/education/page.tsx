@@ -54,7 +54,6 @@ export default function EducationPage() {
       <div className="courses">
         <div className="course"><span className="code">AI 301</span><span>AI Open Source Capstone</span></div>
         <div className="course"><span className="code">TIP 103</span><span>Advanced Interview Prep</span></div>
-        <div className="course"><span className="code">WEB 103</span><span>Full-Stack Backend</span></div>
         <div className="course"><span className="code">CYB 102</span><span>Threat Intelligence & Triage</span></div>
       </div>
     </SectionLayout>
