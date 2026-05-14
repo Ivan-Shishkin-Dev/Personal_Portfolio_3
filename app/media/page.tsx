@@ -44,6 +44,47 @@ export default function MediaPage() {
             </a>
             <p className="media-note">People disagreeing — and learning from it.</p>
           </li>
+          <li className="media-item">
+            <a
+              className="media-name"
+              href="https://www.youtube.com/@CosmicSkeptic"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Alex O&apos;Connor
+            </a>
+            <p className="media-note">
+              Earnest conversations about the questions most people skirt — kindred to the{" "}
+              <a
+                href="https://www.benkuhn.net/abyss/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                staring-into-the-abyss
+              </a>{" "}
+              idea from my bio.
+            </p>
+          </li>
+          <li className="media-item">
+            <a
+              className="media-name"
+              href="https://www.youtube.com/@MikeIsraetelMakingProgress"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Making Progress
+            </a>
+            <p className="media-note">
+              <a
+                href="https://www.youtube.com/channel/UCfQgsKhHjSyRLOp9mnffqVg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Mike Israetel&apos;s
+              </a>{" "}
+              side channel, away from the lifting content. Heavy on Ayn Rand by his own admission.
+            </p>
+          </li>
         </ul>
       </section>
 
@@ -142,6 +183,32 @@ export default function MediaPage() {
               Andrew Huberman
             </a>
             <p className="media-note">Important, interesting topics shared succinctly.</p>
+          </li>
+          <li className="media-item">
+            <a
+              className="media-name"
+              href="https://open.spotify.com/show/1gVshwQYETZFObSi1CJaJk"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Higher Up Wellness
+            </a>
+            <p className="media-note">
+              Michael Smoak&apos;s recent controversy aside, I can take positives from anyone. Taught me the value of clear, plain-spoken communication.
+            </p>
+          </li>
+          <li className="media-item">
+            <a
+              className="media-name"
+              href="https://open.spotify.com/show/0XrOqvxlqQI6bmdYHuIVnr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Modern Wisdom
+            </a>
+            <p className="media-note">
+              Chris Williamson — club promoter turned modern-day &ldquo;philosopher&rdquo; and interviewer. Good questions, good time.
+            </p>
           </li>
         </ul>
       </section>
