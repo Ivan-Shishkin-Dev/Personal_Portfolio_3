@@ -13,6 +13,12 @@ export const contacts: Contact[] = [
     note: "I read it daily",
   },
   {
+    label: "Schedule a meet",
+    handle: "cal.com/ivanshishkin",
+    href: "https://cal.com/ivanshishkin/quick-chat",
+    note: "For optics — or if needed",
+  },
+  {
     label: "GitHub",
     handle: "Ivan-Shishkin-Dev",
     href: "https://github.com/Ivan-Shishkin-Dev",
@@ -23,11 +29,5 @@ export const contacts: Contact[] = [
     handle: "/in/ivan-shishkin-dev",
     href: "https://www.linkedin.com/in/ivan-shishkin-dev/",
     note: "Work history",
-  },
-  {
-    label: "Twitter",
-    handle: "@ivan_shishkin_",
-    href: "https://x.com/ivan_shishkin_",
-    note: "Occasional",
   },
 ];
