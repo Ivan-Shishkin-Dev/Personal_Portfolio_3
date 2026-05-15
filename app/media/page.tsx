@@ -9,7 +9,14 @@ export const metadata: Metadata = {
 
 export default function MediaPage() {
   return (
-    <SectionLayout slug="media">
+    <SectionLayout
+      slug="media"
+      preface={
+        <p>
+          A list, not an endorsement. If someone here has said something out of pocket, I likely already know — and likely agree. I take what&apos;s worth taking and leave the rest.
+        </p>
+      }
+    >
       <div className="media">
       <section className="hobby-category">
         <div className="hobby-category-title">Substack</div>
