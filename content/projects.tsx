@@ -75,6 +75,19 @@ export const projects: Project[] = [
     year: "2026",
   },
   {
+    title: "ClaudeStatusBar",
+    blurb:
+      "A custom status line for Claude Code's terminal UI. A shell script that replaces the default bottom bar with something I'd rather look at.",
+    tags: ["Shell", "Claude Code"],
+    links: [
+      {
+        label: "github.com/Ivan-Shishkin-Dev/ClaudeStatusBar ↗",
+        href: "https://github.com/Ivan-Shishkin-Dev/ClaudeStatusBar",
+      },
+    ],
+    year: "2026",
+  },
+  {
     title: "HomePilot",
     blurb:
       "Hackathon project. AI assistant for first-time renters that monitors listings, flags scams, and walks you through applying.",
