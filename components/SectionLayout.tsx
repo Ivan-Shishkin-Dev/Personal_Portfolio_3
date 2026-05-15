@@ -6,9 +6,11 @@ import { getSection } from "@/content/sections";
 
 export default function SectionLayout({
   slug,
+  preface,
   children,
 }: {
   slug: string;
+  preface?: React.ReactNode;
   children: React.ReactNode;
 }) {
   const s = getSection(slug);
@@ -26,6 +28,7 @@ export default function SectionLayout({
           <span className="num">{s.numeral}.</span>
           <h1>{s.title}</h1>
         </div>
+        {preface ? <div className="section-preface">{preface}</div> : null}
       </header>
       <article>{children}</article>
       <Pager slug={slug} />

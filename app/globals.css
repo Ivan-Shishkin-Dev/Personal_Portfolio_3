@@ -1132,6 +1132,16 @@ button.media-name {
   padding-top: 24px;
   border-top: 0.5px solid var(--rule);
 }
+.section-preface {
+  margin-top: 22px;
+}
+.section-preface p {
+  font-family: var(--ser);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--subtle);
+  margin: 0;
+}
 
 /* ── Coursework grid ────────────────────────── */
 .courses {
