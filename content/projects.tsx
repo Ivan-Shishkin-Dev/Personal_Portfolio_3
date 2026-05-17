@@ -88,6 +88,19 @@ export const projects: Project[] = [
     year: "2026",
   },
   {
+    title: "Ivan-NeoVim",
+    blurb:
+      "My personal Neovim configuration. Plugins, keymaps, and tweaks shaped to how I actually edit.",
+    tags: ["Lua", "Scripting"],
+    links: [
+      {
+        label: "github.com/Ivan-Shishkin-Dev/Ivan-NeoVim ↗",
+        href: "https://github.com/Ivan-Shishkin-Dev/Ivan-NeoVim",
+      },
+    ],
+    year: "2026",
+  },
+  {
     title: "HomePilot",
     blurb:
       "Hackathon project. AI assistant for first-time renters that monitors listings, flags scams, and walks you through applying.",
