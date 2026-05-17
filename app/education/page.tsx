@@ -33,7 +33,7 @@ export default function EducationPage() {
         </div>
       </div>
 
-      <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "40px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Coursework</em></h2>
+      <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "0 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Coursework</em></h2>
       <p style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 20 }}>Classes that mattered.</p>
       <div className="courses">
         <div className="course"><span className="code">ICS 6B</span><span>Boolean Logic & Discrete Structures</span></div>
