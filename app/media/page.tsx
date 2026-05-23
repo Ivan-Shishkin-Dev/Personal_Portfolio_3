@@ -92,6 +92,19 @@ export default function MediaPage() {
               side channel, away from the lifting content. Heavy on Ayn Rand by his own admission.
             </p>
           </li>
+          <li className="media-item">
+            <a
+              className="media-name"
+              href="https://www.youtube.com/c/theprimeagen"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ThePrimeagen
+            </a>
+            <p className="media-note">
+              Inspiring story (meth → software dev), funny guy, and helped me set up Neovim.
+            </p>
+          </li>
         </ul>
       </section>
 
