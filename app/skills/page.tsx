@@ -13,6 +13,13 @@ const Learning = () => (
   </em>
 );
 
+const Past = () => (
+  <em style={{ color: "var(--subtle)", fontStyle: "normal", fontSize: 11 }}>
+    {" "}
+    (formerly)
+  </em>
+);
+
 const Sep = () => <span className="sep"> · </span>;
 
 export default function SkillsPage() {
@@ -22,13 +29,13 @@ export default function SkillsPage() {
         <div className="skill">
           <div className="group">Languages</div>
           <div className="items">
-            Python<Sep />C++<Sep />C<Sep />JavaScript<Sep />SQL<Sep />LaTeX<Sep />TypeScript<Learning /><Sep />Bash<Learning />
+            Python<Sep />C / C++<Sep />JavaScript<Sep />SQL<Sep />LaTeX<Sep />TypeScript<Learning /><Sep />Bash<Learning /><Sep />Lua<Learning />
           </div>
         </div>
         <div className="skill">
           <div className="group">Web</div>
           <div className="items">
-            HTML<Sep />CSS<Sep />React<Sep />Next.js<Sep />Tailwind<Sep />Three.js<Sep />GSAP<Sep />Framer Motion
+            React<Sep />Next.js<Sep />Tailwind<Sep />Three.js<Sep />GSAP<Sep />Framer Motion
           </div>
         </div>
         <div className="skill">
@@ -46,13 +53,18 @@ export default function SkillsPage() {
         <div className="skill">
           <div className="group">Editors & AI dev tools</div>
           <div className="items">
-            VS Code<Sep />Cursor<Sep />Claude Code<Sep />GitHub Copilot<Sep />PyCharm<Sep />Neovim<Learning />
+            Cursor<Sep />CLI tools (Claude Code, Copilot, Antigravity)<Sep />PyCharm / VS Code<Past /><Sep />Neovim<Learning />
           </div>
         </div>
         <div className="skill">
-          <div className="group">AI / LLMs</div>
+          <div className="group">
+            AI / LLMs
+            <div style={{ fontFamily: "var(--ser)", fontStyle: "italic", fontSize: 12, letterSpacing: 0, textTransform: "none", color: "var(--subtle)", marginTop: 6, lineHeight: 1.4 }}>
+              nothing special — everyone has these — but what I play with:
+            </div>
+          </div>
           <div className="items">
-            LLM chat (ChatGPT, Claude, Gemini)<Sep />Browser-use agents<Sep />Prompt engineering<Sep />Agents (tool use)<Sep />RAG<Sep />LLM APIs (OpenAI, Anthropic)
+            LLM chat (ChatGPT, Claude, Gemini, NotebookLM)<Sep />Browser-use agents<Sep />Agents (tool use)<Sep />RAG<Sep />LLM APIs (OpenAI, Anthropic)
           </div>
         </div>
         <div className="skill">
