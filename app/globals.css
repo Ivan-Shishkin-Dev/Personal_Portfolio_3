@@ -45,6 +45,7 @@ em { font-style: italic; }
 /* ── Body prose links — swelling underline ─── */
 article p a,
 article li a,
+.entries .who em a,
 .entries .body a,
 .entry-fields dd a {
   color: var(--accent);
@@ -57,8 +58,20 @@ article li a,
 }
 article p a:hover,
 article li a:hover,
+.entries .who em a:hover,
 .entries .body a:hover,
 .entry-fields dd a:hover { background-size: 100% 1.5px; }
+
+.entries .who > a {
+  color: var(--ink);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.5px;
+  transition: background-size .22s ease;
+  padding-bottom: 1px;
+}
+.entries .who > a:hover { background-size: 100% 1.5px; }
 
 /* ── First-paint stagger (respects reduced-motion) ── */
 @keyframes rise {

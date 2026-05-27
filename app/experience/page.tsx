@@ -12,8 +12,8 @@ export default function ExperiencePage() {
       <div className="entries">
         <div className="entry">
           <div className="when">May 2026 - present</div>
-          <div className="who">Undergraduate Student Researcher, <em>UCI Digital Learning Lab</em></div>
-          <div className="body">Paid research with the Computing and AI for All initiative. Building middle-school coding and science curriculum on the CreatiCode platform and studying responsible AI integration in K-12 classrooms.</div>
+          <div className="who"><a href="https://www.computingandaiforall.org/reu.html" target="_blank" rel="noopener noreferrer">Undergraduate Student Researcher</a>, <em><a href="https://www.digitallearninglab.org/" target="_blank" rel="noopener noreferrer">UCI Digital Learning Lab</a></em></div>
+          <div className="body">Paid research with the <a href="https://www.computingandaiforall.org/" target="_blank" rel="noopener noreferrer">Computing and AI for All</a> initiative. Building middle-school coding and science curriculum on the CreatiCode platform and studying responsible AI integration in K-12 classrooms.</div>
         </div>
         <div className="entry">
           <div className="when">Nov 2025 - present</div>
