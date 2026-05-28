@@ -1207,6 +1207,17 @@ button.media-name {
   line-height: 1.55;
 }
 .skills .items .sep { color: var(--subtle); font-style: normal; }
+.skills .group .note {
+  display: block;
+  margin-top: 7px;
+  font-family: var(--ser);
+  font-style: italic;
+  font-size: 11px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--subtle);
+}
 
 /* ── Reading rows ───────────────────────────── */
 .reading-row {
