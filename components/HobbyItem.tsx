@@ -8,13 +8,26 @@ type Props = {
   title: string;
   summary: string;
   children: React.ReactNode;
+  titleHref?: string;
 };
 
-export default function HobbyItem({ title, summary, children }: Props) {
+export default function HobbyItem({ title, summary, children, titleHref }: Props) {
   const [pinned, setPinned] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const active = hovered || focused || pinned;
+
+  const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const isKeyboard = e.detail === 0;
+    const hasHover =
+      typeof window !== "undefined" &&
+      window.matchMedia("(hover: hover)").matches;
+    if (hasHover && !isKeyboard) {
+      e.currentTarget.blur();
+      return;
+    }
+    setPinned((p) => !p);
+  };
 
   return (
     <li
@@ -30,28 +43,42 @@ export default function HobbyItem({ title, summary, children }: Props) {
         }
       }}
     >
-      <button
-        type="button"
-        className="hobby-head"
-        aria-expanded={pinned}
-        onClick={(e) => {
-          const isKeyboard = e.detail === 0;
-          const hasHover =
-            typeof window !== "undefined" &&
-            window.matchMedia("(hover: hover)").matches;
-          if (hasHover && !isKeyboard) {
-            e.currentTarget.blur();
-            return;
-          }
-          setPinned((p) => !p);
-        }}
-      >
-        <span className="hobby-head-text">
-          <span className="hobby-title">{title}</span>
-          <span className="hobby-summary">{summary}</span>
-        </span>
-        <span className="hobby-mark" aria-hidden="true">+</span>
-      </button>
+      {titleHref ? (
+        <div className="hobby-head hobby-head-linked">
+          <span className="hobby-head-text">
+            <a
+              className="hobby-title hobby-title-link"
+              href={titleHref}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {title}
+            </a>
+            <button
+              type="button"
+              className="hobby-summary-toggle"
+              aria-expanded={pinned}
+              onClick={handleToggle}
+            >
+              {summary}
+            </button>
+          </span>
+          <span className="hobby-mark" aria-hidden="true">+</span>
+        </div>
+      ) : (
+        <button
+          type="button"
+          className="hobby-head"
+          aria-expanded={pinned}
+          onClick={handleToggle}
+        >
+          <span className="hobby-head-text">
+            <span className="hobby-title">{title}</span>
+            <span className="hobby-summary">{summary}</span>
+          </span>
+          <span className="hobby-mark" aria-hidden="true">+</span>
+        </button>
+      )}
       <div className="hobby-detail">
         <div className="hobby-detail-inner">
           <div className="hobby-detail-content">

@@ -17,7 +17,7 @@ export const projects: Project[] = [
     tags: ["TypeScript", "Supabase", "Next.js"],
     links: [
       {
-        label: "inf43-project-bingo.vercel.app ↗",
+        label: "Bingo ↗",
         href: "https://inf43-project-bingo.vercel.app",
       },
     ],
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "TypeScript", "CSS"],
     links: [
       {
-        label: "github.com/Ivan-Shishkin-Dev/Personal_Portfolio_3 ↗",
+        label: "GitHub for Website ↗",
         href: "https://github.com/Ivan-Shishkin-Dev/Personal_Portfolio_3",
       },
     ],
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     tags: ["React", "Supabase", "External APIs"],
     links: [
       {
-        label: "github.com/alieldaoushyuci/Construction-Verification ↗",
+        label: "Construction-Verification ↗",
         href: "https://github.com/alieldaoushyuci/Construction-Verification",
       },
     ],
@@ -68,8 +68,8 @@ export const projects: Project[] = [
     tags: ["Claude Code", "Markdown Files", "Obsidian"],
     links: [
       {
-        label: "github.com/Ivan-Shishkin-Dev/notes ↗",
-        href: "https://github.com/Ivan-Shishkin-Dev/notes",
+        label: "Read my notes! ↗",
+        href: "https://ivan-shishkin-dev.github.io/notes/",
       },
     ],
     year: "2026",
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     tags: ["Shell", "Claude Code"],
     links: [
       {
-        label: "github.com/Ivan-Shishkin-Dev/ClaudeStatusBar ↗",
+        label: "Claude Status Bar ↗",
         href: "https://github.com/Ivan-Shishkin-Dev/ClaudeStatusBar",
       },
     ],
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     tags: ["Lua", "Scripting"],
     links: [
       {
-        label: "github.com/Ivan-Shishkin-Dev/Ivan-NeoVim ↗",
+        label: "Check out my config! ↗",
         href: "https://github.com/Ivan-Shishkin-Dev/Ivan-NeoVim",
       },
     ],
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     tags: ["React", "Three.js", "GSAP"],
     links: [
       {
-        label: "ivan-shishkin-dev.github.io/Personal_Portfolio_2 ↗",
+        label: "Personal Portfolio 2 ↗",
         href: "https://ivan-shishkin-dev.github.io/Personal_Portfolio_2/",
       },
     ],
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     tags: ["CSS", "HTML", "JavaScript"],
     links: [
       {
-        label: "ivan-shishkin-dev.github.io/Personal_Portfolio_1 ↗",
+        label: "Personal Portfolio 1 ↗",
         href: "https://ivan-shishkin-dev.github.io/Personal_Portfolio_1/",
       },
     ],
