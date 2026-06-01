@@ -36,6 +36,7 @@ export default function EducationPage() {
             <li>Was director of housing for a bit.</li>
             <li>Got to go to Georgia for the <a href="https://sigmapi.org/event-directory/tsls/" target="_blank" rel="noopener noreferrer">Tony Siress Leadership Summit</a> — super fun.</li>
             <li>Got tapped for <a href="https://orderofomega.org/" target="_blank" rel="noopener noreferrer">Order of Omega</a>, a leadership honor society for fraternity and sorority members.</li>
+            <li>Received the <a href="https://sigmapi.org/foundations/scholarships/" target="_blank" rel="noopener noreferrer">Byron R. Lewis Academic Scholarship</a>.</li>
           </ul>
         </HobbyItem>
         <HobbyItem title="Mentorship" summary="CLAOC, OC Fellows, and ICS Student Council.">
