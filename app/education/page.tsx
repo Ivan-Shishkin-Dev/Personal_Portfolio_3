@@ -62,13 +62,6 @@ export default function EducationPage() {
         <div className="course"><span className="code">ICS 51</span><span>Computer Organization</span></div>
         <div className="course"><span className="code">INF 43</span><span>Software Engineering</span></div>
       </div>
-
-      <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "40px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Continuing</em></h2>
-      <p style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 20 }}>CodePath cohorts running summer 2026.</p>
-      <div className="courses">
-        <div className="course"><span className="code">AI 301</span><span>AI Open Source Capstone</span></div>
-        <div className="course"><span className="code">TIP 103</span><span>Advanced Interview Prep</span></div>
-      </div>
     </SectionLayout>
   );
 }
