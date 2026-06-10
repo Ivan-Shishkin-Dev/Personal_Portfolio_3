@@ -28,7 +28,14 @@ export default function Home() {
             </p>
             <p className="hero-principle">
               <em>
-                Do more,{" "}
+                <a
+                  href="https://usefulfictions.substack.com/p/how-to-increase-your-surface-area"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Do more
+                </a>
+                ,{" "}
                 <a
                   href="https://www.benkuhn.net/abyss/"
                   target="_blank"
