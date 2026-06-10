@@ -24,8 +24,9 @@ export default function EducationPage() {
       <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "60px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Activities</em></h2>
       <p style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 20 }}>Some more things I do.</p>
       <ul className="hobbies">
-        <HobbyItem title="AI Safety @ UCI" summary="Student org focused on AI safety." titleHref="https://aisafetyuci.org/">
+        <HobbyItem title="Director of AI Safety @ UCI" summary="Student org focused on AI safety." titleHref="https://aisafetyuci.org/">
           <ul>
+            <li>Currently in charge of operations and creating the “How to not lose your job” portion of the fall fellowship.</li>
             <li>Where I spend most of my time to be honest.</li>
             <li>Too much I do for this to briefly explain here — learning, reading, doing.</li>
           </ul>
