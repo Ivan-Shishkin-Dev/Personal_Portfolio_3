@@ -7,35 +7,10 @@ export type Project = {
   tags: string[];
   links: { label: string; href: string }[];
   year: string;
+  group: string;
 };
 
 export const projects: Project[] = [
-  {
-    title: "Bingo (Informatics 43 Project)",
-    blurb:
-      "A mobile social discovery app for meeting nearby people with shared interests, with strong privacy controls and an Interest Bingo mode that nudges users toward communities outside their bubble. Quarter-long team project for UCI's Informatics 43 (Introduction to Software Engineering).",
-    tags: ["TypeScript", "Supabase", "Next.js"],
-    links: [
-      {
-        label: "Bingo ↗",
-        href: "https://inf43-project-bingo.vercel.app",
-      },
-    ],
-    year: "2026",
-  },
-  {
-    title: "Personal_Portfolio_3",
-    blurb:
-      "The site you're on. Editorial, typography-forward, in Next.js 16. Third iteration of my personal page.",
-    tags: ["Next.js", "TypeScript", "CSS"],
-    links: [
-      {
-        label: "GitHub for Website ↗",
-        href: "https://github.com/Ivan-Shishkin-Dev/Personal_Portfolio_3",
-      },
-    ],
-    year: "2026",
-  },
   {
     title: "Construction-Verification",
     blurb: (
@@ -60,6 +35,32 @@ export const projects: Project[] = [
       },
     ],
     year: "2026",
+    group: "Main / Jobs",
+  },
+  {
+    title: "AI Safety Website",
+    blurb: (
+      <>
+        The club site for AI Safety @ UCI. Continuing to run it after{" "}
+        <a
+          href="https://harrywaterman.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Harry Waterman
+        </a>{" "}
+        built the original.
+      </>
+    ),
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    links: [
+      {
+        label: "AI Safety @ UCI ↗",
+        href: "https://aisafetyuci.org/",
+      },
+    ],
+    year: "2026",
+    group: "Main / Jobs",
   },
   {
     title: "Notes",
@@ -73,6 +74,7 @@ export const projects: Project[] = [
       },
     ],
     year: "2026",
+    group: "Tinkering",
   },
   {
     title: "ClaudeStatusBar",
@@ -86,6 +88,7 @@ export const projects: Project[] = [
       },
     ],
     year: "2026",
+    group: "Tinkering",
   },
   {
     title: "Ivan-NeoVim",
@@ -99,6 +102,21 @@ export const projects: Project[] = [
       },
     ],
     year: "2026",
+    group: "Tinkering",
+  },
+  {
+    title: "Bingo (Informatics 43 Project)",
+    blurb:
+      "A mobile social discovery app for meeting nearby people with shared interests, with strong privacy controls and an Interest Bingo mode that nudges users toward communities outside their bubble. Quarter-long team project for UCI's Informatics 43 (Introduction to Software Engineering).",
+    tags: ["TypeScript", "Supabase", "Next.js"],
+    links: [
+      {
+        label: "Bingo ↗",
+        href: "https://inf43-project-bingo.vercel.app",
+      },
+    ],
+    year: "2026",
+    group: "Hackathons / Class",
   },
   {
     title: "HomePilot",
@@ -112,6 +130,21 @@ export const projects: Project[] = [
       },
     ],
     year: "2026",
+    group: "Hackathons / Class",
+  },
+  {
+    title: "Personal_Portfolio_3",
+    blurb:
+      "The site you're on. Editorial, typography-forward, in Next.js 16. Third iteration of my personal page.",
+    tags: ["Next.js", "TypeScript", "CSS"],
+    links: [
+      {
+        label: "GitHub for Website ↗",
+        href: "https://github.com/Ivan-Shishkin-Dev/Personal_Portfolio_3",
+      },
+    ],
+    year: "2026",
+    group: "Personal Portfolios",
   },
   {
     title: "Personal_Portfolio_2",
@@ -124,6 +157,7 @@ export const projects: Project[] = [
       },
     ],
     year: "2025",
+    group: "Personal Portfolios",
   },
   {
     title: "Personal_Portfolio_1",
@@ -137,5 +171,6 @@ export const projects: Project[] = [
       },
     ],
     year: "2025",
+    group: "Personal Portfolios",
   },
 ];

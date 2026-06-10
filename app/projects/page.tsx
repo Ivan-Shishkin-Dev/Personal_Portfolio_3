@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Fragment } from "react";
 import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
 import { projects } from "@/content/projects";
@@ -12,44 +13,49 @@ export default function ProjectsPage() {
   return (
     <SectionLayout slug="projects">
       <div className="entries">
-        {projects.map((p) => (
-          <article className="project" key={p.title}>
-            <div className="project-head">
-              <h3>{p.title}</h3>
-              <span className="year">{p.year}</span>
-            </div>
-            <p className="blurb">{p.blurb}</p>
-            <div className="meta-row">
-              <div className="tags">
-                {p.tags.map((t) => (
-                  <span className="tag" key={t}>{t}</span>
-                ))}
+        {projects.map((p, i) => (
+          <Fragment key={p.title}>
+            {projects[i - 1]?.group !== p.group && (
+              <h2 className="group-label">{p.group}</h2>
+            )}
+            <article className="project">
+              <div className="project-head">
+                <h3>{p.title}</h3>
+                <span className="year">{p.year}</span>
               </div>
-              <div className="links">
-                {p.links.map((l) => {
-                  const isExternal = /^(https?:|mailto:)/.test(l.href);
-                  if (isExternal) {
+              <p className="blurb">{p.blurb}</p>
+              <div className="meta-row">
+                <div className="tags">
+                  {p.tags.map((t) => (
+                    <span className="tag" key={t}>{t}</span>
+                  ))}
+                </div>
+                <div className="links">
+                  {p.links.map((l) => {
+                    const isExternal = /^(https?:|mailto:)/.test(l.href);
+                    if (isExternal) {
+                      return (
+                        <a
+                          className="link"
+                          key={l.label}
+                          href={l.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {l.label}
+                        </a>
+                      );
+                    }
                     return (
-                      <a
-                        className="link"
-                        key={l.label}
-                        href={l.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <Link className="link" key={l.label} href={l.href}>
                         {l.label}
-                      </a>
+                      </Link>
                     );
-                  }
-                  return (
-                    <Link className="link" key={l.label} href={l.href}>
-                      {l.label}
-                    </Link>
-                  );
-                })}
+                  })}
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </Fragment>
         ))}
       </div>
     </SectionLayout>
