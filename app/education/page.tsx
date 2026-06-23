@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function EducationPage() {
   return (
     <SectionLayout slug="education">
-      <div className="entries" style={{ marginTop: -20, borderBottom: "0.5px solid var(--rule)" }}>
+      <div className="entries" style={{ marginTop: -20 }}>
         <div className="entry">
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16 }}>
             <div className="who">B.S. in Computer Science, <em>UC Irvine</em></div>
@@ -23,8 +23,7 @@ export default function EducationPage() {
         </div>
       </div>
 
-      <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "32px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Activities</em></h2>
-      <p style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 20 }}>Some more things I do.</p>
+      <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "32px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>School Activities</em></h2>
       <ul className="hobbies">
         <HobbyItem title="Sigma Pi" summary="Eta-Upsilon Chapter." titleHref="https://sigmapi.org/" alwaysOpen>
           <ul>
