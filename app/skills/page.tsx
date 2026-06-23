@@ -6,27 +6,6 @@ export const metadata: Metadata = {
   description: "Languages, tools, other.",
 };
 
-const Learning = () => (
-  <em style={{ color: "var(--subtle)", fontStyle: "normal", fontSize: 11 }}>
-    {" "}
-    (learning)
-  </em>
-);
-
-const Past = () => (
-  <em style={{ color: "var(--subtle)", fontStyle: "normal", fontSize: 11 }}>
-    {" "}
-    (formerly)
-  </em>
-);
-
-const Primary = () => (
-  <em style={{ color: "var(--subtle)", fontStyle: "normal", fontSize: 11 }}>
-    {" "}
-    (daily driver)
-  </em>
-);
-
 const Sep = () => <span className="sep"> · </span>;
 
 export default function SkillsPage() {
@@ -36,7 +15,7 @@ export default function SkillsPage() {
         <div className="skill">
           <div className="group">Languages</div>
           <div className="items">
-            Python<Sep />C / C++<Sep />JavaScript<Sep />SQL<Sep />LaTeX<Sep />TypeScript<Learning /><Sep />Bash<Learning /><Sep />Lua<Learning />
+            Python<Sep />C / C++<Sep />JavaScript<Sep />SQL<Sep />LaTeX<Sep />TypeScript<Sep />Bash<Sep />Lua
           </div>
         </div>
         <div className="skill">
@@ -60,20 +39,17 @@ export default function SkillsPage() {
         <div className="skill">
           <div className="group">Editors & AI dev tools</div>
           <div className="items">
-            Neovim<Primary /><Sep />Cursor<Sep />PyCharm / VS Code<Past /><Sep />CLI tools (Claude Code, Copilot, Antigravity)
+            Neovim<Sep />Cursor<Sep />PyCharm / VS Code<Sep />CLI tools (Claude Code, Copilot, Antigravity)
           </div>
         </div>
         <div className="skill">
-          <div className="group">
-            AI / LLMs
-            <span className="note">Everyone has these; just showing what I use:</span>
-          </div>
+          <div className="group">AI / LLMs</div>
           <div className="items">
             Agents (tool use)<Sep />RAG<Sep />LLM APIs (OpenAI, Anthropic)<Sep />Browser-use agents<Sep />LLM chat (ChatGPT, Claude, Gemini, NotebookLM)
           </div>
         </div>
         <div className="skill">
-          <div className="group">Languages (human)</div>
+          <div className="group">Spoken languages</div>
           <div className="items">
             English<Sep />Russian
           </div>
