@@ -308,10 +308,10 @@ article li a:hover,
 
 .hero-portrait {
   position: relative;
-  width: 224px;
-  height: 272px;
+  width: 264px;
+  height: 320px;
   margin: 0 auto 32px;
-  border-radius: 112px 112px 0 0;
+  border-radius: 132px 132px 0 0;
   overflow: hidden;
   background: var(--rule);
   box-shadow: 0 0 0 1px var(--rule-strong);

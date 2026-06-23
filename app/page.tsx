@@ -13,10 +13,11 @@ export default function Home() {
           <div>
             <div className="hero-portrait">
               <Image
-                src="/headshot.jpg"
+                src="/headshot.png"
                 alt="Ivan Shishkin"
                 fill
-                sizes="224px"
+                sizes="264px"
+                quality={100}
                 priority
               />
             </div>
