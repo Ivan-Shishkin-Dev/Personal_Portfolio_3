@@ -12,6 +12,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Science Inquiry Studio",
+    blurb: (
+      <>
+        An AI-supported science platform for grades 6–8 that I'm building at
+        the UCI Digital Learning Lab. Students use AI to learn key scientific
+        topics while practicing AI literacy. More in{" "}
+        <Link href="/experience">experience</Link>.
+      </>
+    ),
+    tags: ["Next.js", "TypeScript", "LLM APIs"],
+    links: [
+      {
+        label: "Science Inquiry Studio ↗",
+        href: "https://sinq.studio/",
+      },
+    ],
+    year: "2026",
+    group: "Main / Jobs",
+  },
+  {
     title: "Construction-Verification",
     blurb: (
       <>
@@ -23,35 +43,18 @@ export const projects: Project[] = [
         >
           Ali Eldaoushy
         </a>
-        . A consolidated platform that verifies workers' paperwork so they can get onto the job site. Learn more in{" "}
+        . A consolidated platform that verifies workers' paperwork so they can get onto the job site. The repo stays private, but there's more in{" "}
         <Link href="/experience">experience</Link>.
       </>
     ),
     tags: ["React", "Supabase", "External APIs"],
-    links: [
-      {
-        label: "Construction-Verification ↗",
-        href: "https://github.com/alieldaoushyuci/Construction-Verification",
-      },
-    ],
+    links: [],
     year: "2026",
     group: "Main / Jobs",
   },
   {
     title: "AI Safety Website",
-    blurb: (
-      <>
-        The club site for AI Safety @ UCI. Continuing to run it after{" "}
-        <a
-          href="https://harrywaterman.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Harry Waterman
-        </a>{" "}
-        built the original.
-      </>
-    ),
+    blurb: "The club site for AI Safety @ UCI.",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     links: [
       {
@@ -99,6 +102,20 @@ export const projects: Project[] = [
       {
         label: "Check out my config! ↗",
         href: "https://github.com/Ivan-Shishkin-Dev/Ivan-NeoVim",
+      },
+    ],
+    year: "2026",
+    group: "Tinkering",
+  },
+  {
+    title: "GymTrak",
+    blurb:
+      "A gym tracker I built for myself because I am really into lifting and wanted full control of my app without paying for other stuff, good practice too.",
+    tags: ["React", "Vite", "Supabase"],
+    links: [
+      {
+        label: "GymTrak ↗",
+        href: "https://github.com/Ivan-Shishkin-Dev/GymTrak",
       },
     ],
     year: "2026",
