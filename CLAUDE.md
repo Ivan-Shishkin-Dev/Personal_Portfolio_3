@@ -32,6 +32,10 @@ The home page (`app/page.tsx`) is its own composition. Every sub-page is just `<
 - Reintroduce a dark mode or theme toggle — site is intentionally light-only.
 - Widen `--maxw` (640px) or change `--gap` (60px) casually
 
+## Workflow
+
+- Commit often. After each self-contained change (a copy edit, a component tweak, a CSS adjustment), proactively suggest committing rather than batching many unrelated edits into one commit. Keep commits small and logically scoped with clear messages.
+
 ## Routes
 
 `/`, `/about`, `/projects`, `/experience`, `/education`, `/skills`, `/media`

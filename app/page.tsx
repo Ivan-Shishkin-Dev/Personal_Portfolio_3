@@ -1,7 +1,6 @@
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import Contacts from "@/components/Contacts";
-import Contents from "@/components/Contents";
 import FeedbackForm from "@/components/FeedbackForm";
 
 export default function Home() {
@@ -12,7 +11,6 @@ export default function Home() {
       <section className="hero hero-centered">
         <div className="hero-text">
           <div>
-            <div className="eyebrow">An introduction</div>
             <h1 className="title">Ivan Shishkin</h1>
             <p className="hero-bio">
               I study computer science at the{" "}
@@ -52,8 +50,6 @@ export default function Home() {
       </section>
 
       <Contacts />
-
-      <Contents />
 
       <SiteFooter home />
     </main>
