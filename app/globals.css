@@ -1285,15 +1285,6 @@ button.media-name {
   transition: color .18s ease;
 }
 .pager a:hover .label { color: var(--accent); }
-.pager .num {
-  font-family: var(--ser);
-  font-style: italic;
-  font-size: 12px;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--accent);
-  margin: 0 4px;
-}
 
 /* ── Footer ─────────────────────────────────── */
 .colophon {
