@@ -20,7 +20,7 @@ export default function SectionLayout({
       <nav className="subnav">
         <Link className="home" href="/">← Home</Link>
         <span className="sep">/</span>
-        <span>{s.numeral}. {s.title}</span>
+        <span>{s.title}</span>
       </nav>
       <header className="section-head">
         <div className="eyebrow">{s.eyebrow}</div>

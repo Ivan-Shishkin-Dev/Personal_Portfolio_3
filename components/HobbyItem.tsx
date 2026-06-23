@@ -9,13 +9,14 @@ type Props = {
   summary: string;
   children: React.ReactNode;
   titleHref?: string;
+  alwaysOpen?: boolean;
 };
 
-export default function HobbyItem({ title, summary, children, titleHref }: Props) {
+export default function HobbyItem({ title, summary, children, titleHref, alwaysOpen }: Props) {
   const [pinned, setPinned] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
-  const active = hovered || focused || pinned;
+  const active = alwaysOpen || hovered || focused || pinned;
 
   const handleToggle = (e: React.MouseEvent<HTMLButtonElement>) => {
     const isKeyboard = e.detail === 0;
@@ -28,6 +29,39 @@ export default function HobbyItem({ title, summary, children, titleHref }: Props
     }
     setPinned((p) => !p);
   };
+
+  if (alwaysOpen) {
+    return (
+      <li className="hobby" data-static>
+        <div className="hobby-head hobby-head-static">
+          <span className="hobby-head-text">
+            {titleHref ? (
+              <a
+                className="hobby-title hobby-title-link"
+                href={titleHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {title}
+              </a>
+            ) : (
+              <span className="hobby-title">{title}</span>
+            )}
+            <span className="hobby-summary">{summary}</span>
+          </span>
+        </div>
+        <div className="hobby-detail">
+          <div className="hobby-detail-inner">
+            <div className="hobby-detail-content">
+              <HobbyActiveContext.Provider value={active}>
+                {children}
+              </HobbyActiveContext.Provider>
+            </div>
+          </div>
+        </div>
+      </li>
+    );
+  }
 
   return (
     <li

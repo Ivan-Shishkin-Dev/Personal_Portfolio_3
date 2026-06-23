@@ -1,18 +1,26 @@
+import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import Contacts from "@/components/Contacts";
-import Contents from "@/components/Contents";
 import FeedbackForm from "@/components/FeedbackForm";
 
 export default function Home() {
   return (
-    <main className="page" data-screen-label="Home">
+    <main className="page page-home" data-screen-label="Home">
       <SiteHeader />
 
       <section className="hero hero-centered">
         <div className="hero-text">
           <div>
-            <div className="eyebrow">An introduction</div>
+            <div className="hero-portrait">
+              <Image
+                src="/headshot.png"
+                alt="Ivan Shishkin"
+                fill
+                sizes="264px"
+                quality={100}
+                priority
+              />
+            </div>
             <h1 className="title">Ivan Shishkin</h1>
             <p className="hero-bio">
               I study computer science at the{" "}
@@ -24,7 +32,7 @@ export default function Home() {
               >
                 University of California, Irvine
               </a>
-              , with a specialization in Artificial Intelligence. This site is here for you to get to know me — please, look around.
+              , with a specialization in Artificial Intelligence. This site is here for you to get to know me so please, look around.
             </p>
             <p className="hero-principle">
               <em>
@@ -50,10 +58,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Contacts />
-
-      <Contents />
 
       <SiteFooter home />
     </main>
