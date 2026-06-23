@@ -21,11 +21,19 @@ export default function Hobbies() {
               </li>
               <li>
                 Following safety research and the field, as I am one of the directors
-                of the AI Safety Collective @ UCI.
+                of the{" "}
+                <a
+                  href="https://aisafetyuci.org/team"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  AI Safety Collective @ UCI
+                </a>
+                .
               </li>
               <li>
-                Research for AI literacy curriculum through UCI&apos;s Digital Learning
-                Lab.
+                Research for AI literacy curriculum through{" "}
+                <Link href="/experience#digital-learning-lab">UCI&apos;s Digital Learning Lab</Link>.
               </li>
             </ul>
           </HobbyItem>
@@ -40,6 +48,10 @@ export default function Hobbies() {
                 At this point I can build almost anything quickly. This bullet is a
                 catch-all for &ldquo;application of AI development.&rdquo; It is where the
                 ideas from the AI bucket get tested.
+              </li>
+              <li>
+                Check out what I&apos;ve built on my{" "}
+                <Link href="/projects">projects page</Link>.
               </li>
             </ul>
           </HobbyItem>
@@ -82,7 +94,7 @@ export default function Hobbies() {
               <li>
                 I want to get good at things, so I spend my time learning from people
                 smarter than me. A lot of it shows up on my{" "}
-                <Link href="/education">education page</Link>.
+                <Link href="/education#self-education">education page</Link>.
               </li>
               <li>
                 The mix: reading, podcasts (I walk a lot,

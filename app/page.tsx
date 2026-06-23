@@ -32,7 +32,7 @@ export default function Home() {
               >
                 University of California, Irvine
               </a>
-              , with a specialization in Artificial Intelligence. This site is here for you to get to know me — please, look around.
+              , with a specialization in Artificial Intelligence. This site is here for you to get to know me so please, look around.
             </p>
             <p className="hero-principle">
               <em>

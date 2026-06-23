@@ -708,7 +708,7 @@ article h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 16px;
   cursor: zoom-out;
   animation: portrait-lightbox-in .18s ease-out;
 }
@@ -718,8 +718,8 @@ article h2 {
 }
 .notion-lightbox-frame {
   position: relative;
-  width: min(960px, 92vw);
-  height: min(86vh, 900px);
+  width: calc(100vw - 32px);
+  height: calc(100vh - 32px);
   background: var(--paper);
   border: 0.5px solid var(--rule);
   border-radius: 12px;
@@ -932,8 +932,16 @@ article h2 {
 .entries .entry {
   padding: 20px 0;
   border-top: 0.5px solid var(--rule);
+  scroll-margin-top: 90px;
 }
 .entries .entry:first-child { border-top: none; }
+.entries .entry:target {
+  animation: entry-flash 3s ease-out forwards;
+}
+@keyframes entry-flash {
+  0%, 20% { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  100% { background: transparent; }
+}
 .entries .when {
   font-family: var(--sans);
   font-size: 10px;
