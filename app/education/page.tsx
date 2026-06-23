@@ -17,7 +17,7 @@ export default function EducationPage() {
             <div className="who">B.S. in Computer Science, <em>UC Irvine</em></div>
             <div className="when" style={{ marginBottom: 0, whiteSpace: "nowrap" }}>Aug 2024 - Jun 2028</div>
           </div>
-          <div className="body">GPA 3.8 (Dean's Honor's List, 5×).</div>
+          <div className="body">GPA 3.8 (Dean's Honors List, 6×).</div>
           <p style={{ fontFamily: "var(--ser)", fontStyle: "italic", fontSize: 13.5, lineHeight: 1.6, color: "var(--subtle)", margin: "8px 0 0" }}>Read more about my education by scrolling down.</p>
         </div>
       </div>
@@ -52,15 +52,12 @@ export default function EducationPage() {
       <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "60px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Coursework</em></h2>
       <p style={{ color: "var(--muted)", fontStyle: "italic", marginBottom: 20 }}>Classes that mattered.</p>
       <div className="courses">
-        <div className="course"><span className="code">ICS 6B</span><span>Boolean Logic & Discrete Structures</span></div>
-        <div className="course"><span className="code">MATH 2A</span><span>Calculus I</span></div>
         <div className="course"><span className="code">ICS 33</span><span>Intermediate Programming in Python</span></div>
         <div className="course"><span className="code">ICS 6D</span><span>Discrete Math for CS</span></div>
         <div className="course"><span className="code">MATH 2B</span><span>Calculus II</span></div>
-        <div className="course"><span className="code">ICS 45C</span><span>Programming in C/C++</span></div>
         <div className="course"><span className="code">STATS 67</span><span>Probability & Statistics for CS</span></div>
         <div className="course"><span className="code">MATH 3A</span><span>Linear Algebra</span></div>
-        <div className="course"><span className="code">ICS 46</span><span>Data Structure Implementation & Analysis</span></div>
+        <div className="course"><span className="code">ICS 46</span><span>Data Structure Implementation & Analysis (in C++)</span></div>
         <div className="course"><span className="code">ICS 51</span><span>Computer Organization</span></div>
         <div className="course"><span className="code">INF 43</span><span>Software Engineering</span></div>
       </div>
