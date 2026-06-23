@@ -12,7 +12,6 @@ export const contacts: Contact[] = [
     intent: "Email",
     handle: "click to copy",
     copy: "shishkinivan2006@gmail.com",
-    primary: true,
   },
   {
     intent: "Meet With Me",
