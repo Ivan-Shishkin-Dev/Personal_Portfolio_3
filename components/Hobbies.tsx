@@ -82,7 +82,7 @@ export default function Hobbies() {
               <li>
                 I want to get good at things, so I spend my time learning from people
                 smarter than me. A lot of it shows up on my{" "}
-                <Link href="/media">Media page</Link>.
+                <Link href="/education">education page</Link>.
               </li>
               <li>
                 The mix: reading, podcasts (I walk a lot,

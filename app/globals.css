@@ -20,7 +20,7 @@
 html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
 body {
   font-family: var(--ser);
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -80,13 +80,11 @@ article li a:hover,
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero,
-  .contact-block,
   .section-head,
   article {
     animation: rise .55s cubic-bezier(.2,.6,.2,1) both;
   }
   .hero          { animation-delay: 60ms; }
-  .contact-block { animation-delay: 240ms; }
   .section-head  { animation-delay: 80ms; }
   article        { animation-delay: 200ms; }
 }
@@ -99,6 +97,15 @@ article li a:hover,
 }
 @media (min-width: 720px) {
   .page { padding: 60px 60px 100px; }
+}
+.page-home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.page-home .hero {
+  flex: 1 1 auto;
+  align-content: center;
 }
 @media (min-width: 1024px) {
   :root { --maxw: 880px; }
@@ -299,6 +306,21 @@ article li a:hover,
 }
 .hero-bio em { color: var(--muted); font-style: italic; }
 
+.hero-portrait {
+  position: relative;
+  width: 224px;
+  height: 272px;
+  margin: 0 auto 32px;
+  border-radius: 112px 112px 0 0;
+  overflow: hidden;
+  background: var(--rule);
+  box-shadow: 0 0 0 1px var(--rule-strong);
+}
+.hero-portrait img {
+  object-fit: cover;
+  object-position: center 6%;
+}
+
 .hero-centered { text-align: center; }
 .hero-centered .hero-bio,
 .hero-centered .hero-principle { margin-left: auto; margin-right: auto; }
@@ -385,102 +407,76 @@ article li a:hover,
   max-width: 38em;
 }
 
-/* ── Contact block (home only) ──────────────── */
-.contact-block { margin: 16px 0 64px; }
-.contact-block .block-heading {
-  font-family: var(--sans);
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 500;
-  margin: 0 0 20px;
-}
-.contact-strip {
+/* ── Contact directory ──────────────────────── */
+.contact-directory { margin: -20px 0; }
+.contact-row {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px 32px;
-  padding-top: 18px;
+  grid-template-columns: 1fr auto;
+  gap: 12px 24px;
+  align-items: center;
+  padding: 20px 0;
   border-top: 0.5px solid var(--rule);
-}
-@media (min-width: 480px) { .contact-strip { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .contact-strip { grid-template-columns: repeat(4, 1fr); gap: 32px; } }
-
-.contact-card,
-.contact-card:visited {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
   text-decoration: none;
   color: inherit;
-  transition: color .18s ease;
-  cursor: pointer;
+  transition: padding-left .22s ease;
 }
-.contact-card .label {
+.contact-row:first-child { border-top: none; padding-top: 0; }
+.contact-row:last-child { border-bottom: none; padding-bottom: 0; }
+.contact-row:hover { padding-left: 12px; }
+.contact-intent {
+  font-family: var(--ser);
+  font-style: italic;
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+  color: var(--ink);
+  transition: color .18s ease;
+}
+.contact-row.primary .contact-intent,
+.contact-row:hover .contact-intent { color: var(--accent); }
+.contact-channel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+  justify-self: end;
+}
+.contact-name {
   font-family: var(--sans);
-  font-size: 9.5px;
+  font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--muted);
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
+}
+.contact-handle {
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--subtle);
+  overflow-wrap: anywhere;
   transition: color .18s ease;
 }
-.contact-card .label .arrow {
+.contact-row:hover .contact-handle { color: var(--accent); }
+.contact-arrow {
   font-family: var(--sans);
-  font-size: 12px;
+  font-size: 11px;
+  margin-left: 6px;
   color: var(--muted);
-  opacity: 0;
-  transform: translate(-2px, 2px);
-  transition: opacity .22s ease, transform .22s ease, color .18s ease;
+  display: inline-block;
+  transition: transform .22s ease, color .18s ease;
 }
-.contact-card:hover .label { color: var(--ink); }
-.contact-card:hover .label .arrow { opacity: 1; transform: translate(0, 0); color: var(--accent); }
-.contact-card .handle {
-  font-family: var(--ser);
-  font-size: clamp(16px, 1.6vw, 18px);
-  font-weight: 300;
-  line-height: 1.25;
-  letter-spacing: -0.3px;
-  margin-top: 12px;
-  padding-bottom: 12px;
-  border-bottom: 0.5px solid var(--rule);
-  overflow-wrap: anywhere;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  min-height: 3em;
-  transition: border-color .22s ease, color .18s ease;
-}
-.contact-card:hover .handle { border-color: var(--accent); color: var(--accent); }
-.contact-card .note {
-  font-family: var(--ser);
-  font-style: italic;
-  font-size: 13px;
-  color: var(--muted);
-  margin-top: 10px;
-  min-height: 1.5em;
-  transition: color .22s ease;
-}
-.contact-card .note.copied { color: var(--accent); font-style: normal; letter-spacing: 0.5px; }
-
-/* Email card — button reset + italic handle + hover hint swap */
-button.contact-card.email-card {
+.contact-row:hover .contact-arrow { transform: translate(2px, -2px); color: var(--accent); }
+button.contact-row {
+  width: 100%;
   appearance: none;
   background: none;
-  border: 0;
-  padding: 0;
-  margin: 0;
+  border: none;
   font: inherit;
   text-align: left;
-  width: 100%;
   cursor: pointer;
 }
-.email-card .handle { font-style: italic; }
-.email-card:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
-.email-card .note .note-hint { display: none; }
-.email-card:hover .note .note-default { display: none; }
-.email-card:hover .note .note-hint { display: inline; color: var(--accent); }
+button.contact-row:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.contact-handle.copied { color: var(--accent); }
 
 /* ── Section pages ──────────────────────────── */
 .section-head {
@@ -503,13 +499,13 @@ button.contact-card.email-card {
   font-style: italic;
   font-weight: 400;
   color: var(--accent);
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(32px, 4.5vw, 46px);
   line-height: 0.9;
   letter-spacing: -1px;
 }
 .section-head h1 {
   font-family: var(--ser);
-  font-size: clamp(36px, 6.5vw, 52px);
+  font-size: clamp(30px, 5vw, 42px);
   font-weight: 400;
   letter-spacing: -0.8px;
   margin: 0;
@@ -517,7 +513,7 @@ button.contact-card.email-card {
 }
 
 
-p { font-family: var(--ser); font-size: 16px; line-height: 1.7; margin: 0 0 16px; }
+p { font-family: var(--ser); font-size: 17px; line-height: 1.7; margin: 0 0 16px; }
 
 article h2 {
   font-family: var(--ser);
@@ -578,14 +574,14 @@ article h2 {
 }
 .hobby-title {
   font-family: var(--ser);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--ink);
   line-height: 1.3;
 }
 .hobby-summary {
   font-family: var(--ser);
-  font-size: 14.5px;
+  font-size: 15.5px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -600,7 +596,7 @@ article h2 {
   margin: 0;
   cursor: pointer;
   font-family: var(--ser);
-  font-size: 14.5px;
+  font-size: 15.5px;
   line-height: 1.5;
   color: var(--muted);
 }
@@ -649,11 +645,11 @@ article h2 {
 .hobby-detail-content {
   padding: 0 0 16px;
   font-family: var(--ser);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   color: var(--ink);
 }
-.hobby-detail-content p { font-size: 15px; line-height: 1.65; margin: 0 0 12px; }
+.hobby-detail-content p { font-size: 16px; line-height: 1.65; margin: 0 0 12px; }
 .hobby-detail-content p:last-child { margin-bottom: 0; }
 .hobby-detail-content ul {
   list-style: none;
@@ -663,7 +659,7 @@ article h2 {
 .hobby-detail-content li {
   position: relative;
   padding-left: 20px;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
   margin: 0 0 8px;
 }
@@ -775,7 +771,7 @@ article h2 {
   padding: 1px 0 2px;
   font-family: var(--ser);
   font-style: italic;
-  font-size: 14.5px;
+  font-size: 15.5px;
   color: var(--accent);
   cursor: pointer;
   background-image: linear-gradient(currentColor, currentColor);
@@ -859,7 +855,7 @@ article h2 {
 .feedback-frame textarea {
   width: 100%;
   font-family: var(--ser);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--ink);
   background: transparent;
@@ -946,11 +942,11 @@ article h2 {
   color: var(--muted);
   margin-bottom: 4px;
 }
-.entries .who { font-family: var(--ser); font-size: 18px; }
+.entries .who { font-family: var(--ser); font-size: 19px; }
 .entries .who em { color: var(--accent); }
 .entries .body {
   font-family: var(--ser);
-  font-size: 14.5px;
+  font-size: 15.5px;
   line-height: 1.65;
   color: var(--muted);
   margin-top: 8px;
@@ -982,7 +978,7 @@ article h2 {
   gap: 16px;
 }
 .project h3 { font-family: var(--ser); font-size: 22px; font-weight: 400; font-style: italic; margin: 0; }
-.project .blurb { font-family: var(--ser); font-size: 14.5px; line-height: 1.6; color: var(--muted); margin: 6px 0 12px; }
+.project .blurb { font-family: var(--ser); font-size: 15.5px; line-height: 1.6; color: var(--muted); margin: 6px 0 12px; }
 .project .meta-row {
   display: flex;
   justify-content: space-between;
@@ -1056,7 +1052,7 @@ article h2 {
 }
 .entry-fields dd {
   font-family: var(--ser);
-  font-size: 14.5px;
+  font-size: 15.5px;
   line-height: 1.65;
   color: var(--ink);
   margin: 0;
@@ -1087,7 +1083,7 @@ article h2 {
 }
 .media-name {
   font-family: var(--ser);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 400;
   color: var(--ink);
   background-image: none;
@@ -1127,7 +1123,7 @@ button.media-name {
 }
 .media-note {
   font-family: var(--ser);
-  font-size: 14.5px;
+  font-size: 15.5px;
   line-height: 1.6;
   color: var(--muted);
   margin: 4px 0 0;
@@ -1135,14 +1131,14 @@ button.media-name {
 .media-stub {
   font-family: var(--ser);
   font-style: italic;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--subtle);
   margin: 8px 0 0;
 }
 .media-coda {
   font-family: var(--ser);
   font-style: italic;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--subtle);
   text-align: center;
@@ -1155,7 +1151,7 @@ button.media-name {
 }
 .section-preface p {
   font-family: var(--ser);
-  font-size: 13.5px;
+  font-size: 14.5px;
   line-height: 1.6;
   color: var(--subtle);
   margin: 0;
@@ -1174,7 +1170,7 @@ button.media-name {
   padding: 8px 0;
   border-bottom: 0.5px dotted var(--rule);
   font-family: var(--ser);
-  font-size: 14.5px;
+  font-size: 15.5px;
 }
 .courses .code {
   font-family: var(--sans);
@@ -1208,7 +1204,7 @@ button.media-name {
 .skills .items {
   font-family: var(--ser);
   font-style: italic;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
 }
 .skills .items .sep { color: var(--subtle); font-style: normal; }
@@ -1232,7 +1228,7 @@ button.media-name {
   padding: 12px 0;
   border-top: 0.5px solid var(--rule);
   font-family: var(--ser);
-  font-size: 14.5px;
+  font-size: 15.5px;
 }
 .reading-row:first-child { border-top: none; }
 .reading-row .state {

@@ -80,7 +80,7 @@ export default function FeedbackForm() {
         className="feedback-trigger"
         onClick={() => setOpen(true)}
       >
-        Tell me what to get better at
+        Anonymous Feedback
       </button>
 
       {mounted && open &&

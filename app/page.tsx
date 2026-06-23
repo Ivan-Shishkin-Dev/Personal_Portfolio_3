@@ -1,16 +1,25 @@
+import Image from "next/image";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import Contacts from "@/components/Contacts";
 import FeedbackForm from "@/components/FeedbackForm";
 
 export default function Home() {
   return (
-    <main className="page" data-screen-label="Home">
+    <main className="page page-home" data-screen-label="Home">
       <SiteHeader />
 
       <section className="hero hero-centered">
         <div className="hero-text">
           <div>
+            <div className="hero-portrait">
+              <Image
+                src="/headshot.jpg"
+                alt="Ivan Shishkin"
+                fill
+                sizes="224px"
+                priority
+              />
+            </div>
             <h1 className="title">Ivan Shishkin</h1>
             <p className="hero-bio">
               I study computer science at the{" "}
@@ -48,8 +57,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <Contacts />
 
       <SiteFooter home />
     </main>

@@ -1,33 +1,35 @@
 export type Contact = {
-  label: string;
+  intent: string;
   handle: string;
-  href: string;
-  note?: string;
+  label?: string;
+  href?: string;
+  copy?: string;
+  primary?: boolean;
 };
 
 export const contacts: Contact[] = [
   {
-    label: "Email",
-    handle: "Best way to reach me",
-    href: "mailto:shishkinivan2006@gmail.com",
-    note: "I read it daily",
+    intent: "Email",
+    handle: "click to copy",
+    copy: "shishkinivan2006@gmail.com",
+    primary: true,
   },
   {
-    label: "Schedule a meet",
+    intent: "Meet With Me",
+    label: "Calendar",
     handle: "cal.com/ivanshishkin",
     href: "https://cal.com/ivanshishkin/quick-chat",
-    note: "For optics — or if needed",
   },
   {
+    intent: "Public Code",
     label: "GitHub",
     handle: "Ivan-Shishkin-Dev",
     href: "https://github.com/Ivan-Shishkin-Dev",
-    note: "Code, public",
   },
   {
+    intent: "Work History",
     label: "LinkedIn",
     handle: "/in/ivan-shishkin-dev",
     href: "https://www.linkedin.com/in/ivan-shishkin-dev/",
-    note: "Work history",
   },
 ];
