@@ -52,7 +52,18 @@ export default function Hobbies() {
             <ul>
               <li>
                 Building PCs, Linux, Neovim, anything in that genre. I just love to
-                tinker and see how to make things better. A min-maxer sorta guy.
+                tinker and see how to make things better.
+              </li>
+              <li>
+                A min-maxer sorta guy who sometimes gets{" "}
+                <a
+                  href="https://xkcd.com/356/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  nerd sniped
+                </a>
+                .
               </li>
             </ul>
           </HobbyItem>
@@ -67,15 +78,22 @@ export default function Hobbies() {
             title="Self-education"
             summary="A core part of my identity."
           >
-            <p>
-              I really want to get good at things so I spend my time learning from
-              people smarter than me. A lot of this gets covered on my{" "}
-              <Link href="/media">Media page</Link>. The mix: reading (recently picked
-              it up again), podcasts (I walk a lot, so they fit naturally), long
-              conversations with people unlike me, philosophy. Also: long-form YouTube
-              essays and lectures, blogs and Substacks, Twitter/X for live discourse in
-              AI and tech, online courses.
-            </p>
+            <ul>
+              <li>
+                I want to get good at things, so I spend my time learning from people
+                smarter than me. A lot of it shows up on my{" "}
+                <Link href="/media">Media page</Link>.
+              </li>
+              <li>
+                The mix: reading, podcasts (I walk a lot,
+                so they fit), long conversations with people unlike me,
+                &ldquo;philosophy.&rdquo;
+              </li>
+              <li>
+                Also: long-form YouTube essays and lectures, blogs and Substacks,
+                Twitter/X for live AI and tech discourse.
+              </li>
+            </ul>
           </HobbyItem>
         </ul>
       </section>
@@ -88,7 +106,6 @@ export default function Hobbies() {
             title="Music"
             summary="I like it, mostly as background noise."
           >
-            <p>More functional than emotional most of the time.</p>
             <SpotifyOnRepeat />
           </HobbyItem>
         </ul>

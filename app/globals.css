@@ -506,7 +506,6 @@ button.contact-card.email-card {
   font-size: clamp(40px, 6vw, 64px);
   line-height: 0.9;
   letter-spacing: -1px;
-  align-self: flex-end;
 }
 .section-head h1 {
   font-family: var(--ser);
