@@ -19,7 +19,6 @@ export default function EducationPage() {
             <div className="when" style={{ marginBottom: 0, whiteSpace: "nowrap" }}>Aug 2024 - Jun 2028</div>
           </div>
           <div className="body">GPA 3.8 (Dean's Honors List, 6×).</div>
-          <p style={{ fontFamily: "var(--ser)", fontStyle: "italic", fontSize: 13.5, lineHeight: 1.6, color: "var(--subtle)", margin: "8px 0 0" }}>Read more about my education by scrolling down.</p>
         </div>
       </div>
 

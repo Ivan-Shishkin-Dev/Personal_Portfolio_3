@@ -9,18 +9,41 @@ export const metadata: Metadata = {
   description: "Things I've built.",
 };
 
+const isExternalHref = (href: string) => /^(https?:|mailto:)/.test(href);
+
 export default function ProjectsPage() {
   return (
     <SectionLayout slug="projects">
       <div className="entries">
-        {projects.map((p, i) => (
+        {projects.map((p, i) => {
+          const primary = p.links[0];
+          return (
           <Fragment key={p.title}>
             {projects[i - 1]?.group !== p.group && (
               <h2 className="group-label">{p.group}</h2>
             )}
             <article className="project">
               <div className="project-head">
-                <h3>{p.title}</h3>
+                <h3>
+                  {primary ? (
+                    isExternalHref(primary.href) ? (
+                      <a
+                        className="project-title-link"
+                        href={primary.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {p.title}
+                      </a>
+                    ) : (
+                      <Link className="project-title-link" href={primary.href}>
+                        {p.title}
+                      </Link>
+                    )
+                  ) : (
+                    p.title
+                  )}
+                </h3>
                 <span className="year">{p.year}</span>
               </div>
               <p className="blurb">{p.blurb}</p>
@@ -32,8 +55,7 @@ export default function ProjectsPage() {
                 </div>
                 <div className="links">
                   {p.links.map((l) => {
-                    const isExternal = /^(https?:|mailto:)/.test(l.href);
-                    if (isExternal) {
+                    if (isExternalHref(l.href)) {
                       return (
                         <a
                           className="link"
@@ -56,7 +78,8 @@ export default function ProjectsPage() {
               </div>
             </article>
           </Fragment>
-        ))}
+          );
+        })}
       </div>
     </SectionLayout>
   );
