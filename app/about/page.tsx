@@ -10,9 +10,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <SectionLayout slug="about">
-      <p>How hard is it to convey a whole human in a few paragraphs. With time and with life I&apos;ll be able to box myself in better, but at this point it&apos;s tough. As with all things, that doesn&apos;t mean I won&apos;t try.</p>
-      <p>Originally I&apos;m from Russia. I immigrated here with my mother and sister, and we moved around a lot in our time. At the moment, I&apos;m in Irvine.</p>
-      <p>Ever since I was little I&apos;ve enjoyed technical things. I always considered myself a &ldquo;math guy,&rdquo; in the way elementary schoolers use the term. Other words people tend to use for people like me: analytical, pragmatic, methodical, empirical. Growing up, my conditions rewarded resilience over comfort, which made me someone who acts on life rather than reacts to it.</p>
+      <p>Ever since I was a little kid in Russia I&apos;ve enjoyed technical things. I always considered myself a &ldquo;math guy,&rdquo; in the way elementary schoolers use the term. Other words people tend to use for people like me: analytical, pragmatic, methodical, empirical. Growing up, my conditions rewarded resilience over comfort, which made me someone who acts on life rather than reacts to it.</p>
       <p>In college, that technical streak pushed me toward computer science and everything orbiting it. That said, I never want my learning fenced in by the confines of my major. Here are some things I spend my time on, in case they fill in the picture. This isn&apos;t all that I do, talk to me to find out more!</p>
 
       <Hobbies />

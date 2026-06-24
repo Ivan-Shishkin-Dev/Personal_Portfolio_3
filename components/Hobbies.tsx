@@ -97,13 +97,12 @@ export default function Hobbies() {
                 <Link href="/education#self-education">education page</Link>.
               </li>
               <li>
-                The mix: reading, podcasts (I walk a lot,
-                so they fit), long conversations with people unlike me,
-                &ldquo;philosophy.&rdquo;
+                Reading, podcasts (I walk a lot), long conversations with people
+                unlike me, &ldquo;philosophy.&rdquo;
               </li>
               <li>
-                Also: long-form YouTube essays and lectures, blogs and Substacks,
-                Twitter/X for live AI and tech discourse.
+                Long-form YouTube essays/lectures, blogs/Substacks, Twitter/X for
+                live AI/tech discourse.
               </li>
             </ul>
           </HobbyItem>
