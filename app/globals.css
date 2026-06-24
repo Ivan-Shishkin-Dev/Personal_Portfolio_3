@@ -971,6 +971,26 @@ article h2 {
   gap: 16px;
 }
 .project h3 { font-family: var(--ser); font-size: 22px; font-weight: 400; font-style: italic; margin: 0; }
+.project-title-link {
+  color: var(--accent);
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 1px;
+  transition: background-size .22s ease;
+}
+.project-title-link::after {
+  content: " ↗";
+  font-style: normal;
+  font-size: 0.72em;
+  vertical-align: 0.12em;
+}
+.project-title-link:hover { background-size: 100% 2px; }
+.project-title-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 .project .blurb { font-family: var(--ser); font-size: 15.5px; line-height: 1.6; color: var(--muted); margin: 6px 0 12px; }
 .project .meta-row {
   display: flex;
