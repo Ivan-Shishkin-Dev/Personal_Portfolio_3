@@ -23,16 +23,8 @@ export default function Home() {
             </div>
             <h1 className="title">Ivan Shishkin</h1>
             <p className="hero-bio">
-              I study computer science at the{" "}
-              <a
-                className="uci-mark"
-                href="https://uci.edu"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                University of California, Irvine
-              </a>
-              , with a specialization in Artificial Intelligence. This site is here for you to get to know me so please, look around.
+              I study computer science at the University of California, Irvine,
+              with a specialization in Artificial Intelligence. This site is here for you to get to know me so please, look around.
             </p>
             <p className="hero-principle">
               <em>

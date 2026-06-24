@@ -331,22 +331,6 @@ article li a:hover,
   padding: 14px 20px;
 }
 
-/* UCI inline link — italic Spectral medium, accent, swelling underline */
-.hero-bio .uci-mark {
-  font-family: var(--ser);
-  font-style: italic;
-  font-weight: 500;
-  color: var(--accent);
-  background-image: linear-gradient(currentColor, currentColor);
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 100% 0.5px;
-  padding-bottom: 1px;
-  letter-spacing: -0.1px;
-  transition: background-size 0.22s ease;
-}
-.hero-bio .uci-mark:hover { background-size: 100% 1.5px; }
-
 /* Principle pull-quote — featured editorial statement */
 .hero-principle {
   font-family: var(--ser);
