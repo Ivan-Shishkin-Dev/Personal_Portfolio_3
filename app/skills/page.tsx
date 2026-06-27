@@ -33,7 +33,7 @@ export default function SkillsPage() {
         <div className="skill">
           <div className="group">DevOps / infra</div>
           <div className="items">
-            Git/GitHub<Sep />Linux<Sep />GitHub Actions<Sep />Vercel<Sep />Docker<Sep />Kubernetes<Sep />Cloudflare
+            Git/GitHub<Sep />Linux<Sep />GitHub Actions<Sep />Vercel<Sep />AWS<Sep />Docker<Sep />Kubernetes<Sep />Cloudflare
           </div>
         </div>
         <div className="skill">
