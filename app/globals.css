@@ -319,6 +319,7 @@ article li a:hover,
 .hero-portrait img {
   object-fit: cover;
   object-position: center 6%;
+  transform: translateX(12px) scale(1.1);
 }
 
 .hero-centered { text-align: center; }
