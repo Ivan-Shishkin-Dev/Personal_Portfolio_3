@@ -13,7 +13,14 @@ export default function ExperiencePage() {
         <div className="entry" id="digital-learning-lab">
           <div className="when">May 2026 - present</div>
           <div className="who"><a href="https://www.computingandaiforall.org/reu.html" target="_blank" rel="noopener noreferrer">Undergraduate Student Researcher</a>, <em><a href="https://www.digitallearninglab.org/" target="_blank" rel="noopener noreferrer">UCI Digital Learning Lab</a></em></div>
-          <div className="body">Paid research with the <a href="https://www.computingandaiforall.org/" target="_blank" rel="noopener noreferrer">Computing and AI for All</a> initiative. Building <a href="https://sinq.studio" target="_blank" rel="noopener noreferrer">Science Inquiry Studio</a>, an AI-supported science platform for grades 6&ndash;8 that has students utilize AI to learn important scientific topics while practicing AI literacy.</div>
+          <div className="body">
+            NSF-funded <a href="https://www.computingandaiforall.org/" target="_blank" rel="noopener noreferrer">Computing and AI for All</a> initiative, a $6M+ effort in <a href="https://markwarschauer.com/" target="_blank" rel="noopener noreferrer">Prof. Mark Warschauer&rsquo;s</a> group.
+            <ul>
+              <li>Building grade 6&ndash;8 science curricula that teach subject matter and AI literacy together, aligned with California&rsquo;s Science Standards and piloted across Orange County districts.</li>
+              <li>Co-leading the design of <a href="https://sinq.studio" target="_blank" rel="noopener noreferrer">Science Inquiry Studio</a> and the Science + AI team, prototyping games and simulations that fold LLMs, data handling, and ethics directly into the lessons.</li>
+              <li>Building the authoring tools that let teachers adapt our templates to how they actually teach.</li>
+            </ul>
+          </div>
         </div>
         <div className="entry">
           <div className="when">Nov 2025 - present</div>
