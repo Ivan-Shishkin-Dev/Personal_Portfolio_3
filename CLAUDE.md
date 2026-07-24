@@ -14,7 +14,7 @@ Ivan Shishkin's personal portfolio — a UC Irvine CS student site with a typogr
 
 ## Architecture
 
-The home page (`app/page.tsx`) is its own composition. Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>` — `SectionLayout` renders the subnav, section head, children, `Pager`, and footer. `content/sections.ts` is the single source of truth for navigation order, Roman numerals, and Contents-list descriptions.
+The home page (`app/page.tsx`) is its own composition: hero portrait, bio, principle pull-quote, and the anonymous-feedback modal (`FeedbackForm`, posts to web3forms). Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>` — `SectionLayout` renders the subnav, section head, children, `Pager`, and footer. `content/sections.ts` is the single source of truth for navigation order, Roman numerals, and section eyebrows.
 
 ## Conventions
 
@@ -28,7 +28,7 @@ The home page (`app/page.tsx`) is its own composition. Every sub-page is just `<
 - Replace plain CSS with Tailwind or CSS-in-JS
 - Redesign typography — Spectral / Inter / JetBrains Mono are deliberate
 - Add a state library, CMS, or testing framework. This is a small static portfolio (home + six section pages).
-- Add a contact form. Mailto links are intentional.
+- Add a general contact form. The anonymous-feedback modal on home and the click-to-copy email on `/contact` are intentional.
 - Reintroduce a dark mode or theme toggle — site is intentionally light-only.
 - Widen `--maxw` (640px) or change `--gap` (60px) casually
 
@@ -38,7 +38,7 @@ The home page (`app/page.tsx`) is its own composition. Every sub-page is just `<
 
 ## Routes
 
-`/`, `/about`, `/projects`, `/experience`, `/education`, `/skills`, `/media`
+`/`, `/about`, `/experience`, `/skills`, `/projects`, `/education`, `/contact`
 
 ## Deploy
 
