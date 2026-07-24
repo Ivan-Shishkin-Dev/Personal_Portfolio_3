@@ -24,7 +24,7 @@ export default function Home() {
             <h1 className="title">Ivan Shishkin</h1>
             <p className="hero-bio">
               I study computer science at the University of California, Irvine,
-              with a specialization in Artificial Intelligence. This site is here for you to get to know me so please, look around.
+              with a specialization in Artificial Intelligence. This site is here for you to get to know me — so please, look around.
             </p>
             <p className="hero-principle">
               <em>
