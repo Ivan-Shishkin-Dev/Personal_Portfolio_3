@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { sections } from "@/content/sections";
+import useFocusTrap from "./useFocusTrap";
 
 export default function SiteHeader({
   currentSlug,
@@ -12,6 +13,9 @@ export default function SiteHeader({
 }) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const frameRef = useRef<HTMLDivElement>(null);
+
+  useFocusTrap(open, frameRef);
 
   useEffect(() => {
     setMounted(true);
@@ -68,6 +72,7 @@ export default function SiteHeader({
             onClick={() => setOpen(false)}
           >
             <div
+              ref={frameRef}
               className="site-nav-overlay-frame"
               onClick={(e) => e.stopPropagation()}
             >

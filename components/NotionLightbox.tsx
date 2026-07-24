@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import useFocusTrap from "./useFocusTrap";
 
 type Props = {
   url: string;
@@ -17,6 +18,9 @@ export default function NotionLightbox({
   onHoverChange,
 }: Props) {
   const [mounted, setMounted] = useState(false);
+  const frameRef = useRef<HTMLDivElement>(null);
+
+  useFocusTrap(mounted, frameRef);
 
   useEffect(() => {
     setMounted(true);
@@ -48,6 +52,7 @@ export default function NotionLightbox({
       onMouseLeave={() => onHoverChange?.(false)}
     >
       <div
+        ref={frameRef}
         className="notion-lightbox-frame"
         onClick={(e) => e.stopPropagation()}
       >

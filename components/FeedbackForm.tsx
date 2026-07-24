@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import useFocusTrap from "./useFocusTrap";
 
 const ACCESS_KEY = "588824fa-09ac-46ae-ae60-a14808218451";
 const SUBJECT = "Anonymous feedback — ivanshishkin.com";
@@ -14,6 +15,9 @@ export default function FeedbackForm() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const frameRef = useRef<HTMLDivElement>(null);
+
+  useFocusTrap(open, frameRef);
 
   useEffect(() => {
     setMounted(true);
@@ -93,6 +97,7 @@ export default function FeedbackForm() {
             onClick={close}
           >
             <div
+              ref={frameRef}
               className="feedback-frame"
               onClick={(e) => e.stopPropagation()}
             >
@@ -116,7 +121,7 @@ export default function FeedbackForm() {
                   <textarea
                     name="message"
                     required
-                    autoFocus
+                    data-autofocus
                     rows={6}
                     placeholder="Be honest. Nothing identifying is sent."
                     value={message}
