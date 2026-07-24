@@ -4,7 +4,6 @@ export type Section = {
   slug: string;
   title: string;
   eyebrow: string;
-  description: string;
 };
 
 export const sections: Section[] = [
@@ -14,7 +13,6 @@ export const sections: Section[] = [
     slug: "about",
     title: "About",
     eyebrow: "Learn more about me.",
-    description: "Learn more about me.",
   },
   {
     index: 2,
@@ -22,7 +20,6 @@ export const sections: Section[] = [
     slug: "experience",
     title: "Experience",
     eyebrow: "Jobs, internships, and volunteer work.",
-    description: "Jobs, internships, and volunteer work.",
   },
   {
     index: 3,
@@ -30,7 +27,6 @@ export const sections: Section[] = [
     slug: "skills",
     title: "Skills",
     eyebrow: "Languages, tools, other.",
-    description: "Languages, tools, other.",
   },
   {
     index: 4,
@@ -38,7 +34,6 @@ export const sections: Section[] = [
     slug: "projects",
     title: "Projects",
     eyebrow: "Things I've built.",
-    description: "Things I've built.",
   },
   {
     index: 5,
@@ -46,7 +41,6 @@ export const sections: Section[] = [
     slug: "education",
     title: "Education",
     eyebrow: "Main focus.",
-    description: "Main focus.",
   },
   {
     index: 6,
@@ -54,7 +48,6 @@ export const sections: Section[] = [
     slug: "contact",
     title: "Contact",
     eyebrow: "Ways to reach me.",
-    description: "Ways to reach me.",
   },
 ];
 

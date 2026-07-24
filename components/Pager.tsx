@@ -6,7 +6,7 @@ export default function Pager({ slug }: { slug: string }) {
 
   const left = prev
     ? { href: `/${prev.slug}`, top: "← Previous", label: prev.title }
-    : { href: "/", top: "← Home", label: "Contents" };
+    : { href: "/", top: "← Home", label: "Ivan Shishkin" };
 
   return (
     <nav className="pager">
