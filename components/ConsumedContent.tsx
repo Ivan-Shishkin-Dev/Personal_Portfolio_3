@@ -5,15 +5,19 @@ import {
   consumed,
   categoryOf,
   sourceOf,
+  hostOf,
   CATEGORIES,
   type ConsumedEntry,
 } from "@/content/consumed";
-import CategoryIcon from "./CategoryIcon";
+import { FAVICON_HOSTS } from "@/content/favicons";
+import SourceMonogram from "./SourceMonogram";
 
 const ALL = "All";
 
 type IndexedEntry = ConsumedEntry & {
   category: string;
+  label: string;
+  favicon: string | null;
   haystack: string;
 };
 
@@ -21,9 +25,12 @@ type IndexedEntry = ConsumedEntry & {
 const ENTRIES: IndexedEntry[] = consumed.toReversed().map((entry) => {
   const category = categoryOf(entry);
   const source = sourceOf(entry);
+  const host = entry.url ? hostOf(entry.url) : "";
   return {
     ...entry,
     category,
+    label: source || entry.author || entry.title,
+    favicon: FAVICON_HOSTS.has(host) ? `/favicons/${host}.png` : null,
     haystack:
       `${entry.title} ${entry.author ?? ""} ${source} ${category}`.toLowerCase(),
   };
@@ -103,7 +110,12 @@ export default function ConsumedContent() {
               key={entry.url ?? entry.title}
             >
               <span className="idx" title={entry.category}>
-                <CategoryIcon category={entry.category} />
+                {entry.favicon ? (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img src={entry.favicon} alt="" loading="lazy" />
+                ) : (
+                  <SourceMonogram source={entry.label} />
+                )}
               </span>
               <span className="row-body">
                 {entry.url ? (

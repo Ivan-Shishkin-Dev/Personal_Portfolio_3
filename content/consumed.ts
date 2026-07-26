@@ -64,6 +64,13 @@ const SOURCE_BY_HOST: Record<string, string> = {
   "schneier.com": "Schneier on Security",
   "eth.limo": "Vitalik Buterin",
   "ai-2027.com": "AI 2027",
+  "neelnanda.io": "Neel Nanda",
+  "logangraves.com": "Logan Graves",
+  "jasmi.news": "Jasmine Sun",
+  "transformernews.ai": "Transformer",
+  "darioamodei.com": "Dario Amodei",
+  "samaltman.com": "Sam Altman",
+  "andymasley.com": "Andy Masley",
   "arxiv.org": "arXiv",
   "distill.pub": "Distill",
   "openreview.net": "OpenReview",
@@ -93,7 +100,7 @@ const SOURCE_BY_HOST: Record<string, string> = {
   "nytimes.com": "NYT",
 };
 
-function hostOf(url: string): string {
+export function hostOf(url: string): string {
   try {
     return new URL(url).hostname.replace(/^www\./, "");
   } catch {
@@ -619,5 +626,147 @@ export const consumed: ConsumedEntry[] = [
     title: "Let's have more partial insiders",
     url: "https://www.lesswrong.com/s/zRm8c2oCn2FCdzsNn/p/ezE6iaifkMSwPdrG8",
     author: "Cleo Nardo",
+  },
+  {
+    title: "Third-parties should focus on scrutinising system cards",
+    url: "https://www.lesswrong.com/s/zRm8c2oCn2FCdzsNn/p/wixbZq4zTTtEWqtfe",
+    author: "Cleo Nardo",
+  },
+  {
+    title: "What cognitive biases feel like from the inside",
+    url: "https://www.lesswrong.com/posts/ERWeEA8op6s6tYCKy/what-cognitive-biases-feel-like-from-the-inside",
+    author: "chaosmage",
+  },
+  {
+    title: "Keep Your Identity Small",
+    url: "https://www.paulgraham.com/identity.html",
+    author: "Paul Graham",
+  },
+  {
+    title: "The Power of Intelligence",
+    url: "https://www.lesswrong.com/posts/aiQabnugDhcrFtr9n/the-power-of-intelligence",
+    author: "Eliezer Yudkowsky",
+  },
+  {
+    title: "Surrender as a non-stupid life strategy",
+    url: "https://sashachapin.substack.com/p/should-you-be-in-charge-of-your-life",
+    author: "Sasha Chapin",
+  },
+  {
+    title: "Conflict vs Mistake",
+    url: "https://www.lesswrong.com/w/conflict-vs-mistake",
+    author: "LessWrong",
+  },
+  {
+    title: "Thought Anchors: Which LLM Reasoning Steps Matter?",
+    url: "https://www.alignmentforum.org/posts/iLHe3vLur3NgrFPFy/thought-anchors-which-llm-reasoning-steps-matter",
+    author: "Uzay Macar",
+  },
+  {
+    title: "The Strength of Being Misunderstood",
+    url: "https://blog.samaltman.com/the-strength-of-being-misunderstood",
+    author: "Sam Altman",
+  },
+  {
+    title: "Why AI Makes Coding Education More Important, Not Less",
+    url: "https://digitallearninglab.substack.com/p/why-ai-makes-coding-education-more",
+    author: "Digital Learning Lab",
+  },
+  {
+    title:
+      "Outsiders should focus on specs/constitutions (among other things)",
+    url: "https://www.lesswrong.com/s/zRm8c2oCn2FCdzsNn/p/huwMWvecYJy44nzeL",
+    author: "Cleo Nardo",
+  },
+  {
+    title: "Top Performers are Pathologically Ambitious",
+    url: "https://thatvastvariety.substack.com/p/top-performers-are-pathologically",
+    author: "Matt Beard",
+  },
+  {
+    title: "Become a person who Actually Does Things",
+    url: "https://www.neelnanda.io/blog/become-a-person-who-actually-does-things",
+    author: "Neel Nanda",
+  },
+  {
+    title:
+      "I would really like it if you had a personal website and I think it would make the world better",
+    url: "https://logangraves.com/website#who-should-create-a-personal-website",
+    author: "Logan Graves",
+  },
+  {
+    title: "The Old World Is Dying",
+    url: "https://jasmi.news/p/2026-advice",
+    author: "Jasmine Sun",
+  },
+  {
+    title: "You're not cynical enough about readers' attention spans",
+    url: "https://thatvastvariety.substack.com/p/youre-not-cynical-enough-about-readers",
+    author: "Matt Beard",
+  },
+  {
+    title: "Your Work Will Change You Whether You Like It Or Not",
+    url: "https://thatvastvariety.substack.com/p/your-work-will-change-you-whether",
+    author: "Matt Beard",
+  },
+  {
+    title: "Your Goal Isn't Really to Get a Job",
+    url: "https://thatvastvariety.substack.com/p/your-goal-isnt-really-to-get-a-job",
+    author: "Matt Beard",
+  },
+  {
+    title: "Learn like an athlete, knowledge workers should train",
+    url: "https://marginalrevolution.com/marginalrevolution/2019/07/learn-like-an-athlete-knowledge-workers-should-train.html",
+    author: "Tyler Cowen",
+  },
+  {
+    title: "How I practice at what I do",
+    url: "https://marginalrevolution.com/marginalrevolution/2019/07/how-i-practice-at-what-i-do.html",
+    author: "Tyler Cowen",
+  },
+  {
+    title: "People's deeply held beliefs are surprisingly surface-level",
+    url: "https://blog.andymasley.com/p/peoples-deeply-held-beliefs-are-surprisingly",
+    author: "Andy Masley",
+  },
+  {
+    title: "How to increase your surface area for luck",
+    url: "https://usefulfictions.substack.com/p/how-to-increase-your-surface-area",
+    author: "Cate Hall",
+  },
+  {
+    title: "Policy on the AI Exponential",
+    url: "https://darioamodei.com/post/policy-on-the-ai-exponential",
+    author: "Dario Amodei",
+  },
+  {
+    title: "How to get into AI safety in 3 months",
+    url: "https://80000hours.substack.com/p/how-to-get-into-ai-safety-in-3-months",
+    author: "Matt Beard",
+  },
+  {
+    title: "How Claude's values vary by model and language",
+    url: "https://www.anthropic.com/research/claude-values-models-languages",
+    author: "Anthropic",
+  },
+  {
+    title: "We asked 10+ AI safety orgs about their hiring needs",
+    url: "https://blog.bluedot.org/p/we-asked-ai-safety-orgs-about-their-hiring-needs",
+    author: "Li-Lian Ang",
+  },
+  {
+    title: "Summary of METR's predeployment evaluation of GPT-5.6 Sol",
+    url: "https://metr.org/blog/2026-06-26-gpt-5-6-sol/",
+    author: "METR",
+  },
+  {
+    title: "Redeploying Claude Fable 5",
+    url: "https://www.anthropic.com/news/redeploying-fable-5",
+    author: "Anthropic",
+  },
+  {
+    title: "GPT-5.6 cheats so much its testers couldn't",
+    url: "https://www.transformernews.ai/p/openai-gpt-56-sol-cheating-scheming-metr",
+    author: "Celia Ford",
   },
 ];
