@@ -37,6 +37,7 @@ const CATEGORY_BY_HOST: Record<string, Category> = {
   "overcast.fm": "Podcasts",
   "dwarkesh.com": "Podcasts",
   "lexfridman.com": "Podcasts",
+  "amazon.com": "Books",
 };
 
 const SOURCE_BY_HOST: Record<string, string> = {
@@ -768,5 +769,10 @@ export const consumed: ConsumedEntry[] = [
     title: "GPT-5.6 cheats so much its testers couldn't",
     url: "https://www.transformernews.ai/p/openai-gpt-56-sol-cheating-scheming-metr",
     author: "Celia Ford",
+  },
+  {
+    title: "Difficult Conversations: How to Discuss What Matters Most",
+    url: "https://www.amazon.com/Difficult-Conversations-Discuss-What-Matters/dp/0143118447",
+    author: "Stone, Patton & Heen",
   },
 ];

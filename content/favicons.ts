@@ -4,6 +4,7 @@ export const FAVICON_HOSTS = new Set<string>([
   "80000hours.substack.com",
   "ai-2027.com",
   "alignmentforum.org",
+  "amazon.com",
   "amoretlicentia.substack.com",
   "anthropic.com",
   "antischeming.ai",
