@@ -42,6 +42,16 @@ const CATEGORY_BY_HOST: Record<string, Category> = {
 const SOURCE_BY_HOST: Record<string, string> = {
   "lesswrong.com": "LessWrong",
   "alignmentforum.org": "Alignment Forum",
+  "effectivealtruism.org": "EA Forum",
+  "ifp.org": "IFP",
+  "bbc.com": "BBC",
+  "writingruxandrabio.com": "Ruxandra Teslo",
+  "redwoodresearch.org": "Redwood Research",
+  "oneusefulthing.org": "One Useful Thing",
+  "bluedot.org": "BlueDot",
+  "house.gov": "U.S. House",
+  "rand.org": "RAND",
+  "archive.ph": "Archive.today",
   "arxiv.org": "arXiv",
   "distill.pub": "Distill",
   "openreview.net": "OpenReview",
@@ -104,6 +114,7 @@ export function sourceOf(entry: ReadingEntry): string {
   return base.charAt(0).toUpperCase() + base.slice(1);
 }
 
+// Oldest first — add new entries at the bottom. The page renders newest first.
 export const reading: ReadingEntry[] = [
   {
     title: "Do they know that we know that they know?",
@@ -251,5 +262,140 @@ export const reading: ReadingEntry[] = [
     url: "https://www.youtube.com/watch?v=Vtk8YLgYU4g",
     author: "Buck Shlegeris",
     category: "Podcasts",
+  },
+  {
+    title: "Preparing for Launch",
+    url: "https://ifp.org/preparing-for-launch/",
+    author: "Institute for Progress",
+  },
+  {
+    title:
+      "Help us launch AI safety university groups by referring potential founders",
+    url: "https://forum.effectivealtruism.org/posts/Wjg5htFNeYkxNaRnk/help-us-launch-ai-safety-university-groups-by-referring",
+    author: "Jason Chin",
+  },
+  {
+    title: "Against Learning From Dramatic Events",
+    url: "https://www.astralcodexten.com/p/against-learning-from-dramatic-events",
+    author: "Scott Alexander",
+  },
+  {
+    title:
+      "OpenAI says its AI went rogue and launched 'unprecedented' cyber-attack",
+    url: "https://www.bbc.com/news/articles/c3ek3gvdnj3o",
+    author: "BBC News",
+  },
+  {
+    title: "Model access for third-parties — it's a big deal!",
+    url: "https://www.lesswrong.com/s/zRm8c2oCn2FCdzsNn/p/RuGZ5tMdqpnraJahJ",
+    author: "Cleo Nardo",
+  },
+  {
+    title: "The Market for Lemons",
+    url: "https://en.wikipedia.org/wiki/The_Market_for_Lemons",
+    author: "Wikipedia",
+  },
+  {
+    title: "Utopia for Realists (Chapters 1–2)",
+    url: "https://drive.google.com/file/d/1nh-Km2J2C99s_LYxby-N53EnZgM2uXHZ/view",
+    author: "Rutger Bregman",
+    category: "Books",
+    source: "PDF",
+  },
+  {
+    title: "In search of a dynamist vision for safe superhuman AI",
+    url: "https://helentoner.substack.com/p/dynamism-vs-stasis",
+    author: "Helen Toner",
+  },
+  {
+    title: "Intelligence is not the main bottleneck",
+    url: "https://www.writingruxandrabio.com/p/intelligence-is-not-the-main-bottleneck",
+    author: "Ruxandra Teslo",
+  },
+  {
+    title:
+      "Give Up Seventy Percent Of The Way Through The Hyperstitious Slur Cascade",
+    url: "https://www.astralcodexten.com/p/give-up-seventy-percent-of-the-way",
+    author: "Scott Alexander",
+  },
+  {
+    title: "You Will Listen to Carl on Dwarkesh",
+    url: "https://frommatter.substack.com/p/you-will-listen-to-carl-on-dwarkesh",
+    author: "Matt Reardon",
+  },
+  {
+    title: "It's practically impossible to run a big AI company ethically",
+    url: "https://archive.ph/9DCPq",
+    author: "Vox Future Perfect",
+    source: "Vox",
+  },
+  {
+    title: "Silicon Valley's Safe Space",
+    url: "https://www.nytimes.com/2021/02/13/technology/slate-star-codex-rationalists.html",
+    author: "Cade Metz",
+  },
+  {
+    title:
+      "An analysis of AI-generated content at the Mechanistic Interpretability Workshop",
+    url: "https://www.lesswrong.com/posts/r7FBQ8XDs6qBYc4K4/an-analysis-of-ai-generated-content-at-the-mechanistic",
+    author: "Andy Arditi",
+  },
+  {
+    title:
+      "Recent LLMs can use filler tokens or problem repeats to improve (no-CoT) math performance",
+    url: "https://blog.redwoodresearch.org/p/recent-llms-can-use-filler-tokens",
+    author: "Ryan Greenblatt",
+  },
+  {
+    title:
+      "Reps. Lieu and Moran Introduce Bill to Require Kill Switch for AI Systems That Can Cause Catastrophic Harm",
+    url: "https://lieu.house.gov/media-center/press-releases/reps-lieu-and-moran-introduce-bill-require-kill-switch-ai-systems-can",
+    author: "Office of Rep. Ted Lieu",
+  },
+  {
+    title:
+      "Reading Between the Dots: Decoding Hidden Computation across Filler Tokens",
+    url: "https://arxiv.org/abs/2607.03502",
+    author: "Brauer et al.",
+  },
+  {
+    title: "Seeking Stability in the Competition for AI Advantage",
+    url: "https://www.rand.org/pubs/commentary/2025/03/seeking-stability-in-the-competition-for-ai-advantage.html",
+    author: "Iskander Rehman",
+  },
+  {
+    title: "Bayes' rule",
+    url: "https://www.lesswrong.com/w/bayes-rule?lens=bayes-rule-guide",
+    author: "LessWrong",
+  },
+  {
+    title: "The Huggingface Incident",
+    url: "https://www.astralcodexten.com/p/the-hugging-face-incident",
+    author: "Scott Alexander",
+  },
+  {
+    title: "Scaling: The State of Play in AI",
+    url: "https://www.oneusefulthing.org/p/scaling-the-state-of-play-in-ai",
+    author: "Ethan Mollick",
+  },
+  {
+    title: "A Framework for Frontier AI and the Dawning of a New Age",
+    url: "https://x.com/demishassabis/status/2076957440109625718",
+    author: "Demis Hassabis",
+  },
+  {
+    title: "Safety and alignment in an era of long-horizon models",
+    url: "https://openai.com/index/safety-alignment-long-horizon-models/",
+    author: "OpenAI",
+  },
+  {
+    title: "Build Personal Moats",
+    url: "https://eriktorenberg.substack.com/p/build-personal-moats",
+    author: "Erik Torenberg",
+  },
+  {
+    title: "What is AI alignment?",
+    url: "https://blog.bluedot.org/p/what-is-ai-alignment",
+    author: "Adam Jones",
   },
 ];

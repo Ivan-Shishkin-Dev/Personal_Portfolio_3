@@ -12,6 +12,11 @@
   --rule-strong: rgba(0, 0, 0, 0.55);
   --accent: #7a3d1d;
   --chip: rgba(122, 61, 29, 0.06);
+  --cat-videos: #7a3d1d;
+  --cat-podcasts: #4f5b31;
+  --cat-papers: #3f4d66;
+  --cat-essays: #6b3050;
+  --cat-books: #8a6410;
   --maxw: 640px;
   --gap: 60px;
 }
@@ -1206,35 +1211,59 @@ article h2 {
 
 .reading-list { list-style: none; margin: 0; padding: 0; }
 .reading-item {
+  --cat: var(--subtle);
   display: grid;
   grid-template-columns: 30px 1fr;
   gap: 14px;
   padding: 13px 0;
   border-top: 0.5px solid var(--rule);
 }
+.reading-item[data-category="Videos"] { --cat: var(--cat-videos); }
+.reading-item[data-category="Podcasts"] { --cat: var(--cat-podcasts); }
+.reading-item[data-category="Papers"] { --cat: var(--cat-papers); }
+.reading-item[data-category="Essays"] { --cat: var(--cat-essays); }
+.reading-item[data-category="Books"] { --cat: var(--cat-books); }
 .reading-item:first-child { border-top: none; }
 .reading-item .idx {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: var(--subtle);
-  padding-top: 5px;
+  color: var(--cat);
+  padding-top: 1px;
+}
+.reading-item .idx svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+.reading-item .row-body {
+  display: flex;
+  align-items: baseline;
+  min-width: 0;
 }
 .reading-item .title {
-  display: block;
   font-family: var(--ser);
   font-size: 16px;
-  line-height: 1.45;
+  line-height: 1.5;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-article .reading-item a.title { color: var(--ink); }
+article .reading-item a.title {
+  color: var(--ink);
+  background-image: none;
+  padding-bottom: 0;
+}
 article .reading-item a.title:hover { color: var(--accent); }
-.reading-item .meta {
-  display: block;
-  margin-top: 4px;
+.reading-item .by {
   font-family: var(--sans);
+  font-style: normal;
   font-size: 10px;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.4px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--cat);
+  white-space: nowrap;
+  flex: 0 0 auto;
+  margin-left: 20px;
 }
 .reading-empty {
   font-family: var(--ser);

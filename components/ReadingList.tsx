@@ -8,23 +8,22 @@ import {
   CATEGORIES,
   type ReadingEntry,
 } from "@/content/reading";
+import CategoryIcon from "./CategoryIcon";
 
 const ALL = "All";
 
 type IndexedEntry = ReadingEntry & {
   category: string;
-  meta: string;
   haystack: string;
 };
 
-const ENTRIES: IndexedEntry[] = reading.map((entry) => {
+// reading.ts is kept in the order things were added; newest reads first here.
+const ENTRIES: IndexedEntry[] = reading.toReversed().map((entry) => {
   const category = categoryOf(entry);
   const source = sourceOf(entry);
-  const parts = [entry.author, category].filter(Boolean) as string[];
   return {
     ...entry,
     category,
-    meta: parts.filter((p, i) => parts.indexOf(p) === i).join(" · "),
     haystack:
       `${entry.title} ${entry.author ?? ""} ${source} ${category}`.toLowerCase(),
   };
@@ -97,23 +96,34 @@ export default function ReadingList() {
         <p className="reading-empty">Nothing matches that.</p>
       ) : (
         <ol className="reading-list">
-          {results.map((entry, i) => (
-            <li className="reading-item" key={entry.url ?? entry.title}>
-              <span className="idx">{String(i + 1).padStart(2, "0")}</span>
-              <span>
+          {results.map((entry) => (
+            <li
+              className="reading-item"
+              data-category={entry.category}
+              key={entry.url ?? entry.title}
+            >
+              <span className="idx" title={entry.category}>
+                <CategoryIcon category={entry.category} />
+              </span>
+              <span className="row-body">
                 {entry.url ? (
                   <a
                     className="title"
                     href={entry.url}
+                    title={entry.title}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
                     {entry.title}
                   </a>
                 ) : (
-                  <span className="title">{entry.title}</span>
+                  <span className="title" title={entry.title}>
+                    {entry.title}
+                  </span>
                 )}
-                <span className="meta">{entry.meta}</span>
+                {entry.author ? (
+                  <span className="by">{entry.author}</span>
+                ) : null}
               </span>
             </li>
           ))}
