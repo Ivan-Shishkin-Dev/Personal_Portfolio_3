@@ -661,6 +661,16 @@ article h2 {
   left: 0;
   color: var(--accent);
 }
+/* Course names are titles, so they carry a real underline rather than the
+   hairline the surrounding inline references use. */
+.hobby-detail-content a.course-name {
+  background-image: none;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: text-decoration-thickness .18s ease;
+}
+.hobby-detail-content a.course-name:hover { text-decoration-thickness: 2px; }
 @media (hover: hover) {
   .hobby:hover .hobby-detail { grid-template-rows: 1fr; opacity: 1; }
 }

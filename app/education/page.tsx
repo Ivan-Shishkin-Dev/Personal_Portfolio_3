@@ -39,9 +39,9 @@ export default function EducationPage() {
         </HobbyItem>
         <HobbyItem title="BlueDot Impact" summary="AI safety courses, 57 hours completed." titleHref="https://bluedot.org/" alwaysOpen>
           <ul>
-            <li><a href="https://bluedot.org/courses/future-of-ai" target="_blank" rel="noopener noreferrer">Future of AI</a> — 2 hours. Where AI is headed and the choices that come with it.</li>
-            <li><a href="https://bluedot.org/courses/agi-strategy" target="_blank" rel="noopener noreferrer">AGI Strategy</a> — 25 hours. The AI safety landscape and how to pick a direction within it.</li>
-            <li><a href="https://bluedot.org/courses/technical-ai-safety" target="_blank" rel="noopener noreferrer">Technical AI Safety</a> — 30 hours. Hands-on work on the technical side of making AI systems safe.</li>
+            <li><a className="course-name" href="https://bluedot.org/courses/future-of-ai" target="_blank" rel="noopener noreferrer">Future of AI</a> — 2 hours. Where AI is headed and the choices that come with it.</li>
+            <li><a className="course-name" href="https://bluedot.org/courses/agi-strategy" target="_blank" rel="noopener noreferrer">AGI Strategy</a> — 25 hours. The AI safety landscape and how to pick a direction within it.</li>
+            <li><a className="course-name" href="https://bluedot.org/courses/technical-ai-safety" target="_blank" rel="noopener noreferrer">Technical AI Safety</a> — 30 hours. Hands-on work on the technical side of making AI systems safe.</li>
           </ul>
         </HobbyItem>
       </ul>
