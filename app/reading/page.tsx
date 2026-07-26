@@ -18,9 +18,9 @@ export default function ReadingPage() {
         <span className="sep">/</span>
         <span>Reading List</span>
       </nav>
-      <header className="section-head">
+      <header className="section-head section-head-tight">
         <div className="title-row">
-          <span className="num">§</span>
+          <span className="num mark">§</span>
           <h1>Reading List</h1>
         </div>
       </header>

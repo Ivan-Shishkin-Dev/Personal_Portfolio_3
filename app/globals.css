@@ -1138,6 +1138,13 @@ article h2 {
 }
 
 /* ── Reading list ───────────────────────────── */
+/* § straddles the baseline where the Roman numerals sit on it. */
+.section-head .num.mark {
+  position: relative;
+  top: -0.16em;
+}
+.section-head-tight { margin-bottom: 20px; }
+
 .reading-tools { margin-bottom: 30px; }
 .reading-search {
   width: 100%;
