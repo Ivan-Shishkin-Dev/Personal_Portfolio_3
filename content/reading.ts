@@ -52,6 +52,13 @@ const SOURCE_BY_HOST: Record<string, string> = {
   "house.gov": "U.S. House",
   "rand.org": "RAND",
   "archive.ph": "Archive.today",
+  "antischeming.ai": "Anti-Scheming",
+  "deepignorance.ai": "Deep Ignorance",
+  "cold-takes.com": "Cold Takes",
+  "metr.org": "METR",
+  "civai.org": "CivAI",
+  "tomaspueyo.com": "Uncharted Territories",
+  "federalreserve.gov": "Federal Reserve",
   "arxiv.org": "arXiv",
   "distill.pub": "Distill",
   "openreview.net": "OpenReview",
@@ -397,5 +404,112 @@ export const reading: ReadingEntry[] = [
     title: "What is AI alignment?",
     url: "https://blog.bluedot.org/p/what-is-ai-alignment",
     author: "Adam Jones",
+  },
+  {
+    title: "Introduction to AI Control",
+    url: "https://blog.bluedot.org/p/ai-control",
+    author: "BlueDot",
+  },
+  {
+    title:
+      "What Do Neural Networks Really Learn? Exploring the Brain of an AI Model",
+    url: "https://www.youtube.com/watch?v=jGCvY4gNnA8",
+    author: "Rational Animations",
+  },
+  {
+    title: "Introduction to Mechanistic Interpretability",
+    url: "https://blog.bluedot.org/p/introduction-to-mechanistic-interpretability",
+    author: "BlueDot",
+  },
+  {
+    title: "Neel Nanda on the race to read AI minds (part 1)",
+    url: "https://80000hours.org/podcast/episodes/neel-nanda-mechanistic-interpretability/",
+    author: "80,000 Hours",
+    category: "Podcasts",
+  },
+  {
+    title: "Chain-of-Thought Snippets",
+    url: "https://www.antischeming.ai/snippets",
+    author: "Bronson Schoen",
+    category: "Papers",
+  },
+  {
+    title: "What is input data filtration in AI safety?",
+    url: "https://blog.bluedot.org/p/data-filtration",
+    author: "BlueDot",
+  },
+  {
+    title: "The True Story of How GPT-2 Became Maximally Lewd",
+    url: "https://www.youtube.com/watch?v=qV_rOlHjvvs",
+    author: "Rational Animations",
+  },
+  {
+    title:
+      "Deep Ignorance: Filtering Pretraining Data Builds Tamper-Resistant Safeguards",
+    url: "https://deepignorance.ai/",
+    author: "O'Brien et al.",
+    category: "Papers",
+  },
+  {
+    title: "Specification Gaming: How AI Can Turn Your Wishes Against You",
+    url: "https://www.youtube.com/watch?v=jQOBaGka7O0",
+    author: "Rational Animations",
+  },
+  {
+    title: "Why AI alignment could be hard with modern deep learning",
+    url: "https://www.cold-takes.com/why-ai-alignment-could-be-hard-with-modern-deep-learning/",
+    author: "Ajeya Cotra",
+  },
+  {
+    title: "AI models can be dangerous before public deployment",
+    url: "https://metr.org/blog/2025-01-17-ai-models-dangerous-before-public-deployment/",
+    author: "METR",
+  },
+  {
+    title: "When AI Chooses Harm Over Failure",
+    url: "https://civai.org/p/agentic-misalignment",
+    author: "CivAI",
+  },
+  {
+    title: "The current SOTA model was released without safety evals",
+    url: "https://www.lesswrong.com/posts/9woCWqiDbSFPXpxvn/the-current-sota-model-was-released-without-safety-evals",
+    author: "Parv Mahajan",
+  },
+  {
+    title: "The Most Important Time in History Is Now",
+    url: "https://unchartedterritories.tomaspueyo.com/p/the-most-important-time-in-history-agi-asi",
+    author: "Tomas Pueyo",
+  },
+  {
+    title:
+      "Federal Reserve announces the leadership and objectives of its task forces to advance the conduct of monetary policy",
+    url: "https://www.federalreserve.gov/newsevents/pressreleases/monetary20260709a.htm",
+    author: "Federal Reserve",
+  },
+  {
+    title: "The AI Revolution: The Road to Superintelligence",
+    url: "https://waitbutwhy.com/2015/01/artificial-intelligence-revolution-1.html",
+    author: "Tim Urban",
+  },
+  {
+    title: "“Long” timelines to advanced AI have gotten crazy short",
+    url: "https://helentoner.substack.com/p/long-timelines-to-advanced-ai-have",
+    author: "Helen Toner",
+  },
+  {
+    title:
+      "OpenAI and Hugging Face partner to address security incident during model evaluation",
+    url: "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+    author: "OpenAI",
+  },
+  {
+    title: "Advice for newly busy people",
+    url: "https://amoretlicentia.substack.com/p/advice-for-newly-busy-people",
+    author: "Sese",
+  },
+  {
+    title: "Dual Process Theory (System 1 & System 2)",
+    url: "https://www.lesswrong.com/w/dual-process-theory-system-1-and-system-2",
+    author: "LessWrong",
   },
 ];
