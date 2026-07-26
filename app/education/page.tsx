@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
 import HobbyItem from "@/components/HobbyItem";
-import NotionLink from "@/components/NotionLink";
 
 export const metadata: Metadata = {
   title: "Education",
@@ -54,9 +53,11 @@ export default function EducationPage() {
 
       <h2 id="self-education" style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "60px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)", scrollMarginTop: 90 }}><em>Self-Education</em></h2>
       <p style={{ marginBottom: 8 }}>
-        As I&apos;ve mentioned, this is something I really care about. The link below takes you to my future readings, some of my favorite people, and a few things I&apos;ve especially enjoyed.
+        As I&apos;ve mentioned, this is something I really care about. The link below takes you to what I&apos;ve been watching and reading.
       </p>
-      <NotionLink />
+      <p style={{ textAlign: "center", margin: "28px 0 0" }}>
+        <Link className="media-name" href="/reading">The reading list</Link>
+      </p>
     </SectionLayout>
   );
 }
