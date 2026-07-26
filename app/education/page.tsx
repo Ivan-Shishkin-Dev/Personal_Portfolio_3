@@ -37,7 +37,7 @@ export default function EducationPage() {
             <li><a href="https://studentcouncil.ics.uci.edu/" target="_blank" rel="noopener noreferrer">ICS Student Council Mentorship</a> — matched with a mentor to help me land an internship.</li>
           </ul>
         </HobbyItem>
-        <HobbyItem title="BlueDot Impact" summary="AI safety courses, 57 hours completed." titleHref="https://bluedot.org/" alwaysOpen>
+        <HobbyItem title="BlueDot Impact" summary="AI safety courses." titleHref="https://bluedot.org/" alwaysOpen>
           <ul>
             <li><a className="course-name" href="https://bluedot.org/courses/future-of-ai" target="_blank" rel="noopener noreferrer">Future of AI</a> — 2 hours. Where AI is headed and the choices that come with it.</li>
             <li><a className="course-name" href="https://bluedot.org/courses/agi-strategy" target="_blank" rel="noopener noreferrer">AGI Strategy</a> — 25 hours. The AI safety landscape and how to pick a direction within it.</li>
