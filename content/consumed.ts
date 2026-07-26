@@ -9,7 +9,7 @@ export const CATEGORIES = [
 
 export type Category = (typeof CATEGORIES)[number];
 
-export type ReadingEntry = {
+export type ConsumedEntry = {
   title: string;
   url?: string;
   author?: string;
@@ -59,6 +59,11 @@ const SOURCE_BY_HOST: Record<string, string> = {
   "civai.org": "CivAI",
   "tomaspueyo.com": "Uncharted Territories",
   "federalreserve.gov": "Federal Reserve",
+  "futureoflife.org": "FLI",
+  "cigionline.org": "CIGI",
+  "schneier.com": "Schneier on Security",
+  "eth.limo": "Vitalik Buterin",
+  "ai-2027.com": "AI 2027",
   "arxiv.org": "arXiv",
   "distill.pub": "Distill",
   "openreview.net": "OpenReview",
@@ -103,14 +108,14 @@ function lookup<T>(host: string, table: Record<string, T>): T | undefined {
   return undefined;
 }
 
-export function categoryOf(entry: ReadingEntry): Category {
+export function categoryOf(entry: ConsumedEntry): Category {
   if (entry.category) return entry.category;
   const host = entry.url ? hostOf(entry.url) : "";
   if (!host) return "Books";
   return lookup(host, CATEGORY_BY_HOST) ?? "Essays";
 }
 
-export function sourceOf(entry: ReadingEntry): string {
+export function sourceOf(entry: ConsumedEntry): string {
   if (entry.source) return entry.source;
   const host = entry.url ? hostOf(entry.url) : "";
   if (!host) return "";
@@ -122,7 +127,7 @@ export function sourceOf(entry: ReadingEntry): string {
 }
 
 // Oldest first — add new entries at the bottom. The page renders newest first.
-export const reading: ReadingEntry[] = [
+export const consumed: ConsumedEntry[] = [
   {
     title: "Do they know that we know that they know?",
     url: "https://www.youtube.com/watch?v=hzlR0R91lZA",
@@ -511,5 +516,108 @@ export const reading: ReadingEntry[] = [
     title: "Dual Process Theory (System 1 & System 2)",
     url: "https://www.lesswrong.com/w/dual-process-theory-system-1-and-system-2",
     author: "LessWrong",
+  },
+  {
+    title: "Unresolved debates about the future of AI",
+    url: "https://helentoner.substack.com/p/unresolved-debates-about-the-future",
+    author: "Helen Toner",
+  },
+  {
+    title: "The Power of the Power Law",
+    url: "https://medium.com/@NirZicherman/the-power-of-the-power-law-b24181fe1b92",
+    author: "Nir Zicherman",
+  },
+  {
+    title: "Why do people disagree about when powerful AI will arrive?",
+    url: "https://blog.bluedot.org/p/agi-timelines",
+    author: "BlueDot",
+  },
+  {
+    title: "See your Career as a Product",
+    url: "https://eriktorenberg.substack.com/p/see-your-career-as-a-product",
+    author: "Erik Torenberg",
+  },
+  {
+    title:
+      "The Phrase “No Evidence” Is A Red Flag For Bad Science Communication",
+    url: "https://www.astralcodexten.com/p/the-phrase-no-evidence-is-a-red-flag",
+    author: "Scott Alexander",
+  },
+  {
+    title: "Common Ground between AI 2027 & AI as Normal Technology",
+    url: "https://asteriskmag.substack.com/p/common-ground-between-ai-2027-and",
+    author: "Sayash Kapoor",
+  },
+  {
+    title: "GPT-Red: Unlocking Self-Improvement for Robustness",
+    url: "https://openai.com/index/unlocking-self-improvement-gpt-red/",
+    author: "OpenAI",
+  },
+  {
+    title: "Catastrophic AI Scenarios",
+    url: "https://futureoflife.org/resource/catastrophic-ai-scenarios/",
+    author: "Future of Life Institute",
+  },
+  {
+    title: "AI Could Defeat All Of Us Combined",
+    url: "https://www.cold-takes.com/ai-could-defeat-all-of-us-combined/",
+    author: "Holden Karnofsky",
+  },
+  {
+    title: "AI Is Reviving Fears Around Bioterrorism. What's the Real Risk?",
+    url: "https://www.cigionline.org/articles/ai-is-reviving-fears-around-bioterrorism-whats-the-real-risk/",
+    author: "Kyle Hiebert",
+  },
+  {
+    title: "The Security Mindset",
+    url: "https://www.schneier.com/blog/archives/2008/03/the_security_mi_1.html",
+    author: "Bruce Schneier",
+  },
+  {
+    title: "d/acc: one year later",
+    url: "https://vitalik.eth.limo/general/2025/01/05/dacc2.html",
+    author: "Vitalik Buterin",
+  },
+  {
+    title: "Just Send the Fucking Email",
+    url: "https://pointingatthings.substack.com/p/just-send-the-fucking-email",
+    author: "Trailheads",
+  },
+  {
+    title: "How to be more agentic",
+    url: "https://usefulfictions.substack.com/p/how-to-be-more-agentic",
+    author: "Cate Hall",
+  },
+  {
+    title: "AI 2027",
+    url: "https://ai-2027.com/",
+    author: "Kokotajlo et al.",
+  },
+  {
+    title:
+      "Trees are mostly made of air and a generalizable lesson for AI safety",
+    url: "https://www.lesswrong.com/posts/xiTBpBDwubnr4MLRe/trees-are-mostly-made-of-air-and-a-generalizable-lesson-for",
+    author: "Zephaniah Roe",
+  },
+  {
+    title: "How might outsiders make things go well?",
+    url: "https://www.lesswrong.com/s/zRm8c2oCn2FCdzsNn/p/KeZSMBAxYZFzFpF9Y",
+    author: "Cleo Nardo",
+  },
+  {
+    title: "The third wave of American philanthropy",
+    url: "https://nanransohoff.substack.com/p/the-third-wave-of-american-philanthropy",
+    author: "Nan Ransohoff",
+  },
+  {
+    title:
+      "I can't think of great interventions for ensuring third-party model access",
+    url: "https://www.lesswrong.com/s/zRm8c2oCn2FCdzsNn/p/iEhqyMGGD4BHQapLA",
+    author: "Cleo Nardo",
+  },
+  {
+    title: "Let's have more partial insiders",
+    url: "https://www.lesswrong.com/s/zRm8c2oCn2FCdzsNn/p/ezE6iaifkMSwPdrG8",
+    author: "Cleo Nardo",
   },
 ];

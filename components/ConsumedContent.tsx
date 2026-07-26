@@ -2,23 +2,23 @@
 
 import { useMemo, useState } from "react";
 import {
-  reading,
+  consumed,
   categoryOf,
   sourceOf,
   CATEGORIES,
-  type ReadingEntry,
-} from "@/content/reading";
+  type ConsumedEntry,
+} from "@/content/consumed";
 import CategoryIcon from "./CategoryIcon";
 
 const ALL = "All";
 
-type IndexedEntry = ReadingEntry & {
+type IndexedEntry = ConsumedEntry & {
   category: string;
   haystack: string;
 };
 
-// reading.ts is kept in the order things were added; newest reads first here.
-const ENTRIES: IndexedEntry[] = reading.toReversed().map((entry) => {
+// consumed.ts is kept in the order things were added; newest reads first here.
+const ENTRIES: IndexedEntry[] = consumed.toReversed().map((entry) => {
   const category = categoryOf(entry);
   const source = sourceOf(entry);
   return {
@@ -33,7 +33,7 @@ const PRESENT: string[] = CATEGORIES.filter((c) =>
   ENTRIES.some((e) => e.category === c),
 );
 
-export default function ReadingList() {
+export default function ConsumedContent() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState(ALL);
 
@@ -61,25 +61,25 @@ export default function ReadingList() {
 
   return (
     <>
-      <div className="reading-tools">
+      <div className="consumed-tools">
         <input
           type="search"
-          className="reading-search"
+          className="consumed-search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={`Search ${ENTRIES.length} pieces`}
-          aria-label="Search reading list"
+          aria-label="Search consumed content"
           autoComplete="off"
           spellCheck={false}
         />
-        <div className="reading-filters">
+        <div className="consumed-filters">
           {[ALL, ...PRESENT].map((name) => {
             const count = counts.get(name) ?? 0;
             return (
               <button
                 key={name}
                 type="button"
-                className={`reading-filter${name === category ? " active" : ""}`}
+                className={`consumed-filter${name === category ? " active" : ""}`}
                 aria-pressed={name === category}
                 disabled={count === 0 && name !== category}
                 onClick={() => setCategory(name)}
@@ -93,12 +93,12 @@ export default function ReadingList() {
       </div>
 
       {results.length === 0 ? (
-        <p className="reading-empty">Nothing matches that.</p>
+        <p className="consumed-empty">Nothing matches that.</p>
       ) : (
-        <ol className="reading-list">
+        <ol className="consumed-list">
           {results.map((entry) => (
             <li
-              className="reading-item"
+              className="consumed-item"
               data-category={entry.category}
               key={entry.url ?? entry.title}
             >

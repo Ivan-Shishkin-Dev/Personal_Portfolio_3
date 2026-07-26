@@ -56,7 +56,7 @@ export default function EducationPage() {
         As I&apos;ve mentioned, this is something I really care about. The link below takes you to what I&apos;ve been watching and reading.
       </p>
       <p style={{ textAlign: "center", margin: "28px 0 0" }}>
-        <Link className="media-name" href="/reading">The reading list</Link>
+        <Link className="media-name" href="/consumed-content">Consumed content</Link>
       </p>
     </SectionLayout>
   );

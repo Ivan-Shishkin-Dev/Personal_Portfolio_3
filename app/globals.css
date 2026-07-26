@@ -1035,7 +1035,7 @@ article h2 {
   margin: 0;
 }
 
-/* ── Reading list link ──────────────────────── */
+/* ── Consumed content link ──────────────────────── */
 .media-name {
   font-family: var(--ser);
   font-size: 18px;
@@ -1142,16 +1142,16 @@ article h2 {
   color: var(--subtle);
 }
 
-/* ── Reading list ───────────────────────────── */
+/* ── Consumed content ───────────────────────────── */
 /* § straddles the baseline where the Roman numerals sit on it. */
 .section-head .num.mark {
   position: relative;
-  top: -0.16em;
+  top: -0.06em;
 }
 .section-head-tight { margin-bottom: 20px; }
 
-.reading-tools { margin-bottom: 30px; }
-.reading-search {
+.consumed-tools { margin-bottom: 30px; }
+.consumed-search {
   width: 100%;
   font-family: var(--ser);
   font-size: 16px;
@@ -1165,19 +1165,19 @@ article h2 {
   -webkit-appearance: none;
   appearance: none;
 }
-.reading-search:focus {
+.consumed-search:focus {
   outline: none;
   border-color: var(--accent);
 }
-.reading-search::placeholder { color: var(--subtle); font-style: italic; }
+.consumed-search::placeholder { color: var(--subtle); font-style: italic; }
 
-.reading-filters {
+.consumed-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 18px;
 }
-.reading-filter {
+.consumed-filter {
   cursor: pointer;
   font-family: var(--sans);
   font-size: 10px;
@@ -1189,28 +1189,28 @@ article h2 {
   background: var(--chip);
   transition: color .18s ease, background .18s ease, border-color .18s ease;
 }
-.reading-filter:hover:not(:disabled):not(.active) {
+.consumed-filter:hover:not(:disabled):not(.active) {
   color: var(--ink);
   border-color: var(--rule-strong);
 }
-.reading-filter.active {
+.consumed-filter.active {
   background: var(--accent);
   border-color: var(--accent);
   color: var(--paper);
 }
-.reading-filter:disabled { opacity: .35; cursor: default; }
-.reading-filter:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
-.reading-filter .count {
+.consumed-filter:disabled { opacity: .35; cursor: default; }
+.consumed-filter:focus-visible { outline: 1px solid var(--accent); outline-offset: 2px; }
+.consumed-filter .count {
   font-family: var(--mono);
   font-size: 9px;
   letter-spacing: 0;
   margin-left: 6px;
   color: var(--subtle);
 }
-.reading-filter.active .count { color: var(--paper); opacity: .75; }
+.consumed-filter.active .count { color: var(--paper); opacity: .75; }
 
-.reading-list { list-style: none; margin: 0; padding: 0; }
-.reading-item {
+.consumed-list { list-style: none; margin: 0; padding: 0; }
+.consumed-item {
   --cat: var(--subtle);
   display: grid;
   grid-template-columns: 30px 1fr;
@@ -1218,27 +1218,27 @@ article h2 {
   padding: 13px 0;
   border-top: 0.5px solid var(--rule);
 }
-.reading-item[data-category="Videos"] { --cat: var(--cat-videos); }
-.reading-item[data-category="Podcasts"] { --cat: var(--cat-podcasts); }
-.reading-item[data-category="Papers"] { --cat: var(--cat-papers); }
-.reading-item[data-category="Essays"] { --cat: var(--cat-essays); }
-.reading-item[data-category="Books"] { --cat: var(--cat-books); }
-.reading-item:first-child { border-top: none; }
-.reading-item .idx {
+.consumed-item[data-category="Videos"] { --cat: var(--cat-videos); }
+.consumed-item[data-category="Podcasts"] { --cat: var(--cat-podcasts); }
+.consumed-item[data-category="Papers"] { --cat: var(--cat-papers); }
+.consumed-item[data-category="Essays"] { --cat: var(--cat-essays); }
+.consumed-item[data-category="Books"] { --cat: var(--cat-books); }
+.consumed-item:first-child { border-top: none; }
+.consumed-item .idx {
   color: var(--cat);
   padding-top: 1px;
 }
-.reading-item .idx svg {
+.consumed-item .idx svg {
   display: block;
   width: 22px;
   height: 22px;
 }
-.reading-item .row-body {
+.consumed-item .row-body {
   display: flex;
   align-items: baseline;
   min-width: 0;
 }
-.reading-item .title {
+.consumed-item .title {
   font-family: var(--ser);
   font-size: 16px;
   line-height: 1.5;
@@ -1248,13 +1248,13 @@ article h2 {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-article .reading-item a.title {
+article .consumed-item a.title {
   color: var(--ink);
   background-image: none;
   padding-bottom: 0;
 }
-article .reading-item a.title:hover { color: var(--accent); }
-.reading-item .by {
+article .consumed-item a.title:hover { color: var(--accent); }
+.consumed-item .by {
   font-family: var(--sans);
   font-style: normal;
   font-size: 10px;
@@ -1265,7 +1265,7 @@ article .reading-item a.title:hover { color: var(--accent); }
   flex: 0 0 auto;
   margin-left: 20px;
 }
-.reading-empty {
+.consumed-empty {
   font-family: var(--ser);
   font-style: italic;
   color: var(--subtle);
