@@ -37,6 +37,13 @@ export default function EducationPage() {
             <li><a href="https://studentcouncil.ics.uci.edu/" target="_blank" rel="noopener noreferrer">ICS Student Council Mentorship</a> — matched with a mentor to help me land an internship.</li>
           </ul>
         </HobbyItem>
+        <HobbyItem title="BlueDot Impact" summary="AI safety courses, 57 hours completed." titleHref="https://bluedot.org/" alwaysOpen>
+          <ul>
+            <li><a href="https://bluedot.org/courses/future-of-ai" target="_blank" rel="noopener noreferrer">Future of AI</a> — 2 hours. Where AI is headed and the choices that come with it.</li>
+            <li><a href="https://bluedot.org/courses/agi-strategy" target="_blank" rel="noopener noreferrer">AGI Strategy</a> — 25 hours. The AI safety landscape and how to pick a direction within it.</li>
+            <li><a href="https://bluedot.org/courses/technical-ai-safety" target="_blank" rel="noopener noreferrer">Technical AI Safety</a> — 30 hours. Hands-on work on the technical side of making AI systems safe.</li>
+          </ul>
+        </HobbyItem>
       </ul>
 
       <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "60px 0 20px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Standout Coursework</em></h2>
@@ -52,16 +59,8 @@ export default function EducationPage() {
       </div>
 
       <h2 id="self-education" style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "60px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)", scrollMarginTop: 90 }}><em>Self-Education</em></h2>
-      <p style={{ marginBottom: 16 }}>
-        As I&apos;ve mentioned, this is something I really care about. Courses through <a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer">BlueDot Impact</a>:
-      </p>
-      <div className="courses">
-        <div className="course"><span className="code">2 HRS</span><span><a href="https://bluedot.org/courses/future-of-ai" target="_blank" rel="noopener noreferrer">Future of AI</a></span></div>
-        <div className="course"><span className="code">25 HRS</span><span><a href="https://bluedot.org/courses/agi-strategy" target="_blank" rel="noopener noreferrer">AGI Strategy</a></span></div>
-        <div className="course"><span className="code">30 HRS</span><span><a href="https://bluedot.org/courses/technical-ai-safety" target="_blank" rel="noopener noreferrer">Technical AI Safety</a></span></div>
-      </div>
-      <p style={{ margin: "28px 0 8px" }}>
-        The link below takes you to what I&apos;ve been watching and reading.
+      <p style={{ marginBottom: 8 }}>
+        As I&apos;ve mentioned, this is something I really care about. The link below takes you to what I&apos;ve been watching and reading.
       </p>
       <p style={{ textAlign: "center", margin: "28px 0 0" }}>
         <Link className="media-name" href="/consumed-content">Consumed content</Link>
