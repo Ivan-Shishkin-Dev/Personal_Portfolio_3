@@ -99,6 +99,8 @@ const SOURCE_BY_HOST: Record<string, string> = {
   "nature.com": "Nature",
   "medium.com": "Medium",
   "nytimes.com": "NYT",
+  "jjbeshara.com": "James Beshara",
+  "nvidia.com": "NVIDIA",
 };
 
 export function hostOf(url: string): string {
@@ -774,5 +776,25 @@ export const consumed: ConsumedEntry[] = [
     title: "Difficult Conversations: How to Discuss What Matters Most",
     url: "https://www.amazon.com/Difficult-Conversations-Discuss-What-Matters/dp/0143118447",
     author: "Stone, Patton & Heen",
+  },
+  {
+    title: "Mental Wealth",
+    url: "https://jjbeshara.com/2020/06/04/mental-wealth/",
+    author: "James Beshara",
+  },
+  {
+    title: "Psychology Research Is Mostly Fine",
+    url: "https://www.astralcodexten.com/p/psychology-research-is-mostly-fine",
+    author: "Scott Alexander",
+  },
+  {
+    title: "Our position on open-weights models",
+    url: "https://www.anthropic.com/news/position-open-weights-models",
+    author: "Dario Amodei",
+  },
+  {
+    title: "Open Weights and American AI Leadership",
+    url: "https://images.nvidia.com/pdf/Open-Weights-and-American-AI-Leadership.pdf",
+    author: "Industry coalition",
   },
 ];

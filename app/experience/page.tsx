@@ -14,7 +14,7 @@ export default function ExperiencePage() {
           <div className="when">May 2026 - present</div>
           <div className="who"><a href="https://www.computingandaiforall.org/reu.html" target="_blank" rel="noopener noreferrer">Undergraduate Student Researcher</a>, <em><a href="https://www.digitallearninglab.org/" target="_blank" rel="noopener noreferrer">UCI Digital Learning Lab</a></em></div>
           <div className="body">
-            NSF-funded <a href="https://www.computingandaiforall.org/" target="_blank" rel="noopener noreferrer">Computing and AI for All</a> initiative, a $6M+ effort in <a href="https://markwarschauer.com/" target="_blank" rel="noopener noreferrer">Prof. Mark Warschauer&rsquo;s</a> group.
+            Selected from ~500 students to participate in the NSF-funded <a href="https://www.computingandaiforall.org/" target="_blank" rel="noopener noreferrer">Computing and AI for All</a> initiative, a $6M+ effort in <a href="https://markwarschauer.com/" target="_blank" rel="noopener noreferrer">Prof. Mark Warschauer&rsquo;s</a> group.
             <ul>
               <li>Building grade 6&ndash;8 science curricula that teach subject matter and AI literacy together, aligned with California&rsquo;s Science Standards and piloted across Orange County districts.</li>
               <li>Co-leading the design of <a href="https://sinq.studio" target="_blank" rel="noopener noreferrer">Science Inquiry Studio</a> and the Science + AI team, prototyping games and simulations that fold LLMs, data handling, and ethics directly into the lessons.</li>
@@ -35,13 +35,13 @@ export default function ExperiencePage() {
         <h2 className="group-label">Volunteering</h2>
         <div className="entry">
           <div className="when">May 2026 - present</div>
-          <div className="who">Director, <em><a href="https://aisafetyuci.org/team" target="_blank" rel="noopener noreferrer">AI Safety Collective @ UCI</a></em></div>
-          <div className="body">Lead day-to-day operations and the collective&rsquo;s online presence while building the &ldquo;How to not lose your job&rdquo; portion of the fall fellowship.</div>
+          <div className="who">Executive Board, <em><a href="https://aisafetyuci.org/team" target="_blank" rel="noopener noreferrer">AI Safety Collective @ UCI</a></em></div>
+          <div className="body">Lead day-to-day operations and the collective&rsquo;s external presence while building the &ldquo;How to not lose your job&rdquo; portion of the fall fellowship.</div>
         </div>
         <div className="entry" id="director-of-housing">
           <div className="when">Oct 2024 - Sep 2025</div>
           <div className="who">Director of Housing, <em>Sigma Pi Fraternity</em></div>
-          <div className="body">Oversaw housing operations for a 100+ member chapter, managing landlord, realtor, and student-group relationships across multiple properties. Represented the chapter at the Tony Siress Leadership Summit in Lanier Islands, GA.</div>
+          <div className="body">Oversaw housing operations for a 100+ member chapter, managing landlord, realtor, and student-group relationships across multiple properties.</div>
         </div>
         <div className="entry">
           <div className="when">Oct 2022 - Oct 2024</div>
