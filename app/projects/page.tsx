@@ -76,6 +76,20 @@ export default function ProjectsPage() {
                   })}
                 </div>
               </div>
+              {p.video && (
+                <video
+                  className="project-video"
+                  controls
+                  playsInline
+                  preload="none"
+                  poster={p.video.poster}
+                  aria-label={`${p.title} demo video`}
+                >
+                  <source src={p.video.src} type="video/mp4" />
+                  Your browser does not support embedded video.{" "}
+                  <a href={p.video.src}>Download the demo video.</a>
+                </video>
+              )}
             </article>
           </Fragment>
           );

@@ -13,22 +13,28 @@ export default function EducationPage() {
     <SectionLayout slug="education">
       <div className="entries" style={{ marginTop: -20 }}>
         <div className="entry">
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 16 }}>
+          <div className="education-heading">
             <div className="who">B.S. in Computer Science, <em>UC Irvine</em></div>
             <div className="when" style={{ marginBottom: 0, whiteSpace: "nowrap" }}>Aug 2024 - Jun 2028</div>
           </div>
           <div className="body">GPA 3.8 (Dean's Honors List, 6×).</div>
+          <div className="body">
+            <ul>
+              <li>Member of the <a href="https://ics.uci.edu/honors/" target="_blank" rel="noopener noreferrer">ICS Honors Program</a>, which connects undergraduates with faculty research.</li>
+              <li>Awarded the Magnificent Obsession Perpetual Scholarship of $5,000 for the 2026&ndash;2027 academic year.</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-      <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "32px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>School Activities</em></h2>
+      <h2 style={{ fontFamily: "var(--ser)", fontSize: "1.625rem", fontWeight: 400, margin: "32px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>School Activities</em></h2>
       <ul className="hobbies">
         <HobbyItem title="Sigma Pi" summary="Eta-Upsilon Chapter." titleHref="https://sigmapi.org/" alwaysOpen>
           <ul>
             <li>Served as the chapter&apos;s <Link href="/experience#director-of-housing">Director of Housing</Link>, managing properties and relationships for 100+ members.</li>
             <li>Got to go to Georgia for the <a className="course-name" href="https://sigmapi.org/event-directory/tsls/" target="_blank" rel="noopener noreferrer">Tony Siress Leadership Summit</a>.</li>
             <li>Got tapped for <a href="https://orderofomega.org/" target="_blank" rel="noopener noreferrer">Order of Omega</a>, a leadership honor society for fraternity and sorority members.</li>
-            <li>Received the <a href="https://sigmapi.org/foundations/scholarships/" target="_blank" rel="noopener noreferrer">Byron R. Lewis Academic Scholarship</a>.</li>
+            <li>Received the <a href="https://sigmapi.org/foundations/scholarships/" target="_blank" rel="noopener noreferrer">Byron R. Lewis Academic Scholarship</a> of $2,500.</li>
           </ul>
         </HobbyItem>
         <HobbyItem title="Mentorship" summary="CLAOC, OC Fellows, and ICS Student Council." alwaysOpen>
@@ -46,7 +52,7 @@ export default function EducationPage() {
         </HobbyItem>
       </ul>
 
-      <h2 style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "60px 0 20px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Standout Coursework</em></h2>
+      <h2 style={{ fontFamily: "var(--ser)", fontSize: "1.625rem", fontWeight: 400, margin: "60px 0 20px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Standout Coursework</em></h2>
       <div className="courses">
         <div className="course"><span className="code">ICS 33</span><span>Intermediate Programming in Python</span></div>
         <div className="course"><span className="code">ICS 6D</span><span>Discrete Math for CS</span></div>
@@ -58,7 +64,7 @@ export default function EducationPage() {
         <div className="course"><span className="code">INF 43</span><span>Software Engineering</span></div>
       </div>
 
-      <h2 id="self-education" style={{ fontFamily: "var(--ser)", fontSize: 22, fontWeight: 400, margin: "60px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)", scrollMarginTop: 90 }}><em>Self-Education</em></h2>
+      <h2 id="self-education" style={{ fontFamily: "var(--ser)", fontSize: "1.625rem", fontWeight: 400, margin: "60px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)", scrollMarginTop: 90 }}><em>Self-Education</em></h2>
       <p style={{ marginBottom: 8 }}>
         As I&apos;ve mentioned, this is something I really care about. The link below takes you to what I&apos;ve been watching and reading.
       </p>

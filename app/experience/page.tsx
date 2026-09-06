@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SectionLayout from "@/components/SectionLayout";
+import DllGallery from "@/components/DllGallery";
 
 export const metadata: Metadata = {
   title: "Experience",
@@ -11,16 +12,17 @@ export default function ExperiencePage() {
     <SectionLayout slug="experience">
       <div className="entries">
         <div className="entry" id="digital-learning-lab">
-          <div className="when">May 2026 - present</div>
+          <div className="when">May 2026 - Sep 2026</div>
           <div className="who"><a href="https://www.computingandaiforall.org/reu.html" target="_blank" rel="noopener noreferrer">Undergraduate Student Researcher</a>, <em><a href="https://www.digitallearninglab.org/" target="_blank" rel="noopener noreferrer">UCI Digital Learning Lab</a></em></div>
           <div className="body">
-            Selected from ~500 students to participate in the NSF-funded <a href="https://www.computingandaiforall.org/" target="_blank" rel="noopener noreferrer">Computing and AI for All</a> initiative, a $6M+ effort in <a href="https://markwarschauer.com/" target="_blank" rel="noopener noreferrer">Prof. Mark Warschauer&rsquo;s</a> group.
+            Selected from ~500 students to participate in the NSF-funded <a href="https://www.computingandaiforall.org/" target="_blank" rel="noopener noreferrer">Computing and AI for All</a> initiative, a $6M+ effort in <a href="https://markwarschauer.com/" target="_blank" rel="noopener noreferrer">Prof. Mark Warschauer&rsquo;s</a> group, the number one lab in digital literacy in the world.
             <ul>
-              <li>Building grade 6&ndash;8 science curricula that teach subject matter and AI literacy together, aligned with California&rsquo;s Science Standards and piloted across Orange County districts.</li>
-              <li>Co-leading the design of <a href="https://sinq.studio" target="_blank" rel="noopener noreferrer">Science Inquiry Studio</a> and the Science + AI team, prototyping games and simulations that fold LLMs, data handling, and ethics directly into the lessons.</li>
-              <li>Building the authoring tools that let teachers adapt our templates to how they actually teach.</li>
+              <li>Built grade 6&ndash;8 science curricula that teach subject matter and AI literacy together, aligned with California&rsquo;s Science Standards and piloted across Orange County districts.</li>
+              <li>Co-led the design of <a href="https://sinq.studio" target="_blank" rel="noopener noreferrer">Science Inquiry Studio</a> and the Science + AI team, prototyping games and simulations that fold LLMs, data handling, and ethics directly into the lessons.</li>
+              <li>Built the authoring tools that let teachers adapt our templates to how they actually teach.</li>
             </ul>
           </div>
+          <DllGallery />
         </div>
         <div className="entry">
           <div className="when">Nov 2025 - present</div>
@@ -36,7 +38,19 @@ export default function ExperiencePage() {
         <div className="entry">
           <div className="when">May 2026 - present</div>
           <div className="who">Executive Board, <em><a href="https://aisafetyuci.org/team" target="_blank" rel="noopener noreferrer">AI Safety Collective @ UCI</a></em></div>
-          <div className="body">Lead day-to-day operations and the collective&rsquo;s external presence while building the &ldquo;How to not lose your job&rdquo; portion of the fall fellowship.</div>
+          <div className="body">
+            <ul>
+              <li>Lead day-to-day operations and the collective&rsquo;s external presence.</li>
+              <li>Mentee in the <a href="https://pathfinder.kairos-project.org/" target="_blank" rel="noopener noreferrer">Pathfinder Fellowship</a>.</li>
+              <li>Attended OASIS 7.0, a weeklong conference organized by <a href="https://kairos-project.org/" target="_blank" rel="noopener noreferrer">Kairos</a>, alongside other AI safety group organizers at the <a href="https://constellation.org/" target="_blank" rel="noopener noreferrer">Constellation</a> office in Berkeley.</li>
+              <li>Attended <a href="https://www.effectivealtruism.org/ea-global" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", textUnderlineOffset: "3px", backgroundImage: "none" }}>EAGxBerkeley</a>.</li>
+            </ul>
+          </div>
+        </div>
+        <div className="entry">
+          <div className="when">Aug 2026 - present</div>
+          <div className="who">Campus Leader, <em><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Notion</a></em></div>
+          <div className="body">Help students use Notion to organize coursework, manage projects, and collaborate. I&rsquo;m big on organization, so I want to help others make the most of this tool too!</div>
         </div>
         <div className="entry" id="director-of-housing">
           <div className="when">Oct 2024 - Sep 2025</div>

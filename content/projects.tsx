@@ -8,11 +8,16 @@ export type Project = {
   links: { label: string; href: string }[];
   year: string;
   group: string;
+  video?: { src: string; poster: string };
 };
 
 export const projects: Project[] = [
   {
     title: "Science Inquiry Studio",
+    video: {
+      src: "/videos/science-inquiry-studio.mp4",
+      poster: "/videos/science-inquiry-studio-poster.jpg",
+    },
     blurb: (
       <>
         An AI-supported science platform for grades 6–8 that I'm building at

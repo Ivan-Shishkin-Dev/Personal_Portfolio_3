@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FeedbackForm from "@/components/FeedbackForm";
@@ -16,15 +17,16 @@ export default function Home() {
                 src="/headshot.png"
                 alt="Ivan Shishkin"
                 fill
-                sizes="264px"
+                sizes="(max-width: 769px) 200px, (max-width: 1307px) 26vw, 340px"
                 quality={100}
                 priority
               />
             </div>
             <h1 className="title">Ivan Shishkin</h1>
             <p className="hero-bio">
-              I study computer science at the University of California, Irvine,
-              with a specialization in Artificial Intelligence.
+              I’m an honors Computer Science student at UC Irvine. I like to do
+              a lot of things though,{" "}
+              <Link href="/about">learn more</Link>.
             </p>
             <p className="hero-principle">
               <em>
