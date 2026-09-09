@@ -112,8 +112,7 @@ article li a:hover,
   .page { padding: 60px 60px 100px; }
 }
 .page-home {
-  max-width: 1120px;
-  padding: clamp(24px, 4vh, 48px) clamp(24px, 4vw, 56px) 32px;
+  padding-bottom: 32px;
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
@@ -124,30 +123,14 @@ article li a:hover,
   align-content: center;
   margin-block: clamp(32px, 5vh, 64px);
 }
-.page-home .site-head,
-.page-home .site-nav {
-  font-size: 0.875rem;
-  letter-spacing: 1.8px;
-}
-.page-home .title {
-  font-size: clamp(3.0187rem, 6.325vw, 6.325rem);
-}
 .page-home .hero-bio {
   max-width: 34em;
-  font-size: clamp(1.2937rem, 1.84vw, 1.725rem);
   margin-top: 24px;
   text-wrap: pretty;
 }
 .page-home .hero-principle {
-  font-size: clamp(1.15rem, 1.38vw, 1.3656rem);
   margin-top: 28px;
   text-wrap: pretty;
-}
-.page-home .feedback-trigger {
-  font-size: clamp(1.15rem, 1.265vw, 1.2937rem);
-}
-.page-home .colophon {
-  font-size: 0.8125rem;
 }
 @media (min-width: 1024px) {
   :root { --maxw: 1000px; }
@@ -385,7 +368,7 @@ article li a:hover,
 /* Principle pull-quote — featured editorial statement */
 .hero-principle {
   font-family: var(--ser);
-  font-size: clamp(1.0781rem, 1.782vw, 1.2219rem);
+  font-size: inherit;
   line-height: 1.55;
   font-weight: 300;
   color: var(--muted);
@@ -423,17 +406,15 @@ article li a:hover,
 }
 .title {
   font-family: var(--ser);
-  font-size: clamp(2.875rem, 10.925vw, 5.175rem);
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.5px;
   margin: 0;
 }
 
-/* hero-bio promoted to magazine standfirst */
 .hero-bio {
   font-family: var(--ser);
-  font-size: clamp(1.2219rem, 2.07vw, 1.4375rem);
+  font-size: inherit;
   line-height: 1.6;
   font-weight: 300;
   letter-spacing: -0.2px;
@@ -539,6 +520,7 @@ button.contact-row:focus-visible { outline: 1px solid var(--accent); outline-off
   line-height: 0.9;
   letter-spacing: -1px;
 }
+.hero .title,
 .section-head h1 {
   font-family: var(--ser);
   font-size: clamp(2.1562rem, 5.75vw, 3.0187rem);
