@@ -101,6 +101,8 @@ const SOURCE_BY_HOST: Record<string, string> = {
   "nytimes.com": "NYT",
   "jjbeshara.com": "James Beshara",
   "nvidia.com": "NVIDIA",
+  "arstechnica.com": "Ars Technica",
+  "sive.rs": "Derek Sivers",
 };
 
 export function hostOf(url: string): string {
@@ -796,5 +798,57 @@ export const consumed: ConsumedEntry[] = [
     title: "Open Weights and American AI Leadership",
     url: "https://images.nvidia.com/pdf/Open-Weights-and-American-AI-Leadership.pdf",
     author: "Industry coalition",
+  },
+  {
+    title: "The OpenAI/Hugging Face attack, clearly explained",
+    url: "https://www.youtube.com/watch?v=u15N3l4RT80",
+    author: "Dwarkesh Patel",
+  },
+  {
+    title: "What the hell happened with AGI timelines in 2026?",
+    url: "https://www.youtube.com/watch?v=31Uhv12ZLHU",
+    author: "80,000 Hours",
+  },
+  {
+    title: "JFrog tries to spin OpenAI 0-day exploit of its app into a success story",
+    url: "https://arstechnica.com/security/2026/07/jfrog-tries-to-spin-openai-0-day-exploit-of-its-app-into-a-success-story/",
+    author: "Dan Goodin",
+  },
+  {
+    title: "The Long (Self-)Correction",
+    url: "https://www.lesswrong.com/posts/2iCmDWewnZWQxxwtt/the-long-self-correction-2",
+    author: "Wei Dai",
+  },
+  {
+    title: "There are always more than two options",
+    url: "https://sive.rs/options",
+    author: "Derek Sivers",
+  },
+  {
+    title: "Investigating three incidents in our cybersecurity evaluations",
+    url: "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+    author: "Anthropic",
+  },
+  {
+    title: "The Joe Rogan Intervention | Malcolm Gladwell's Revisionist History Podcast",
+    url: "https://www.youtube.com/watch?v=_KsYndiFpfA",
+    author: "Malcolm Gladwell",
+    category: "Podcasts",
+  },
+  {
+    title: "Can you teach context?",
+    url: "https://blog.bluedot.org/p/can-you-teach-context",
+    author: "Joshua Landes & Harry Waterman",
+  },
+  {
+    title: "BlueDot’s 6-month plan",
+    url: "https://blog.bluedot.org/p/owners",
+    author: "Dewi Erwan",
+  },
+  {
+    title: "The lowkey high-impact role that makes orgs tick",
+    url: "https://coefficientgiving.substack.com/p/the-lowkey-high-impact-role-that",
+    author: "Danny De La Torre",
+    source: "Coefficient Giving",
   },
 ];
