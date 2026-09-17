@@ -1232,44 +1232,6 @@ article h2 {
   padding-top: 4px;
 }
 
-/* ── Skills ─────────────────────────────────── */
-.skills .skill {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 6px;
-  padding: 14px 0;
-  border-top: 0.5px solid var(--rule);
-}
-@media (min-width: 560px) {
-  .skills .skill { grid-template-columns: 120px 1fr; gap: 16px; align-items: baseline; }
-}
-.skills .skill:first-child { border-top: none; }
-.skills .group {
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.skills .items {
-  font-family: var(--ser);
-  font-style: italic;
-  font-size: 1.15rem;
-  line-height: 1.55;
-}
-.skills .items .sep { color: var(--subtle); font-style: normal; }
-.skills .group .note {
-  display: block;
-  margin-top: 7px;
-  font-family: var(--ser);
-  font-style: italic;
-  font-size: 0.8125rem;
-  line-height: 1.5;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--subtle);
-}
-
 /* ── Consumed content ───────────────────────────── */
 /* § straddles the baseline where the Roman numerals sit on it. */
 .section-head .num.mark {
