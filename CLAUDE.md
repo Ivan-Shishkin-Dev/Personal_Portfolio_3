@@ -2,7 +2,7 @@
 
 ## What this is
 
-Ivan Shishkin's personal portfolio — a UC Irvine CS student site with a typography-forward, Anthropic Claude-inspired editorial aesthetic. Cream paper palette (#fbf6ea bg, rust accent #7a3d1d), Spectral serif body, Inter sans labels, JetBrains Mono counters, single 640px column, numerated sections I–VI.
+Ivan Shishkin's personal portfolio — a UC Irvine CS student site with a typography-forward, Anthropic Claude-inspired editorial aesthetic. Cream paper palette (#fbf6ea bg, rust accent #7a3d1d), Spectral serif body, Inter sans labels, JetBrains Mono counters, single 640px column, numerated sections I–V.
 
 ## Stack
 
@@ -39,7 +39,7 @@ A searchable list of everything Ivan has read, watched, or listened to. `content
 
 - Replace plain CSS with Tailwind or CSS-in-JS
 - Redesign typography — Spectral / Inter / JetBrains Mono are deliberate
-- Add a state library, CMS, or testing framework. This is a small static portfolio (home + six section pages + `/consumed-content`).
+- Add a state library, CMS, or testing framework. This is a small static portfolio (home + five section pages + `/consumed-content`).
 - Add `/consumed-content` to `content/sections.ts`, or link it from anywhere but `/education` — it is meant to be found only there.
 - Hotlink favicons at runtime, or hand-edit the generated `content/favicons.ts`.
 - Add a general contact form. The anonymous-feedback modal on home and the click-to-copy email on `/contact` are intentional.
@@ -54,7 +54,7 @@ A searchable list of everything Ivan has read, watched, or listened to. `content
 
 ## Routes
 
-`/`, `/about`, `/experience`, `/skills`, `/projects`, `/education`, `/contact`, `/consumed-content`
+`/`, `/about`, `/experience`, `/projects`, `/education`, `/contact`, `/consumed-content`
 
 ## Deploy
 
