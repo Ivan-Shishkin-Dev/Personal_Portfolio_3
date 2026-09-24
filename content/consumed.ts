@@ -851,4 +851,29 @@ export const consumed: ConsumedEntry[] = [
     author: "Danny De La Torre",
     source: "Coefficient Giving",
   },
+  {
+    title: "Joe Rogan Experience #2551 - Daniel Kokotajlo",
+    url: "https://www.youtube.com/watch?v=hSQ1iVqEZO4",
+    author: "Joe Rogan",
+    category: "Podcasts",
+  },
+  {
+    title:
+      "AI Emergency: The AI Labs Are Lying To Everyone, He Says 99% Chance Of Extinction | Roman Yampolskiy",
+    url: "https://www.youtube.com/watch?v=OhOmLqR5nN4",
+    author: "The Diary Of A CEO",
+    category: "Podcasts",
+  },
+  {
+    title: "OpenAI researcher on agent swarms & recursive self-improvement",
+    url: "https://www.youtube.com/watch?v=6AgOfiZOWiY",
+    author: "Dwarkesh Patel",
+    category: "Podcasts",
+  },
+  {
+    title: "AI researchers debate how close we are to recursive self-improvement",
+    url: "https://www.youtube.com/watch?v=PrSf7IOYu-I",
+    author: "Dwarkesh Patel",
+    category: "Podcasts",
+  },
 ];
