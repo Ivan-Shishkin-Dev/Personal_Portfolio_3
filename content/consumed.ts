@@ -876,4 +876,10 @@ export const consumed: ConsumedEntry[] = [
     author: "Dwarkesh Patel",
     category: "Podcasts",
   },
+  {
+    title: "Ajeya Cotra — “This might be the clearest warning shot we ever get”",
+    url: "https://www.youtube.com/watch?v=X50zezLFWWI",
+    author: "Dwarkesh Patel",
+    category: "Podcasts",
+  },
 ];
