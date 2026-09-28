@@ -30,22 +30,25 @@ export default function Home() {
             </p>
             <p className="hero-principle">
               <em>
+                I try to{" "}
                 <a
                   href="https://usefulfictions.substack.com/p/how-to-increase-your-surface-area"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Do more
-                </a>
-                ,{" "}
+                  get lucky on purpose
+                </a>{" "}
+                and{" "}
                 <a
                   href="https://www.benkuhn.net/abyss/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  do the hard thing
+                  look directly at what scares me
                 </a>
-                , until I'm the best at the things I care for.
+                . Right now and in the foreseeable future, I&rsquo;m most
+                interested in how I can use my skills to help reduce risks from
+                AI systems.
               </em>
             </p>
             <FeedbackForm />
