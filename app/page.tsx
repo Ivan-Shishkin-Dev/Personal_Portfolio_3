@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import FeedbackForm from "@/components/FeedbackForm";
@@ -24,11 +23,17 @@ export default function Home() {
             </div>
             <h1 className="title">Ivan Shishkin</h1>
             <p className="hero-bio">
-              I’m an honors Computer Science student at UC Irvine. I like to do
-              a lot of things though,{" "}
-              <Link href="/about">learn more</Link>. Right now and in the
-              foreseeable future, I&rsquo;m most interested in how I can use my
-              skills to help reduce risks from AI systems.
+              I’m an honors Computer Science student at UC Irvine. Right now and
+              in the foreseeable future, I&rsquo;m most interested in how I can
+              use my skills to help{" "}
+              <a
+                href="https://80000hours.org/problem-profiles/artificial-intelligence/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                reduce risks from AI systems
+              </a>
+              .
             </p>
             <p className="hero-principle">
               <em>
