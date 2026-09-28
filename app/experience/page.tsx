@@ -30,7 +30,7 @@ export default function ExperiencePage() {
           <div className="body">Co-developing a $10K-funded mobile app that consolidates contractor verification, insurance, licensing, and safety certifications into a single platform, replacing multi-day back-and-forth with agents and phone calls.</div>
         </div>
         <div className="entry">
-          <div className="when">Aug 2025 - present</div>
+          <div className="when">Aug 2025 - Sep 2026</div>
           <div className="who">Center Attendant, <em><a href="https://housing.uci.edu/arroyo-vista/" target="_blank" rel="noopener noreferrer">UCI Arroyo Vista Housing</a></em></div>
           <div className="body">Front-facing housing operations supporting 100+ resident requests weekly across a large on-campus community.</div>
         </div>
