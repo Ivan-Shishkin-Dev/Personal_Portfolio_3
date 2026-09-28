@@ -32,7 +32,7 @@ export default function ExperiencePage() {
         <div className="entry">
           <div className="when">Aug 2025 - Sep 2026</div>
           <div className="who">Center Attendant, <em><a href="https://housing.uci.edu/arroyo-vista/" target="_blank" rel="noopener noreferrer">UCI Arroyo Vista Housing</a></em></div>
-          <div className="body">Front-facing housing operations supporting 100+ resident requests weekly across a large on-campus community.</div>
+          <div className="body">Supported front-facing housing operations handling 100+ resident requests weekly across a large on-campus community.</div>
         </div>
         <h2 className="group-label">Volunteering</h2>
         <div className="entry">
