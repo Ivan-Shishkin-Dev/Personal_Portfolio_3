@@ -877,6 +877,12 @@ export const consumed: ConsumedEntry[] = [
     category: "Podcasts",
   },
   {
+    title: "Ajeya Cotra — “This might be the clearest warning shot we ever get”",
+    url: "https://www.youtube.com/watch?v=X50zezLFWWI",
+    author: "Dwarkesh Patel",
+    category: "Podcasts",
+  },
+  {
     title: "Dylan Patel – Two labs will soon control most of the world's workforce",
     url: "https://www.youtube.com/watch?v=aV26V1UvkJw",
     author: "Dwarkesh Patel",
@@ -886,5 +892,10 @@ export const consumed: ConsumedEntry[] = [
     title: "If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All",
     author: "Eliezer Yudkowsky & Nate Soares",
     category: "Books",
+  },
+  {
+    title: "AI Realist vs 20 AI Optimists (ft. Andrew Yang) | Surrounded",
+    url: "https://www.youtube.com/watch?v=020ZvO0FbMM",
+    author: "Jubilee",
   },
 ];
