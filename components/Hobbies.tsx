@@ -32,7 +32,7 @@ export default function Hobbies() {
                 .
               </li>
               <li>
-                Research for AI literacy curriculum through{" "}
+                Researched AI literacy curriculum through{" "}
                 <Link href="/experience#digital-learning-lab">UCI&apos;s Digital Learning Lab</Link>.
               </li>
             </ul>
