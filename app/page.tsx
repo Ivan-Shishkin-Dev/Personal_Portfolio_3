@@ -26,7 +26,9 @@ export default function Home() {
             <p className="hero-bio">
               I’m an honors Computer Science student at UC Irvine. I like to do
               a lot of things though,{" "}
-              <Link href="/about">learn more</Link>.
+              <Link href="/about">learn more</Link>. Right now and in the
+              foreseeable future, I&rsquo;m most interested in how I can use my
+              skills to help reduce risks from AI systems.
             </p>
             <p className="hero-principle">
               <em>
@@ -46,9 +48,7 @@ export default function Home() {
                 >
                   look directly at what scares me
                 </a>
-                . Right now and in the foreseeable future, I&rsquo;m most
-                interested in how I can use my skills to help reduce risks from
-                AI systems.
+                .
               </em>
             </p>
             <FeedbackForm />
