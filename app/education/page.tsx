@@ -62,6 +62,8 @@ export default function EducationPage() {
         <div className="course"><span className="code">ICS 46</span><span>Data Structure Implementation & Analysis (in C++)</span></div>
         <div className="course"><span className="code">ICS 51</span><span>Computer Organization</span></div>
         <div className="course"><span className="code">INF 43</span><span>Software Engineering</span></div>
+        <div className="course"><span className="code">CS 161</span><span>Design & Analysis of Algorithms</span></div>
+        <div className="course"><span className="code">CS 178</span><span>Machine Learning & Data Mining</span></div>
       </div>
 
       <h2 id="self-education" style={{ fontFamily: "var(--ser)", fontSize: "1.625rem", fontWeight: 400, margin: "60px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)", scrollMarginTop: 90 }}><em>Self-Education</em></h2>
