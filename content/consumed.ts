@@ -898,4 +898,10 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.youtube.com/watch?v=020ZvO0FbMM",
     author: "Jubilee",
   },
+  {
+    title: "You can get funded to launch an AI safety org",
+    url: "https://www.youtube.com/watch?v=_UXQxcDzHBs",
+    author: "80,000 Hours",
+    category: "Podcasts",
+  },
 ];
