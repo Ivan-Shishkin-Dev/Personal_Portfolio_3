@@ -904,4 +904,10 @@ export const consumed: ConsumedEntry[] = [
     author: "80,000 Hours",
     category: "Podcasts",
   },
+  {
+    title: "The Next President May Control Superintelligence",
+    url: "https://www.youtube.com/watch?v=-loeFkwmEpo",
+    author: "80,000 Hours",
+    category: "Podcasts",
+  },
 ];
