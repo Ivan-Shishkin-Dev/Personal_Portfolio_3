@@ -910,4 +910,9 @@ export const consumed: ConsumedEntry[] = [
     author: "80,000 Hours",
     category: "Podcasts",
   },
+  {
+    title: "80,000 Hours: How to have a fulfilling career that does good",
+    author: "Benjamin Todd",
+    category: "Books",
+  },
 ];
