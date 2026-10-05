@@ -921,4 +921,9 @@ export const consumed: ConsumedEntry[] = [
     author: "80,000 Hours",
     category: "Podcasts",
   },
+  {
+    title: "Outliers: The Story of Success",
+    author: "Malcolm Gladwell",
+    category: "Books",
+  },
 ];
