@@ -915,4 +915,10 @@ export const consumed: ConsumedEntry[] = [
     author: "Benjamin Todd",
     category: "Books",
   },
+  {
+    title: "11 'Hugging Face' details that reveal what's coming next",
+    url: "https://www.youtube.com/watch?v=3zNRoQmzaME",
+    author: "80,000 Hours",
+    category: "Podcasts",
+  },
 ];
