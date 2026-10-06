@@ -926,4 +926,9 @@ export const consumed: ConsumedEntry[] = [
     author: "Malcolm Gladwell",
     category: "Books",
   },
+  {
+    title: "Chris Painter's testimony to the U.S. Senate on AI agent incidents",
+    url: "https://metr.org/blog/2026-09-30-chris-painter-senate-testimony/#anticipating-and-securing-against-ai-agent-risks",
+    author: "METR",
+  },
 ];
