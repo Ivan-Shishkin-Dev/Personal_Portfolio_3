@@ -17,7 +17,7 @@ export const contacts: Contact[] = [
     intent: "Meet With Me",
     label: "Calendar",
     handle: "cal.com/ivanshishkin",
-    href: "https://cal.com/ivanshishkin/quick-chat",
+    href: "https://cal.com/ivanshishkin",
   },
   {
     intent: "Public Code",
