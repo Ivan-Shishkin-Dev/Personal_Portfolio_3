@@ -931,4 +931,10 @@ export const consumed: ConsumedEntry[] = [
     url: "https://metr.org/blog/2026-09-30-chris-painter-senate-testimony/#anticipating-and-securing-against-ai-agent-risks",
     author: "METR",
   },
+  {
+    title: "A realistic path from rogue AI agents to human extinction",
+    url: "https://www.youtube.com/watch?v=RIJJB5B2lHU",
+    author: "80,000 Hours",
+    category: "Podcasts",
+  },
 ];
