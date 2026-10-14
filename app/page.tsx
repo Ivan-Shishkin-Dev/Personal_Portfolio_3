@@ -4,6 +4,7 @@ import SiteNav from "@/components/SiteNav";
 import FeedbackForm from "@/components/FeedbackForm";
 import Headshot from "@/components/Headshot";
 import Topbar from "@/components/Topbar";
+import TerminalButton from "@/components/TerminalButton";
 import CopyLink from "@/components/CopyLink";
 import { contacts } from "@/content/contacts";
 
@@ -71,6 +72,8 @@ export default function Home() {
               </li>
             </ul>
           </section>
+
+          <TerminalButton variant="hint" />
 
           <div className="home-text">
             <p className="home-lede">
