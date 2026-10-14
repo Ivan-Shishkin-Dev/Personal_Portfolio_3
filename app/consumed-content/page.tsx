@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import SiteHeader from "@/components/SiteHeader";
+import PageHead from "@/components/PageHead";
+import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import Topbar from "@/components/Topbar";
 import ConsumedContent from "@/components/ConsumedContent";
 
 export const metadata: Metadata = {
@@ -11,23 +12,21 @@ export const metadata: Metadata = {
 
 export default function ConsumedContentPage() {
   return (
-    <main className="page" data-screen-label="Consumed Content">
-      <SiteHeader />
-      <nav className="subnav">
-        <Link className="home" href="/education#self-education">← Education</Link>
-        <span className="sep">/</span>
-        <span>Consumed Content</span>
-      </nav>
-      <header className="section-head section-head-tight">
-        <div className="title-row">
-          <span className="num mark">§</span>
-          <h1>Consumed Content</h1>
-        </div>
-      </header>
-      <article>
-        <ConsumedContent />
-      </article>
-      <SiteFooter />
-    </main>
+    <>
+      <Topbar
+        crumbs={[
+          { href: "/education", label: "Education", icon: "🎓" },
+          { href: "/consumed-content", label: "Consumed content", icon: "📚" },
+        ]}
+      />
+      <main className="page" data-screen-label="Consumed Content">
+        <PageHead icon="📚" title="Consumed content" />
+        <article>
+          <ConsumedContent />
+        </article>
+        <SiteNav />
+        <SiteFooter />
+      </main>
+    </>
   );
 }

@@ -1,18 +1,10 @@
 import type { Metadata } from "next";
-import { Spectral, Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
+import Terminal from "@/components/Terminal";
 import "./globals.css";
-
-const spectral = Spectral({
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
-  variable: "--ser",
-  display: "swap",
-});
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500"],
   variable: "--sans",
   display: "swap",
 });
@@ -44,11 +36,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${spectral.variable} ${inter.variable} ${mono.variable}`}
-    >
-      <body>{children}</body>
+    <html lang="en" className={`${inter.variable} ${mono.variable}`}>
+      <body>
+        {children}
+        <Terminal />
+      </body>
     </html>
   );
 }

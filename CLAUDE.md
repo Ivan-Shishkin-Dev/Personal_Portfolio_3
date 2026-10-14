@@ -2,21 +2,36 @@
 
 ## What this is
 
-Ivan Shishkin's personal portfolio — a UC Irvine CS student site with a typography-forward, Anthropic Claude-inspired editorial aesthetic. Cream paper palette (#fbf6ea bg, rust accent #7a3d1d), Spectral serif body, Inter sans labels, JetBrains Mono counters, single 640px column, numerated sections I–V.
+Ivan Shishkin's personal portfolio — a UC Irvine CS student site styled like a Notion workspace with a terminal hidden behind ⌘K. Pages look like Notion pages: breadcrumb bar, emoji page icon, bold sans title, properties, callouts, toggles, sub-page links. Notion palette (white `--bg`, `#37352f` ink, Notion blue `--accent` on hover and focus). Inter for everything on the page; JetBrains Mono only for terminal and code-like bits.
 
 ## Stack
 
 - Next.js 16 (App Router) + React 19 + TypeScript
-- Fonts via `next/font/google` exposed as `--ser`, `--sans`, `--mono` in `app/layout.tsx`
+- Inter (`--sans`) and JetBrains Mono (`--mono`) via `next/font/google` in `app/layout.tsx`
 - Plain CSS in `app/globals.css` — no Tailwind, no CSS Modules
 - Static content modules under `content/` (`sections.ts`, `projects.tsx`, `contacts.ts`, `consumed.ts`). `projects.tsx` because project blurbs accept inline JSX (e.g. cross-link from Construction-Verification into `/experience`)
 - Deployed on Vercel
 
 ## Architecture
 
-The home page (`app/page.tsx`) is its own composition: hero portrait, bio, principle pull-quote, and the anonymous-feedback modal (`FeedbackForm`, posts to web3forms). Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>` — `SectionLayout` renders the subnav, section head, children, `Pager`, and footer. `content/sections.ts` is the single source of truth for navigation order, Roman numerals, and section eyebrows.
+The home page (`app/page.tsx`) is the merged home + about, laid out as a Notion page: the headshot as the page icon, the name as title, then a properties list read from `content/contacts.ts` — an entry with `copy` renders as a click-to-copy button (`CopyLink`), the rest as external links showing their `handle` — plus a Feedback row with the anonymous-feedback modal (`FeedbackForm`, posts to web3forms). The bio follows as prose with one 💡 callout.
 
-`/consumed-content` is the one exception. It builds its own shell from `SiteHeader`/`SiteFooter` rather than `SectionLayout`, because `getSection` throws on any slug missing from `sections.ts` — and keeping it out of that file is what keeps it out of the nav, the header menu, and the `Pager`. It is reachable only from the Self-Education link on `/education`, which is deliberate. It is still in `sitemap.xml` and indexable.
+Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>`. `SectionLayout` renders `Topbar` (sticky Notion breadcrumb + terminal launcher), `PageHead` (emoji icon, title, the section's one-line `eyebrow` as subtitle), the children, `SiteNav`, and `SiteFooter`. `content/sections.ts` is the single source of truth for navigation order, icons, and subtitles.
+
+`Topbar` is a breadcrumb, not a nav menu: "Ivan Shishkin / <page>" is the way home. Section navigation is `SiteNav` at the bottom of every page — a Notion-style list of sub-page links (icon + title).
+
+## Terminal (⌘K)
+
+`components/Terminal.tsx` is mounted once in `app/layout.tsx`, so its scrollback and history survive navigation. It is a native `<dialog>` opened by ⌘K / Ctrl+K, `/` (when not typing in a field), or the `>_` button in `Topbar` (`TerminalButton` dispatches the `terminal:open` window event).
+
+- The filesystem is derived, not hand-kept: `~` is home, each entry in `sections.ts` is a directory, and `~/education/consumed-content` maps to `/consumed-content` — so it only shows up when you `ls` inside education, keeping it out of the top-level listing.
+- `cd` navigates with the router and closes the terminal; `cwd` comes from the current pathname.
+- `open <name>` and `email` read from `content/contacts.ts`. New contacts with an `href` and `label` become `open` targets automatically.
+- Commands: help, ls, cd, pwd, cat, whoami, open, email, echo, clear, exit (+ a `sudo` joke). Tab completes, ↑/↓ walk history, Ctrl+L clears, Ctrl+C cancels.
+
+`/consumed-content` is the one exception. It composes `Topbar`/`PageHead`/`SiteNav`/`SiteFooter` itself rather than using `SectionLayout`, because `getSection` throws on any slug missing from `sections.ts` — and keeping it out of that file is what keeps it out of the nav. It is linked from two places only: the Self-Education link on `/education` and the reading bullet in the home TL;DR. It stays out of the nav on purpose. It is still in `sitemap.xml` and indexable.
+
+`/about` and `/contact` no longer exist; `next.config.ts` redirects both to `/` so old links still land.
 
 ## Consumed Content (`/consumed-content`)
 
@@ -32,19 +47,25 @@ A searchable list of everything Ivan has read, watched, or listened to. `content
 
 - Design tokens in `app/globals.css` are stable. Adjust them; don't fight them with per-component overrides.
 - Section pages should be just prose inside `<SectionLayout>`. Don't add layout chrome.
+- One link style everywhere: ink text with a 1px grey underline, Notion blue on hover (`.page a` in `globals.css`). Buttons that act like links (`.copy-link`, `.feedback-trigger`) share it. Don't add per-component link colours.
+- Reach for Notion's own block vocabulary (callout, toggle, inline `code`, properties, sub-page links) before inventing new chrome.
+- Monospace is for terminal-flavoured things only: the terminal, the `>_` launcher and home hint, `code`. Prose stays in Inter.
+- No all-caps letter-spaced labels, no italic or coloured headings, no Roman numerals. Hierarchy comes from size, weight, and `--muted`.
+- The terminal is the one dark surface (`--term-*` tokens). It does not make the site dark-mode.
 - Light-mode only. No theme toggle, no `data-theme` switching — the `:root` tokens in `app/globals.css` are the sole palette.
 - No code comments unless the *why* is non-obvious. Don't narrate WHAT the code does — well-named identifiers handle that.
 
 ## Don't (without asking)
 
 - Replace plain CSS with Tailwind or CSS-in-JS
-- Redesign typography — Spectral / Inter / JetBrains Mono are deliberate
-- Add a state library, CMS, or testing framework. This is a small static portfolio (home + five section pages + `/consumed-content`).
-- Add `/consumed-content` to `content/sections.ts`, or link it from anywhere but `/education` — it is meant to be found only there.
+- Add a third typeface — Inter + JetBrains Mono, on purpose
+- Add a state library, CMS, or testing framework. This is a small static portfolio (home + three section pages + `/consumed-content`).
+- Add `/consumed-content` to `content/sections.ts`, or link it from anywhere beyond `/education` and the home TL;DR — it is meant to stay out of the nav.
 - Hotlink favicons at runtime, or hand-edit the generated `content/favicons.ts`.
-- Add a general contact form. The anonymous-feedback modal on home and the click-to-copy email on `/contact` are intentional.
+- Add a general contact form or bring back a contact page. The anonymous-feedback modal and the click-to-copy email in the home link row are intentional.
+- Turn `Topbar` into a nav menu, or split the bio back out into an about page.
 - Reintroduce a dark mode or theme toggle — site is intentionally light-only.
-- Widen `--maxw` (640px) or change `--gap` (60px) casually
+- Change `--maxw` (760px, 1000px from 1024px up) casually
 
 ## Workflow
 
@@ -54,7 +75,7 @@ A searchable list of everything Ivan has read, watched, or listened to. `content
 
 ## Routes
 
-`/`, `/about`, `/experience`, `/projects`, `/education`, `/contact`, `/consumed-content`
+`/`, `/experience`, `/projects`, `/education`, `/consumed-content`
 
 ## Deploy
 

@@ -19,7 +19,7 @@ export default function ExperiencePage() {
             <ul>
               <li>Built grade 6&ndash;8 science curricula that teach subject matter and AI literacy together, aligned with California&rsquo;s Science Standards and piloted across Orange County districts.</li>
               <li>Co-led the design of <a href="https://sinq.studio" target="_blank" rel="noopener noreferrer">Science Inquiry Studio</a> and the Science + AI team, prototyping games and simulations that fold LLMs, data handling, and ethics directly into the lessons.</li>
-              <li>Built the authoring tools that let teachers adapt our templates to how they actually teach.</li>
+              <li>Built the authoring tools that let teachers adapt our templates to how they actually teach, or how they think others would like to teach.</li>
             </ul>
           </div>
           <DllGallery />
@@ -43,7 +43,7 @@ export default function ExperiencePage() {
               <li>Lead day-to-day operations and the collective&rsquo;s external presence.</li>
               <li>Mentee in the <a href="https://pathfinder.kairos-project.org/" target="_blank" rel="noopener noreferrer">Pathfinder Fellowship</a>.</li>
               <li>Attended OASIS 7.0, a weeklong conference organized by <a href="https://kairos-project.org/" target="_blank" rel="noopener noreferrer">Kairos</a>, alongside other AI safety group organizers at the <a href="https://constellation.org/" target="_blank" rel="noopener noreferrer">Constellation</a> office in Berkeley.</li>
-              <li>Attended <a href="https://www.effectivealtruism.org/ea-global" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "underline", textUnderlineOffset: "3px", backgroundImage: "none" }}>EAGxBerkeley</a>.</li>
+              <li>Attended <a href="https://www.effectivealtruism.org/ea-global" target="_blank" rel="noopener noreferrer">EAGxBerkeley</a>.</li>
             </ul>
           </div>
         </div>

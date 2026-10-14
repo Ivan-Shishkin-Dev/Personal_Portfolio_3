@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function EducationPage() {
   return (
     <SectionLayout slug="education">
-      <div className="entries" style={{ marginTop: -20 }}>
+      <div className="entries">
         <div className="entry">
           <div className="education-heading">
             <div className="who">B.S. in Computer Science, <em>UC Irvine</em></div>
@@ -27,7 +27,7 @@ export default function EducationPage() {
         </div>
       </div>
 
-      <h2 style={{ fontFamily: "var(--ser)", fontSize: "1.625rem", fontWeight: 400, margin: "32px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>School Activities</em></h2>
+      <h2>School activities</h2>
       <ul className="hobbies">
         <HobbyItem title="Sigma Pi" summary="Eta-Upsilon Chapter." titleHref="https://sigmapi.org/" alwaysOpen>
           <ul>
@@ -52,25 +52,11 @@ export default function EducationPage() {
         </HobbyItem>
       </ul>
 
-      <h2 style={{ fontFamily: "var(--ser)", fontSize: "1.625rem", fontWeight: 400, margin: "60px 0 20px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)" }}><em>Standout Coursework</em></h2>
-      <div className="courses">
-        <div className="course"><span className="code">ICS 33</span><span>Intermediate Programming in Python</span></div>
-        <div className="course"><span className="code">ICS 6D</span><span>Discrete Math for CS</span></div>
-        <div className="course"><span className="code">MATH 2B</span><span>Calculus II</span></div>
-        <div className="course"><span className="code">STATS 67</span><span>Probability & Statistics for CS</span></div>
-        <div className="course"><span className="code">MATH 3A</span><span>Linear Algebra</span></div>
-        <div className="course"><span className="code">ICS 46</span><span>Data Structure Implementation & Analysis (in C++)</span></div>
-        <div className="course"><span className="code">ICS 51</span><span>Computer Organization</span></div>
-        <div className="course"><span className="code">INF 43</span><span>Software Engineering</span></div>
-        <div className="course"><span className="code">CS 161</span><span>Design & Analysis of Algorithms</span></div>
-        <div className="course"><span className="code">CS 178</span><span>Machine Learning & Data Mining</span></div>
-      </div>
-
-      <h2 id="self-education" style={{ fontFamily: "var(--ser)", fontSize: "1.625rem", fontWeight: 400, margin: "60px 0 12px", paddingBottom: 6, borderBottom: "0.5px solid var(--rule)", scrollMarginTop: 90 }}><em>Self-Education</em></h2>
-      <p style={{ marginBottom: 8 }}>
+      <h2 id="self-education">Self-education</h2>
+      <p>
         As I&apos;ve mentioned, this is something I really care about. The link below takes you to what I&apos;ve been watching and reading.
       </p>
-      <p style={{ textAlign: "center", margin: "28px 0 0" }}>
+      <p>
         <Link className="media-name" href="/consumed-content">Consumed content</Link>
       </p>
     </SectionLayout>

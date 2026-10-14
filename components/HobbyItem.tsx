@@ -97,7 +97,7 @@ export default function HobbyItem({ title, summary, children, titleHref, alwaysO
               {summary}
             </button>
           </span>
-          <span className="hobby-mark" aria-hidden="true">+</span>
+          <span className="hobby-mark" aria-hidden="true">▸</span>
         </div>
       ) : (
         <button
@@ -110,7 +110,7 @@ export default function HobbyItem({ title, summary, children, titleHref, alwaysO
             <span className="hobby-title">{title}</span>
             <span className="hobby-summary">{summary}</span>
           </span>
-          <span className="hobby-mark" aria-hidden="true">+</span>
+          <span className="hobby-mark" aria-hidden="true">▸</span>
         </button>
       )}
       <div className="hobby-detail">

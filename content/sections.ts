@@ -1,46 +1,26 @@
 export type Section = {
-  index: number;
-  numeral: string;
   slug: string;
   title: string;
-  eyebrow: string;
+  icon: string;
+  eyebrow?: string;
 };
 
 export const sections: Section[] = [
   {
-    index: 1,
-    numeral: "I",
-    slug: "about",
-    title: "About",
-    eyebrow: "Learn more about me.",
-  },
-  {
-    index: 2,
-    numeral: "II",
     slug: "experience",
+    icon: "💼",
     title: "Experience",
-    eyebrow: "Jobs, internships, and volunteer work.",
   },
   {
-    index: 3,
-    numeral: "III",
     slug: "projects",
+    icon: "🛠️",
     title: "Projects",
-    eyebrow: "Things I've built.",
   },
   {
-    index: 4,
-    numeral: "IV",
     slug: "education",
+    icon: "🎓",
     title: "Education",
     eyebrow: "Main focus.",
-  },
-  {
-    index: 5,
-    numeral: "V",
-    slug: "contact",
-    title: "Contact",
-    eyebrow: "Ways to reach me.",
   },
 ];
 
@@ -48,15 +28,4 @@ export function getSection(slug: string): Section {
   const s = sections.find((sec) => sec.slug === slug);
   if (!s) throw new Error(`Unknown section slug: ${slug}`);
   return s;
-}
-
-export function getNeighbors(slug: string): {
-  prev: Section | null;
-  next: Section | null;
-} {
-  const i = sections.findIndex((sec) => sec.slug === slug);
-  return {
-    prev: i > 0 ? sections[i - 1] : null,
-    next: i >= 0 && i < sections.length - 1 ? sections[i + 1] : null,
-  };
 }
