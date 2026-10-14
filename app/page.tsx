@@ -76,48 +76,39 @@ export default function Home() {
           <TerminalButton variant="hint" />
 
           <div className="home-text">
-            <p className="home-lede">
-              I&rsquo;m a computer science student at UC Irvine. I care most
-              about{" "}
+            <p>
+              Someone stuck around! Just kidding. Like I mentioned above, I care
+              about making sure{" "}
               <Ext href="https://80000hours.org/problem-profiles/artificial-intelligence/">
-                reducing risks from AI systems
+                AI goes well for humanity
               </Ext>
-              , and I help run the{" "}
-              <Ext href="https://aisafetyuci.org/team">AI Safety Collective at UCI</Ext>.
-            </p>
-            <aside className="callout">
-              <span className="callout-icon" aria-hidden="true">💡</span>
-              <p>
-                I try to{" "}
-                <Ext href="https://usefulfictions.substack.com/p/how-to-increase-your-surface-area">
-                  get lucky on purpose
-                </Ext>{" "}
-                and{" "}
-                <Ext href="https://www.benkuhn.net/abyss/">
-                  look directly at what scares me
-                </Ext>
-                .
-              </p>
-            </aside>
-            <p>
-              Most of my time goes to three things. With AI, I build using the
-              newest tooling, try new models as they ship, and follow safety
-              research. With software, my{" "}
-              <Link href="/projects">projects</Link> are where those ideas get
-              tested. And I spend a lot of time learning from people smarter
-              than me: reading, podcasts on long walks, and long conversations
-              with people unlike me. Much of that shows up under{" "}
-              <Link href="/education#self-education">self-education</Link>.
+              . The way I&rsquo;m currently doing that is by helping direct the{" "}
+              <Ext href="https://aisafetyuci.org/team">AI Safety Collective</Ext>,
+              although I&rsquo;ve had previous stints doing other work in the AI
+              safety space and am always looking for more opportunities.
             </p>
             <p>
-              I grew up in Russia as the &ldquo;math guy,&rdquo; somewhere that
-              rewarded resilience over comfort. It made me someone who acts on
-              life rather than reacts to it.
+              Something that generally summarizes me as a person: I try to{" "}
+              <Ext href="https://usefulfictions.substack.com/p/how-to-increase-your-surface-area">
+                get lucky on purpose
+              </Ext>{" "}
+              and{" "}
+              <Ext href="https://www.benkuhn.net/abyss/">
+                look directly at what scares me
+              </Ext>
+              . I also tend to be pathologically ambitious, for better and for
+              worse. I love to get things done quickly, efficiently, and with
+              great care. Something I had on my previous website said: I grew up
+              in conditions that rewarded resilience over comfort, which made me
+              someone who acts on life rather than reacts to it.
             </p>
             <p>
-              Outside of that I lift, tinker with PCs, Linux, and Neovim, and
-              sometimes get <Ext href="https://xkcd.com/356/">nerd sniped</Ext>.
-              This isn&rsquo;t all that I do, so talk to me to find out more.
+              I&rsquo;m also a lifelong learner. I never want the learning I do
+              in life to be confined by my major. I enjoy learning all sorts of
+              things: tech, philosophy, biology (roughly), biomechanics (big
+              words for lifting), nutrition, rationality (new pickup), and many
+              others. I do this by surrounding myself with people much better
+              than me and learning through osmosis.
             </p>
           </div>
 

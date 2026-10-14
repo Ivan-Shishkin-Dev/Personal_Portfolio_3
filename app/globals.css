@@ -358,18 +358,6 @@ code {
 .tldr li::marker { color: var(--ink); }
 .home-text p { text-wrap: pretty; }
 .home-text p:last-child { margin-bottom: 0; }
-.home-text .home-lede { font-size: 1.0625rem; line-height: 1.5; }
-
-.callout {
-  display: flex;
-  gap: 12px;
-  margin: 4px 0 20px;
-  padding: 16px 16px 16px 12px;
-  border-radius: 4px;
-  background: var(--paper);
-}
-.callout-icon { flex: none; font-size: 1.25rem; line-height: 1.4; }
-.callout p { margin: 0; }
 
 /* ── Page head ──────────────────────────────── */
 .section-head { margin: clamp(32px, 7vh, 72px) 0 28px; }
