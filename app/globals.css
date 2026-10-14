@@ -683,15 +683,6 @@ article h2,
 .entries .group-label:first-child { margin-top: 0; }
 
 .dll-gallery { margin-top: 24px; }
-.dll-gallery-heading {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 4px 16px;
-  margin-bottom: 12px;
-  font-size: 0.9375rem;
-  color: var(--muted);
-}
 .dll-gallery-strip {
   display: flex;
   gap: 12px;
@@ -831,33 +822,6 @@ article h2,
 .media-name::after {
   content: " →";
   color: var(--subtle);
-}
-
-/* ── Coursework grid ────────────────────────── */
-.courses {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px 28px;
-}
-@media (min-width: 560px) { .courses { grid-template-columns: 1fr 1fr; } }
-.courses .course {
-  display: flex;
-  align-items: baseline;
-  gap: 12px;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--rule);
-  font-size: 1.0625rem;
-}
-.courses .code {
-  font-family: var(--mono), ui-monospace, monospace;
-  font-size: 0.8125rem;
-  color: var(--code-ink);
-  background: var(--code-bg);
-  border-radius: 4px;
-  padding: 1px 6px;
-  min-width: 84px;
-  text-align: center;
-  flex-shrink: 0;
 }
 
 /* ── Consumed content ───────────────────────────── */

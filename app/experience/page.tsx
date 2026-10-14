@@ -19,7 +19,7 @@ export default function ExperiencePage() {
             <ul>
               <li>Built grade 6&ndash;8 science curricula that teach subject matter and AI literacy together, aligned with California&rsquo;s Science Standards and piloted across Orange County districts.</li>
               <li>Co-led the design of <a href="https://sinq.studio" target="_blank" rel="noopener noreferrer">Science Inquiry Studio</a> and the Science + AI team, prototyping games and simulations that fold LLMs, data handling, and ethics directly into the lessons.</li>
-              <li>Built the authoring tools that let teachers adapt our templates to how they actually teach.</li>
+              <li>Built the authoring tools that let teachers adapt our templates to how they actually teach, or how they think others would like to teach.</li>
             </ul>
           </div>
           <DllGallery />

@@ -30,10 +30,6 @@ export default function DllGallery() {
 
   return (
     <section className="dll-gallery" aria-label="Digital Learning Lab photos">
-      <div className="dll-gallery-heading">
-        <span>Moments from the lab</span>
-        <span>5 photos · Click to expand</span>
-      </div>
       <div className="dll-gallery-strip">
         {photos.map((item, index) => (
           <button

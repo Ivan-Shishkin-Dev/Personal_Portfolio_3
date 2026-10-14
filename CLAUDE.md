@@ -49,7 +49,7 @@ A searchable list of everything Ivan has read, watched, or listened to. `content
 - Section pages should be just prose inside `<SectionLayout>`. Don't add layout chrome.
 - One link style everywhere: ink text with a 1px grey underline, Notion blue on hover (`.page a` in `globals.css`). Buttons that act like links (`.copy-link`, `.feedback-trigger`) share it. Don't add per-component link colours.
 - Reach for Notion's own block vocabulary (callout, toggle, inline `code`, properties, sub-page links) before inventing new chrome.
-- Monospace is for terminal-flavoured things only: the terminal, the `>_` launcher, `code`, course codes. Prose stays in Inter.
+- Monospace is for terminal-flavoured things only: the terminal, the `>_` launcher and home hint, `code`. Prose stays in Inter.
 - No all-caps letter-spaced labels, no italic or coloured headings, no Roman numerals. Hierarchy comes from size, weight, and `--muted`.
 - The terminal is the one dark surface (`--term-*` tokens). It does not make the site dark-mode.
 - Light-mode only. No theme toggle, no `data-theme` switching — the `:root` tokens in `app/globals.css` are the sole palette.

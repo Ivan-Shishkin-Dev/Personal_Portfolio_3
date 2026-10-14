@@ -52,20 +52,6 @@ export default function EducationPage() {
         </HobbyItem>
       </ul>
 
-      <h2>Standout coursework</h2>
-      <div className="courses">
-        <div className="course"><span className="code">ICS 33</span><span>Intermediate Programming in Python</span></div>
-        <div className="course"><span className="code">ICS 6D</span><span>Discrete Math for CS</span></div>
-        <div className="course"><span className="code">MATH 2B</span><span>Calculus II</span></div>
-        <div className="course"><span className="code">STATS 67</span><span>Probability & Statistics for CS</span></div>
-        <div className="course"><span className="code">MATH 3A</span><span>Linear Algebra</span></div>
-        <div className="course"><span className="code">ICS 46</span><span>Data Structure Implementation & Analysis (in C++)</span></div>
-        <div className="course"><span className="code">ICS 51</span><span>Computer Organization</span></div>
-        <div className="course"><span className="code">INF 43</span><span>Software Engineering</span></div>
-        <div className="course"><span className="code">CS 161</span><span>Design & Analysis of Algorithms</span></div>
-        <div className="course"><span className="code">CS 178</span><span>Machine Learning & Data Mining</span></div>
-      </div>
-
       <h2 id="self-education">Self-education</h2>
       <p>
         As I&apos;ve mentioned, this is something I really care about. The link below takes you to what I&apos;ve been watching and reading.
