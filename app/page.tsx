@@ -108,7 +108,11 @@ export default function Home() {
               things: tech, philosophy, biology (roughly), biomechanics (big
               words for lifting), nutrition, rationality (new pickup), and many
               others. I do this by surrounding myself with people much better
-              than me and learning through osmosis.
+              than me and learning through osmosis. When I&rsquo;m alone, I
+              still &ldquo;surround&rdquo; myself with people better than me
+              by putting them in my ears (or on my screen): long-form YouTube
+              essays and lectures, blogs and Substacks, and Twitter/X for live
+              AI and tech discourse.
             </p>
           </div>
 
