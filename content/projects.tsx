@@ -166,7 +166,7 @@ export const projects: Project[] = [
       },
     ],
     year: "2026",
-    group: "Personal Portfolios",
+    group: "Personal portfolios",
   },
   {
     title: "Personal_Portfolio_2",
@@ -179,7 +179,7 @@ export const projects: Project[] = [
       },
     ],
     year: "2025",
-    group: "Personal Portfolios",
+    group: "Personal portfolios",
   },
   {
     title: "Personal_Portfolio_1",
@@ -193,6 +193,6 @@ export const projects: Project[] = [
       },
     ],
     year: "2025",
-    group: "Personal Portfolios",
+    group: "Personal portfolios",
   },
 ];

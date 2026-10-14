@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import SiteHeader from "@/components/SiteHeader";
+import PageHead from "@/components/PageHead";
+import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import ConsumedContent from "@/components/ConsumedContent";
 
@@ -12,21 +12,15 @@ export const metadata: Metadata = {
 export default function ConsumedContentPage() {
   return (
     <main className="page" data-screen-label="Consumed Content">
-      <SiteHeader />
-      <nav className="subnav">
-        <Link className="home" href="/education#self-education">← Education</Link>
-        <span className="sep">/</span>
-        <span>Consumed Content</span>
-      </nav>
-      <header className="section-head section-head-tight">
-        <div className="title-row">
-          <span className="num mark">§</span>
-          <h1>Consumed Content</h1>
-        </div>
-      </header>
+      <PageHead
+        title="Consumed content"
+        backHref="/education#self-education"
+        backLabel="Education"
+      />
       <article>
         <ConsumedContent />
       </article>
+      <SiteNav />
       <SiteFooter />
     </main>
   );

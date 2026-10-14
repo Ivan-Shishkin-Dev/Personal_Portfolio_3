@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Spectral, Inter, JetBrains_Mono } from "next/font/google";
+import { Spectral } from "next/font/google";
 import "./globals.css";
 
 const spectral = Spectral({
@@ -7,20 +7,6 @@ const spectral = Spectral({
   weight: ["300", "400", "500"],
   style: ["normal", "italic"],
   variable: "--ser",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--sans",
-  display: "swap",
-});
-
-const mono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--mono",
   display: "swap",
 });
 
@@ -46,7 +32,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spectral.variable} ${inter.variable} ${mono.variable}`}
+      className={spectral.variable}
     >
       <body>{children}</body>
     </html>

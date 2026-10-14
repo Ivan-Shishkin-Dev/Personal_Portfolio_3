@@ -2,21 +2,27 @@
 
 ## What this is
 
-Ivan Shishkin's personal portfolio — a UC Irvine CS student site with a typography-forward, Anthropic Claude-inspired editorial aesthetic. Cream paper palette (#fbf6ea bg, rust accent #7a3d1d), Spectral serif body, Inter sans labels, JetBrains Mono counters, single 640px column, numerated sections I–V.
+Ivan Shishkin's personal portfolio — a UC Irvine CS student site in a plain, Notion-style layout: one column of prose, sentence-case headings, underlined links. Cream page (`--bg` #f5efe2), ink text, and a rust accent (#7a3d1d) that appears only on hover and focus. Spectral is the only typeface.
 
 ## Stack
 
 - Next.js 16 (App Router) + React 19 + TypeScript
-- Fonts via `next/font/google` exposed as `--ser`, `--sans`, `--mono` in `app/layout.tsx`
+- Spectral via `next/font/google`, exposed as `--ser` in `app/layout.tsx`
 - Plain CSS in `app/globals.css` — no Tailwind, no CSS Modules
 - Static content modules under `content/` (`sections.ts`, `projects.tsx`, `contacts.ts`, `consumed.ts`). `projects.tsx` because project blurbs accept inline JSX (e.g. cross-link from Construction-Verification into `/experience`)
 - Deployed on Vercel
 
 ## Architecture
 
-The home page (`app/page.tsx`) is its own composition: hero portrait, bio, principle pull-quote, and the anonymous-feedback modal (`FeedbackForm`, posts to web3forms). Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>` — `SectionLayout` renders the subnav, section head, children, `Pager`, and footer. `content/sections.ts` is the single source of truth for navigation order, Roman numerals, and section eyebrows.
+The home page (`app/page.tsx`) is the merged home + about: a header with the round headshot beside the name and a link row, then the bio as prose. The link row reads from `content/contacts.ts` — an entry with `copy` renders as a click-to-copy button (`CopyLink`), the rest as external links — followed by the anonymous-feedback modal trigger (`FeedbackForm`, posts to web3forms).
 
-`/consumed-content` is the one exception. It builds its own shell from `SiteHeader`/`SiteFooter` rather than `SectionLayout`, because `getSection` throws on any slug missing from `sections.ts` — and keeping it out of that file is what keeps it out of the nav, the header menu, and the `Pager`. It is reachable only from the Self-Education link on `/education`, which is deliberate. It is still in `sitemap.xml` and indexable.
+Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>`. `SectionLayout` renders `PageHead` (a back link to home, the title, and the section's one-line `eyebrow` as a subtitle), the children, `SiteNav`, and `SiteFooter`. `content/sections.ts` is the single source of truth for navigation order and those subtitles.
+
+Navigation lives at the bottom of every page. `SiteNav` is a plain link row; sub-pages get a Home link in it, the home page does not. There is no top bar — on sub-pages the back link in `PageHead` is the way home.
+
+`/consumed-content` is the one exception. It composes `PageHead`/`SiteNav`/`SiteFooter` itself rather than using `SectionLayout`, because `getSection` throws on any slug missing from `sections.ts` — and keeping it out of that file is what keeps it out of the nav. It is reachable only from the Self-Education link on `/education`, which is deliberate. It is still in `sitemap.xml` and indexable.
+
+`/about` and `/contact` no longer exist; `next.config.ts` redirects both to `/` so old links still land.
 
 ## Consumed Content (`/consumed-content`)
 
@@ -32,19 +38,22 @@ A searchable list of everything Ivan has read, watched, or listened to. `content
 
 - Design tokens in `app/globals.css` are stable. Adjust them; don't fight them with per-component overrides.
 - Section pages should be just prose inside `<SectionLayout>`. Don't add layout chrome.
+- One link style everywhere: ink text with a hairline underline, rust on hover (`.page a` in `globals.css`). Buttons that act like links (`.copy-link`, `.feedback-trigger`) share it. Don't add per-component link colours.
+- No all-caps letter-spaced labels, no italic or coloured headings, no Roman numerals. Hierarchy comes from size, weight, and `--muted`.
 - Light-mode only. No theme toggle, no `data-theme` switching — the `:root` tokens in `app/globals.css` are the sole palette.
 - No code comments unless the *why* is non-obvious. Don't narrate WHAT the code does — well-named identifiers handle that.
 
 ## Don't (without asking)
 
 - Replace plain CSS with Tailwind or CSS-in-JS
-- Redesign typography — Spectral / Inter / JetBrains Mono are deliberate
-- Add a state library, CMS, or testing framework. This is a small static portfolio (home + five section pages + `/consumed-content`).
+- Add a second typeface — the site is Spectral only, on purpose
+- Add a state library, CMS, or testing framework. This is a small static portfolio (home + three section pages + `/consumed-content`).
 - Add `/consumed-content` to `content/sections.ts`, or link it from anywhere but `/education` — it is meant to be found only there.
 - Hotlink favicons at runtime, or hand-edit the generated `content/favicons.ts`.
-- Add a general contact form. The anonymous-feedback modal on home and the click-to-copy email on `/contact` are intentional.
+- Add a general contact form or bring back a contact page. The anonymous-feedback modal and the click-to-copy email in the home link row are intentional.
+- Bring back a top nav bar, or split the bio back out into an about page.
 - Reintroduce a dark mode or theme toggle — site is intentionally light-only.
-- Widen `--maxw` (640px) or change `--gap` (60px) casually
+- Change `--maxw` (760px, 1000px from 1024px up) casually
 
 ## Workflow
 
@@ -54,7 +63,7 @@ A searchable list of everything Ivan has read, watched, or listened to. `content
 
 ## Routes
 
-`/`, `/about`, `/experience`, `/projects`, `/education`, `/contact`, `/consumed-content`
+`/`, `/experience`, `/projects`, `/education`, `/consumed-content`
 
 ## Deploy
 
