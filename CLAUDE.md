@@ -27,7 +27,7 @@ Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>`. `Secti
 - The filesystem is derived, not hand-kept: `~` is home, each entry in `sections.ts` is a directory, and `~/education/consumed-content` maps to `/consumed-content` — so it only shows up when you `ls` inside education, keeping it out of the top-level listing.
 - `cd` navigates with the router and closes the terminal; `cwd` comes from the current pathname.
 - `open <name>` and `email` read from `content/contacts.ts`. New contacts with an `href` and `label` become `open` targets automatically.
-- Commands: help, ls, cd, pwd, cat, whoami, open, email, echo, clear, exit (+ a `sudo` joke). Tab completes, ↑/↓ walk history, Ctrl+L clears, Ctrl+C cancels.
+- Every command should *do* something (navigate, open, copy, close) or be a deliberate joke; no commands that just print static text. Listed in `help`: help, ls, cd, open, email, read (random `/consumed-content` entry), xkcd, cowsay, clear, exit. Hidden: vim/nvim/vi, :q/:q!/:wq, sudo, rm. Tab completes, ↑/↓ walk history, Ctrl+L clears, Ctrl+C cancels.
 
 `/consumed-content` is the one exception. It composes `Topbar`/`PageHead`/`SiteNav`/`SiteFooter` itself rather than using `SectionLayout`, because `getSection` throws on any slug missing from `sections.ts` — and keeping it out of that file is what keeps it out of the nav. It is linked from two places only: the Self-Education link on `/education` and the reading bullet in the home TL;DR. It stays out of the nav on purpose. It is still in `sitemap.xml` and indexable.
 

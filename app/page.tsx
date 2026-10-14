@@ -77,8 +77,7 @@ export default function Home() {
 
           <div className="home-text">
             <p>
-              Someone stuck around! Just kidding. Like I mentioned above, I care
-              about making sure{" "}
+              Like I mentioned above, I care about making sure{" "}
               <Ext href="https://80000hours.org/problem-profiles/artificial-intelligence/">
                 AI goes well for humanity
               </Ext>
