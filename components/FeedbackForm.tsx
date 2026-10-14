@@ -9,7 +9,7 @@ const SUBJECT = "Anonymous feedback — ivanshishkin.com";
 
 type Status = "idle" | "sending" | "success" | "error";
 
-export default function FeedbackForm() {
+export default function FeedbackForm({ label = "Anonymous feedback" }: { label?: string }) {
   const [open, setOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const [message, setMessage] = useState("");
@@ -84,7 +84,7 @@ export default function FeedbackForm() {
         className="feedback-trigger"
         onClick={() => setOpen(true)}
       >
-        Anonymous feedback
+        {label}
       </button>
 
       {mounted && open &&

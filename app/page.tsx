@@ -115,6 +115,13 @@ export default function Home() {
               <Ext href="https://x.com/ivan_shishkin_">Twitter/X</Ext> for live
               AI and tech discourse.
             </p>
+            <p>
+              Generally, I care about doing life right. The way I do this is by
+              getting a large picture of the world and continuously updating
+              that picture. You can help me do this by filling out an{" "}
+              <FeedbackForm label="anonymous feedback form" /> and telling me
+              what you think.
+            </p>
           </div>
 
           <SiteNav />
