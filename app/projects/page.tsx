@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Fragment } from "react";
 import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
+import Toggle from "@/components/Toggle";
+import ExpandAll from "@/components/ExpandAll";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
@@ -11,40 +13,33 @@ export const metadata: Metadata = {
 
 const isExternalHref = (href: string) => /^(https?:|mailto:)/.test(href);
 
+function ProjectTitle({ title, href }: { title: string; href?: string }) {
+  if (!href) return <>{title}</>;
+  if (isExternalHref(href)) {
+    return (
+      <a className="project-title-link" href={href} target="_blank" rel="noopener noreferrer">
+        {title}
+      </a>
+    );
+  }
+  return (
+    <Link className="project-title-link" href={href}>
+      {title}
+    </Link>
+  );
+}
+
 export default function ProjectsPage() {
   return (
     <SectionLayout slug="projects">
-      <div className="entries">
-        {projects.map((p, i) => {
-          return (
+      <ExpandAll />
+      <div className="toggles">
+        {projects.map((p, i) => (
           <Fragment key={p.title}>
             {projects[i - 1]?.group !== p.group && (
               <h2 className="group-label">{p.group}</h2>
             )}
-            <article className="project">
-              <div className="project-head">
-                <h3>
-                  {p.href ? (
-                    isExternalHref(p.href) ? (
-                      <a
-                        className="project-title-link"
-                        href={p.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {p.title}
-                      </a>
-                    ) : (
-                      <Link className="project-title-link" href={p.href}>
-                        {p.title}
-                      </Link>
-                    )
-                  ) : (
-                    p.title
-                  )}
-                </h3>
-                <span className="year">{p.year}</span>
-              </div>
+            <Toggle title={<ProjectTitle title={p.title} href={p.href} />} meta={p.year}>
               <p className="blurb">{p.blurb}</p>
               {p.video && (
                 <video
@@ -60,10 +55,9 @@ export default function ProjectsPage() {
                   <a href={p.video.src}>Download the demo video.</a>
                 </video>
               )}
-            </article>
+            </Toggle>
           </Fragment>
-          );
-        })}
+        ))}
       </div>
     </SectionLayout>
   );

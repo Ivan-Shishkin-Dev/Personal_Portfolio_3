@@ -2,7 +2,6 @@ export type Section = {
   slug: string;
   title: string;
   icon: string;
-  eyebrow?: string;
 };
 
 export const sections: Section[] = [
@@ -20,7 +19,6 @@ export const sections: Section[] = [
     slug: "education",
     icon: "🎓",
     title: "Education",
-    eyebrow: "Main focus.",
   },
 ];
 
