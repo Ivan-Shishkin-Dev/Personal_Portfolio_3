@@ -111,7 +111,8 @@ export default function Home() {
               than me and learning through osmosis. When I&rsquo;m alone, I
               still &ldquo;surround&rdquo; myself with people better than me
               by putting them in my ears (or on my screen): long-form YouTube
-              essays and lectures, blogs and Substacks, and Twitter/X for live
+              essays and lectures, blogs and Substacks, and{" "}
+              <Ext href="https://x.com/ivan_shishkin_">Twitter/X</Ext> for live
               AI and tech discourse.
             </p>
           </div>

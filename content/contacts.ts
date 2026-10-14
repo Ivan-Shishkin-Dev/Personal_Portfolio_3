@@ -32,4 +32,10 @@ export const contacts: Contact[] = [
     handle: "/in/ivan-shishkin-dev",
     href: "https://www.linkedin.com/in/ivan-shishkin-dev/",
   },
+  {
+    intent: "Live takes",
+    label: "X",
+    handle: "@ivan_shishkin_",
+    href: "https://x.com/ivan_shishkin_",
+  },
 ];
