@@ -16,7 +16,9 @@ Ivan Shishkin's personal portfolio — a UC Irvine CS student site styled like a
 
 The home page (`app/page.tsx`) is the merged home + about, laid out as a Notion page: the headshot as the page icon, the name as title, then a properties list read from `content/contacts.ts` — an entry with `copy` renders as a click-to-copy button (`CopyLink`), the rest as external links showing their `handle` — plus a Feedback row with the anonymous-feedback modal (`FeedbackForm`, posts to web3forms). The bio follows as prose with one 💡 callout.
 
-Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>`. `SectionLayout` renders `Topbar` (sticky Notion breadcrumb + terminal launcher), `PageHead` (emoji icon, title, the section's one-line `eyebrow` as subtitle), the children, `SiteNav`, and `SiteFooter`. `content/sections.ts` is the single source of truth for navigation order, icons, and subtitles.
+Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>`. `SectionLayout` renders `Topbar` (sticky Notion breadcrumb + terminal launcher), `PageHead` (emoji icon and title — section pages have no subtitle), the children, `SiteNav`, and `SiteFooter`. `content/sections.ts` is the single source of truth for navigation order and icons.
+
+Entry lists on Experience, Projects, and Education use `Toggle` (with `ExpandAll` above them) — a native `<details>` that shows one line (title + dates) and expands to the full entry. `OpenHashTarget` in `SectionLayout` opens a toggle when a URL hash points at it (e.g. `/experience#digital-learning-lab`).
 
 `Topbar` is a breadcrumb, not a nav menu: "Ivan Shishkin / <page>" is the way home. Section navigation is `SiteNav` at the bottom of every page — a Notion-style list of sub-page links (icon + title).
 
