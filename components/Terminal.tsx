@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { sections } from "@/content/sections";
 import { contacts } from "@/content/contacts";
+import { consumed } from "@/content/consumed";
 
 export const OPEN_TERMINAL = "terminal:open";
 
@@ -16,30 +17,40 @@ const ROUTES: Record<string, string> = {
   [`${HOME}/education/consumed-content`]: "/consumed-content",
 };
 
-const FILES: Record<string, Record<string, string>> = {
-  [HOME]: {
-    "README.md":
-      "Ivan Shishkin. CS student at UC Irvine. Cares most about reducing risks from AI systems; helps run the AI Safety Collective at UCI.",
-  },
-};
-
 const LINKS = Object.fromEntries(
   contacts.filter((c) => c.href).map((c) => [c.label!.toLowerCase(), c.href!]),
 );
 const EMAIL = contacts.find((c) => c.copy)?.copy ?? "";
 
+const READING = consumed.filter((c) => c.url);
+
 const COMMANDS: [string, string][] = [
   ["help", "list commands"],
   ["ls [dir]", "list pages"],
   ["cd <dir>", "go to a page (cd .. / cd ~)"],
-  ["pwd", "print current page"],
-  ["cat <file>", "print a file"],
-  ["whoami", "who runs this place"],
   ["open <name>", `open ${Object.keys(LINKS).join(", ")}`],
   ["email", "copy my email address"],
+  ["read", "open something random I've read or watched"],
+  ["xkcd", "open the comic that explains me"],
+  ["cowsay <msg>", "a cow says it"],
   ["clear", "clear the screen (ctrl+l)"],
-  ["exit", "close the terminal (esc)"],
+  ["exit", "close the terminal (esc, :q)"],
 ];
+
+function cowsay(msg: string): string {
+  const text = msg || "moo";
+  const bar = "-".repeat(text.length + 2);
+  return [
+    ` ${bar}`,
+    `< ${text} >`,
+    ` ${bar}`,
+    "        \\   ^__^",
+    "         \\  (oo)\\_______",
+    "            (__)\\       )\\/\\",
+    "                ||----w |",
+    "                ||     ||",
+  ].join("\n");
+}
 
 type Line =
   | { kind: "cmd"; cwd: string; text: string }
@@ -165,12 +176,10 @@ export default function Terminal() {
         const dir = arg ? resolve(cwd, arg) : cwd;
         if (!dir) return out(`ls: ${arg}: No such directory`, "err");
         const dirs = childrenOf(dir);
-        const files = Object.keys(FILES[dir] ?? {});
-        if (!dirs.length && !files.length) return out("(empty)", "muted");
+        if (!dirs.length) return out("(empty)", "muted");
         return out(
           <span className="term-ls">
             {dirs.map((d) => <span key={d} className="term-dir">{d}/</span>)}
-            {files.map((f) => <span key={f}>{f}</span>)}
           </span>,
         );
       }
@@ -180,15 +189,6 @@ export default function Terminal() {
         if (dir !== cwd) go(dir);
         return [];
       }
-      case "pwd":
-        return out(cwd);
-      case "cat": {
-        const text = FILES[cwd]?.[arg];
-        if (!arg) return out("cat: which file? try `ls`", "err");
-        return text ? out(text) : out(`cat: ${arg}: No such file`, "err");
-      }
-      case "whoami":
-        return out("Ivan Shishkin — CS @ UC Irvine, working toward safer AI.");
       case "open": {
         const href = LINKS[arg.toLowerCase()];
         if (!href) return out(`open: try one of: ${Object.keys(LINKS).join(", ")}`, "err");
@@ -198,11 +198,28 @@ export default function Terminal() {
       case "email":
         navigator.clipboard.writeText(EMAIL);
         return out(`copied ${EMAIL} to clipboard`);
-      case "echo":
-        return out(arg);
+      case "read": {
+        const pick = READING[Math.floor(Math.random() * READING.length)];
+        window.open(pick.url, "_blank", "noopener,noreferrer");
+        return out(`opening "${pick.title}"`, "muted");
+      }
+      case "xkcd":
+        window.open("https://xkcd.com/356/", "_blank", "noopener,noreferrer");
+        return out("opening xkcd 356: nerd sniping", "muted");
+      case "cowsay":
+        return out(cowsay(arg));
+      case "vim":
+      case "nvim":
+      case "vi":
+        return out("you're already in my terminal. type :q to leave (it works here, promise)", "muted");
       case "sudo":
         return out("ivan is not in the sudoers file. This incident will be reported.", "err");
+      case "rm":
+        return out("rm: nice try. this site is read-only.", "err");
       case "exit":
+      case ":q":
+      case ":q!":
+      case ":wq":
         close();
         return [];
       default:
@@ -234,9 +251,7 @@ export default function Terminal() {
     const options =
       cmd === "open"
         ? Object.keys(LINKS)
-        : cmd === "cat"
-          ? Object.keys(FILES[cwd] ?? {})
-          : childrenOf(cwd).map((d) => d + "/").concat("../");
+        : childrenOf(cwd).map((d) => d + "/").concat("../");
     const hits = options.filter((o) => o.startsWith(partial));
     if (hits.length === 1) setInput(`${cmd} ${hits[0]}`);
     else if (hits.length > 1) {
