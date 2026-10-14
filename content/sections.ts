@@ -1,22 +1,26 @@
 export type Section = {
   slug: string;
   title: string;
+  icon: string;
   eyebrow: string;
 };
 
 export const sections: Section[] = [
   {
     slug: "experience",
+    icon: "💼",
     title: "Experience",
     eyebrow: "Jobs, internships, and volunteer work.",
   },
   {
     slug: "projects",
+    icon: "🛠️",
     title: "Projects",
     eyebrow: "Things I've built.",
   },
   {
     slug: "education",
+    icon: "🎓",
     title: "Education",
     eyebrow: "Main focus.",
   },

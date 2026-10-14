@@ -1,28 +1,18 @@
 import Link from "next/link";
 import { sections } from "@/content/sections";
 
-export default function SiteNav({
-  currentSlug,
-  home = false,
-}: {
-  currentSlug?: string;
-  home?: boolean;
-}) {
+export default function SiteNav({ currentSlug }: { currentSlug?: string }) {
   return (
-    <nav aria-label="Sections">
-      <ul className="link-row site-nav">
-        {!home && (
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-        )}
+    <nav aria-label="Pages" className="site-nav">
+      <ul className="subpages">
         {sections.map((s) => (
           <li key={s.slug}>
             <Link
               href={`/${s.slug}`}
               aria-current={s.slug === currentSlug ? "page" : undefined}
             >
-              {s.title}
+              <span className="subpage-icon" aria-hidden="true">{s.icon}</span>
+              <span className="subpage-title">{s.title}</span>
             </Link>
           </li>
         ))}

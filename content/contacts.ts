@@ -10,7 +10,8 @@ export type Contact = {
 export const contacts: Contact[] = [
   {
     intent: "Email",
-    handle: "click to copy",
+    label: "Email",
+    handle: "shishkinivan2006 ( at ) gmail ( dot ) com",
     copy: "shishkinivan2006@gmail.com",
   },
   {

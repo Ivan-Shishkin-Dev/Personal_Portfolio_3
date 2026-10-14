@@ -18,6 +18,7 @@ export default function CopyLink({ label, value }: { label: string; value: strin
       className="copy-link"
       onClick={onClick}
       aria-label={`Copy ${value} to clipboard`}
+      title="Click to copy"
     >
       <span aria-live="polite">{copied ? "Copied" : label}</span>
     </button>

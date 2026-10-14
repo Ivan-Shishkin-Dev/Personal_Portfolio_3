@@ -34,7 +34,7 @@ export default function Headshot() {
             quality={100}
             loading="eager"
           />
-          <span>Yep, this is me; some have said the face looks better in person.</span>
+          <span>I see you looking closer lol</span>
         </button>
       </div>
     </div>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageHead from "@/components/PageHead";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
+import Topbar from "@/components/Topbar";
 import ConsumedContent from "@/components/ConsumedContent";
 
 export const metadata: Metadata = {
@@ -11,17 +12,21 @@ export const metadata: Metadata = {
 
 export default function ConsumedContentPage() {
   return (
-    <main className="page" data-screen-label="Consumed Content">
-      <PageHead
-        title="Consumed content"
-        backHref="/education#self-education"
-        backLabel="Education"
+    <>
+      <Topbar
+        crumbs={[
+          { href: "/education", label: "Education", icon: "🎓" },
+          { href: "/consumed-content", label: "Consumed content", icon: "📚" },
+        ]}
       />
-      <article>
-        <ConsumedContent />
-      </article>
-      <SiteNav />
-      <SiteFooter />
-    </main>
+      <main className="page" data-screen-label="Consumed Content">
+        <PageHead icon="📚" title="Consumed content" />
+        <article>
+          <ConsumedContent />
+        </article>
+        <SiteNav />
+        <SiteFooter />
+      </main>
+    </>
   );
 }
