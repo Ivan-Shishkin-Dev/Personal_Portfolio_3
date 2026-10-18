@@ -937,4 +937,9 @@ export const consumed: ConsumedEntry[] = [
     author: "80,000 Hours",
     category: "Podcasts",
   },
+  {
+    title: "Why acausal dynamics are important",
+    url: "https://www.youtube.com/watch?v=_uLpUhL0Ejc",
+    author: "Like Minds",
+  },
 ];
