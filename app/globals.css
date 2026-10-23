@@ -351,6 +351,7 @@ code {
 .tldr li::marker { color: var(--ink); }
 .home-text p { text-wrap: pretty; }
 .home-text p:last-child { margin-bottom: 0; }
+.page-home .site-nav { margin-top: 24px; }
 
 /* ── Page head ──────────────────────────────── */
 .section-head { margin: clamp(32px, 7vh, 72px) 0 28px; }
