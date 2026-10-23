@@ -121,6 +121,14 @@ export default function Home() {
               <FeedbackForm label="anonymous feedback form" /> and telling me
               what you think.
             </p>
+            <p>
+              If you have reached this point, check out my career doc:
+              it&rsquo;s updated from time to time and is a less formal
+              version of this website, plus other thoughts I have.{" "}
+              <Ext href="https://docs.google.com/document/d/16fCT3eEBZ56480HVKWCUW6Aw1wc0PBnlsD2602c37rU/edit?tab=t.0">
+                Click me to go there.
+              </Ext>
+            </p>
           </div>
 
           <SiteNav />
