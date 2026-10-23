@@ -13,7 +13,7 @@ export default function Headshot() {
           src="/headshot.png"
           alt="Ivan Shishkin"
           fill
-          sizes="96px"
+          sizes="(max-width: 640px) 180px, 220px"
           quality={100}
           priority
         />
