@@ -81,9 +81,31 @@ export const projects: Project[] = [
   },
   {
     title: "GymTrak",
-    blurb:
-      "A gym tracker I built for myself because I am really into lifting and wanted full control of my app without paying for other stuff, good practice too.",
+    blurb: (
+      <>
+        A gym tracker I built for myself because I am really into lifting and
+        wanted full control of my app without paying for other stuff, good
+        practice too. Now being{" "}
+        <a
+          href="https://github.com/Ivan-Shishkin-Dev/gymtrak-swift-rewrite"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          rewritten natively in SwiftUI
+        </a>{" "}
+        for iPhone and Apple Watch, with a coach that sets targets from my own
+        lifting history.
+      </>
+    ),
     href: "https://github.com/Ivan-Shishkin-Dev/GymTrak",
+    year: "2026",
+    group: "Tinkering",
+  },
+  {
+    title: "SideDock",
+    blurb:
+      "A second dock for macOS that sits on the left or right edge of the screen next to the system Dock. Folder stacks, notification badges, auto-hide, and a settings panel for nearly everything.",
+    href: "https://github.com/Ivan-Shishkin-Dev/SideDock",
     year: "2026",
     group: "Tinkering",
   },
