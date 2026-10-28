@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
 import Toggle from "@/components/Toggle";
@@ -54,6 +55,21 @@ export default function ProjectsPage() {
                   Your browser does not support embedded video.{" "}
                   <a href={p.video.src}>Download the demo video.</a>
                 </video>
+              )}
+              {p.shots && (
+                <div className={p.shots.length > 1 ? "project-shots is-pair" : "project-shots"}>
+                  {p.shots.map((s) => (
+                    <Image
+                      key={s.src}
+                      className="project-shot"
+                      src={s.src}
+                      alt={s.alt}
+                      width={s.width}
+                      height={s.height}
+                      sizes={p.shots!.length > 1 ? "(max-width: 560px) 45vw, 240px" : "(max-width: 1024px) 100vw, 920px"}
+                    />
+                  ))}
+                </div>
               )}
             </Toggle>
           </Fragment>

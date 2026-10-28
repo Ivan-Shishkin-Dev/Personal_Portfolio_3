@@ -700,6 +700,22 @@ article h2,
   border-radius: 6px;
   background: var(--ink);
 }
+.project-shots {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 14px;
+}
+.project-shots.is-pair { max-width: 500px; }
+.project-shot {
+  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
 .project-title-link::after {
   content: " ↗";
   font-size: 0.8em;

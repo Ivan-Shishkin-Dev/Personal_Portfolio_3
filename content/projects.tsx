@@ -1,6 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
+export type Shot = { src: string; alt: string; width: number; height: number };
+
 export type Project = {
   title: string;
   blurb: ReactNode;
@@ -8,7 +10,15 @@ export type Project = {
   year: string;
   group: string;
   video?: { src: string; poster: string };
+  shots?: Shot[];
 };
+
+const shot = (name: string, alt: string, width: number, height: number): Shot => ({
+  src: `/images/projects/${name}.webp`,
+  alt,
+  width,
+  height,
+});
 
 export const projects: Project[] = [
   {
@@ -52,6 +62,9 @@ export const projects: Project[] = [
     title: "AI Safety Website",
     blurb: "The club site for AI Safety @ UCI.",
     href: "https://aisafetyuci.org/",
+    shots: [
+      shot("ai-safety-website", "AI Safety Collective at Irvine home page", 1600, 1000),
+    ],
     year: "2026",
     group: "Main / Jobs",
   },
@@ -60,6 +73,9 @@ export const projects: Project[] = [
     blurb:
       "A small pipeline that has Claude rewrite my Obsidian markdown notes. Markdown in, edits I can review back out.",
     href: "https://ivan-shishkin-dev.github.io/notes/",
+    shots: [
+      shot("notes", "Ivan's CS Notes home page, organized by quarter", 1600, 1000),
+    ],
     year: "2026",
     group: "Tinkering",
   },
@@ -68,6 +84,9 @@ export const projects: Project[] = [
     blurb:
       "A custom status line for Claude Code's terminal UI. A shell script that replaces the default bottom bar with something I'd rather look at.",
     href: "https://github.com/Ivan-Shishkin-Dev/ClaudeStatusBar",
+    shots: [
+      shot("claudestatusbar", "The status bar showing model, context use, and rate-limit meters", 1670, 94),
+    ],
     year: "2026",
     group: "Tinkering",
   },
@@ -76,6 +95,9 @@ export const projects: Project[] = [
     blurb:
       "My personal Neovim configuration. Plugins, keymaps, and tweaks shaped to how I actually edit.",
     href: "https://github.com/Ivan-Shishkin-Dev/Ivan-NeoVim",
+    shots: [
+      shot("neovim", "Neovim with a file tree open beside this site's Projects page code", 1600, 1183),
+    ],
     year: "2026",
     group: "Tinkering",
   },
@@ -98,6 +120,10 @@ export const projects: Project[] = [
       </>
     ),
     href: "https://github.com/Ivan-Shishkin-Dev/GymTrak",
+    shots: [
+      shot("gymtrak-pwa", "GymTrak web app Plan screen with the run plan and four lift days", 410, 989),
+      shot("gymtrak-swift", "GymTrak SwiftUI app Today screen with an adherence calendar", 660, 1434),
+    ],
     year: "2026",
     group: "Tinkering",
   },
@@ -114,6 +140,9 @@ export const projects: Project[] = [
     blurb:
       "A mobile social discovery app for meeting nearby people with shared interests, with strong privacy controls and an Interest Bingo mode that nudges users toward communities outside their bubble. Quarter-long team project for UCI's Informatics 43 (Introduction to Software Engineering).",
     href: "https://inf43-project-bingo.vercel.app",
+    shots: [
+      shot("bingo", "Bingo landing page with a nearby-match card", 1600, 1000),
+    ],
     year: "2026",
     group: "Hackathons / Class",
   },
@@ -122,6 +151,9 @@ export const projects: Project[] = [
     blurb:
       "Hackathon project. AI assistant for first-time renters that monitors listings, flags scams, and walks you through applying.",
     href: "https://v0-homepilot.vercel.app/",
+    shots: [
+      shot("homepilot", "HomePilot landing page with a renter dashboard preview", 1600, 1000),
+    ],
     year: "2026",
     group: "Hackathons / Class",
   },
@@ -130,6 +162,9 @@ export const projects: Project[] = [
     blurb:
       "The site you're on. Editorial, typography-forward, in Next.js 16. Third iteration of my personal page.",
     href: "https://github.com/Ivan-Shishkin-Dev/Personal_Portfolio_3",
+    shots: [
+      shot("portfolio-3", "This site's home page", 1600, 1000),
+    ],
     year: "2026",
     group: "Personal portfolios",
   },
@@ -137,6 +172,9 @@ export const projects: Project[] = [
     title: "Personal_Portfolio_2",
     blurb: "Personal site, version two. Hosted on GitHub Pages.",
     href: "https://ivan-shishkin-dev.github.io/Personal_Portfolio_2/",
+    shots: [
+      shot("portfolio-2", "Personal Portfolio 2 home page with a falling-code background", 1600, 1000),
+    ],
     year: "2025",
     group: "Personal portfolios",
   },
@@ -145,6 +183,9 @@ export const projects: Project[] = [
     blurb:
       "First personal site. Where I started learning what I wanted a personal page to feel like.",
     href: "https://ivan-shishkin-dev.github.io/Personal_Portfolio_1/",
+    shots: [
+      shot("portfolio-1", "Personal Portfolio 1 home page over a city skyline at night", 1600, 1000),
+    ],
     year: "2025",
     group: "Personal portfolios",
   },
