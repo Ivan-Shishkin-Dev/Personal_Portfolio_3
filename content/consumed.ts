@@ -952,4 +952,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.lesswrong.com/posts/3375SZNGA5dKHQMie/i-did-this-without-your-knowledge",
     author: "joec",
   },
+  {
+    title: "How an unelected man ruled New York for 30 years",
+    url: "https://www.youtube.com/watch?v=kX_WmQK_tt0",
+    author: "Dwarkesh Patel",
+  },
 ];
