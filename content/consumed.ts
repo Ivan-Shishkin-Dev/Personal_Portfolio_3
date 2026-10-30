@@ -103,6 +103,16 @@ const SOURCE_BY_HOST: Record<string, string> = {
   "nvidia.com": "NVIDIA",
   "arstechnica.com": "Ars Technica",
   "sive.rs": "Derek Sivers",
+  "aipolicyperspectives.com": "AI Policy Perspectives",
+  "planned-obsolescence.org": "Planned Obsolescence",
+  "ai-2040.com": "AI 2040",
+  "carnegieendowment.org": "Carnegie Endowment",
+  "cset.georgetown.edu": "CSET",
+  "epoch.ai": "Epoch AI",
+  "lawfaremedia.org": "Lawfare",
+  "antonleicht.me": "Anton Leicht",
+  "longtermresilience.org": "CLTR",
+  "radical-optionality.ai": "Radical Optionality",
 };
 
 export function hostOf(url: string): string {
@@ -951,5 +961,99 @@ export const consumed: ConsumedEntry[] = [
     title: "How an unelected man ruled New York for 30 years",
     url: "https://www.youtube.com/watch?v=kX_WmQK_tt0",
     author: "Dwarkesh Patel",
+  },
+  {
+    title: "When is a capability truly worrying?",
+    url: "https://www.aipolicyperspectives.com/p/when-is-a-capability-truly-worrying",
+    author: "Séb Krier",
+  },
+  {
+    title: "Takeoff speeds rule everything around me",
+    url: "https://www.planned-obsolescence.org/p/takeoff-speeds-rule-everything-around",
+    author: "Ajeya Cotra",
+  },
+  {
+    title: "AI 2040: Plan A",
+    url: "https://ai-2040.com/",
+    author: "AI Futures Project",
+  },
+  {
+    title: "Task-Completion Time Horizons of Frontier AI Models",
+    url: "https://metr.org/time-horizons/",
+    author: "METR",
+  },
+  {
+    title: "How China Views AI Risks and What to Do About Them",
+    url: "https://carnegieendowment.org/russia-eurasia/research/2025/10/how-china-views-ai-risks-and-what-to-do-about-them",
+    author: "Matt Sheehan & Scott Singer",
+  },
+  {
+    title: "AI Governance at the Frontier: Unpacking Foundational Assumptions",
+    url: "https://cset.georgetown.edu/publication/ai-governance-at-the-frontier/",
+    author: "CSET",
+  },
+  {
+    title: "AI 2040: Plan S — Shut it all down",
+    url: "https://ai-2040.com/?choices=plan-s-root",
+    author: "AI Futures Project",
+  },
+  {
+    title: "AI Governance: Overview and Theoretical Lenses",
+    url: "https://docs.google.com/document/d/18urWknXlA3EJ8NcJdxhU12crlVMQTty_DJ0XEC1Y3LM/edit?tab=t.0",
+    author: "Allan Dafoe",
+    category: "Papers",
+    source: "Google Docs",
+  },
+  {
+    title: "AI benchmarks & capabilities",
+    url: "https://epoch.ai/benchmarks?view=graph&tab=eci",
+    author: "Epoch AI",
+    category: "Other",
+  },
+  {
+    title: "Investigation of agents' behavior in the OpenAI / Hugging Face hacking incident",
+    url: "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
+    author: "METR",
+  },
+  {
+    title: "When Reporting an AI Security Incident Is Not Mandatory",
+    url: "https://www.lawfaremedia.org/article/when-reporting-an-ai-security-incident-is-not-mandatory",
+    author: "Mackenzie Arnold & Stephan Llerena",
+  },
+  {
+    title: "The Next Three Phases of AI Politics",
+    url: "https://writing.antonleicht.me/p/the-next-three-phases-of-ai-politics",
+    author: "Anton Leicht",
+  },
+  {
+    title: "Advancing the UK's global leadership in frontier AI governance",
+    url: "https://www.longtermresilience.org/reports/advancing-the-uks-global-leadership-in-frontier-ai-governance/",
+    author: "Imogen Stead & Jess Whittlestone",
+  },
+  {
+    title: "Frontier AI Governance, Unit 4: Grappling with the Intelligence Explosion",
+    url: "https://bluedot.org/courses/ai-governance/4/1",
+    author: "BlueDot",
+  },
+  {
+    title: "Taking Jaggedness Seriously",
+    url: "https://helentoner.substack.com/p/taking-jaggedness-seriously",
+    author: "Helen Toner",
+  },
+  {
+    title: "Radical Optionality: Governing Transformative AI Under Uncertainty",
+    url: "https://radical-optionality.ai/",
+    author: "Christoph Winter & Charlie Bullock",
+  },
+  {
+    title: "Epoch Capabilities Index",
+    url: "https://epoch.ai/eci?view=graph&tab=release-date#overview",
+    author: "Epoch AI",
+    category: "Other",
+  },
+  {
+    title: "AI Safety Evaluations: An Explainer",
+    url: "https://cset.georgetown.edu/article/ai-safety-evaluations-an-explainer/",
+    author: "Jessica Ji",
   },
 ];
