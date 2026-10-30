@@ -943,11 +943,6 @@ export const consumed: ConsumedEntry[] = [
     author: "Like Minds",
   },
   {
-    title: "Richard Ngo – Reframing AGI Threat Models [Alignment Workshop]",
-    url: "https://www.youtube.com/watch?v=4v3uqWeVmco",
-    author: "FAR.AI",
-  },
-  {
     title: "I Did This Without Your Knowledge",
     url: "https://www.lesswrong.com/posts/3375SZNGA5dKHQMie/i-did-this-without-your-knowledge",
     author: "joec",
