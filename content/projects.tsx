@@ -160,7 +160,7 @@ export const projects: Project[] = [
   {
     title: "Personal_Portfolio_3",
     blurb:
-      "The site you're on. Editorial, typography-forward, in Next.js 16. Third iteration of my personal page.",
+      "The site you're on. A Notion-style page with a terminal hidden behind ⌘K, in Next.js 16. Third iteration of my personal page.",
     href: "https://github.com/Ivan-Shishkin-Dev/Personal_Portfolio_3",
     shots: [
       shot("portfolio-3", "This site's home page", 1600, 1000),

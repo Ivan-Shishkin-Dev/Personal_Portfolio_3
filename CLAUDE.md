@@ -14,7 +14,7 @@ Ivan Shishkin's personal portfolio — a UC Irvine CS student site styled like a
 
 ## Architecture
 
-The home page (`app/page.tsx`) is the merged home + about, laid out as a Notion page: the headshot as the page icon, the name as title, then a properties list read from `content/contacts.ts` — an entry with `copy` renders as a click-to-copy button (`CopyLink`), the rest as external links showing their `handle` — plus a Feedback row with the anonymous-feedback modal (`FeedbackForm`, posts to web3forms). The bio follows as prose with one 💡 callout.
+The home page (`app/page.tsx`) is the merged home + about, laid out as a Notion page: the headshot as the page icon, the name as title, then a properties list read from `content/contacts.ts` — an entry with `copy` renders as a click-to-copy button (`CopyLink`), the rest as external links showing their `handle` — plus a Feedback row with the anonymous-feedback modal (`FeedbackForm`, posts to web3forms). A TL;DR list and the terminal hint follow, then the bio as prose.
 
 Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>`. `SectionLayout` renders `Topbar` (sticky Notion breadcrumb + terminal launcher), `PageHead` (emoji icon and title — section pages have no subtitle), the children, `SiteNav`, and `SiteFooter`. `content/sections.ts` is the single source of truth for navigation order and icons.
 
