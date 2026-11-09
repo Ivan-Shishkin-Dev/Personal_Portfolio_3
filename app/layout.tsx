@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     siteName: "Ivan Shishkin",
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
   icons: { icon: "/icon.png" },
 };
 
