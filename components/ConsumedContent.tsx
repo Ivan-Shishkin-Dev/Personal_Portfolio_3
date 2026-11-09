@@ -93,6 +93,23 @@ export default function ConsumedContent() {
           autoComplete="off"
           spellCheck={false}
         />
+        {matchesQuery.length > 0 && (
+          <div className="consumed-diet" role="group" aria-label="Share of each medium">
+            {PRESENT.filter((name) => counts.get(name)).map((name) => (
+              <button
+                key={name}
+                type="button"
+                className={`consumed-diet-part${category !== ALL && name !== category ? " dim" : ""}`}
+                data-category={name}
+                style={{ flexGrow: counts.get(name) }}
+                title={`${name}: ${counts.get(name)}`}
+                aria-label={`${name}: ${counts.get(name)}`}
+                aria-pressed={name === category}
+                onClick={() => setCategory(name === category ? ALL : name)}
+              />
+            ))}
+          </div>
+        )}
         <div className="consumed-filters">
           {[ALL, ...PRESENT].map((name) => {
             const count = counts.get(name) ?? 0;

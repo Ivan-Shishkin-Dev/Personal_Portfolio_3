@@ -777,11 +777,33 @@ article h2,
   color: var(--subtle);
 }
 
+/* The reading diet: one segment per medium, sized by how many pieces it holds. */
+.consumed-diet {
+  display: flex;
+  gap: 2px;
+  margin-top: 14px;
+}
+.consumed-diet-part {
+  --cat: var(--subtle);
+  flex: 1 0 8px;
+  height: 14px;
+  padding: 4px 0;
+  border: 0;
+  background: var(--cat);
+  background-clip: content-box;
+  cursor: pointer;
+  transition: opacity .18s ease;
+}
+.consumed-diet-part:first-child { border-radius: 3px 0 0 3px; }
+.consumed-diet-part:last-child { border-radius: 0 3px 3px 0; }
+.consumed-diet-part.dim { opacity: .25; }
+.consumed-diet-part:hover { opacity: 1; padding: 2px 0; }
+
 .consumed-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 18px;
+  margin-top: 10px;
 }
 .consumed-filter {
   cursor: pointer;
@@ -815,11 +837,11 @@ article h2,
   padding: 13px 0;
   border-top: 1px solid var(--rule);
 }
-.consumed-item[data-category="Videos"] { --cat: var(--cat-videos); }
-.consumed-item[data-category="Podcasts"] { --cat: var(--cat-podcasts); }
-.consumed-item[data-category="Papers"] { --cat: var(--cat-papers); }
-.consumed-item[data-category="Essays"] { --cat: var(--cat-essays); }
-.consumed-item[data-category="Books"] { --cat: var(--cat-books); }
+[data-category="Videos"] { --cat: var(--cat-videos); }
+[data-category="Podcasts"] { --cat: var(--cat-podcasts); }
+[data-category="Papers"] { --cat: var(--cat-papers); }
+[data-category="Essays"] { --cat: var(--cat-essays); }
+[data-category="Books"] { --cat: var(--cat-books); }
 .consumed-item:first-child { border-top: none; }
 .consumed-item .idx {
   color: var(--cat);
