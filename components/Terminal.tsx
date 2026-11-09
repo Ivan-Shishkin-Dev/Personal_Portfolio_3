@@ -148,6 +148,9 @@ export default function Terminal() {
     screenRef.current?.scrollTo({ top: screenRef.current.scrollHeight });
   }, [lines]);
 
+  const append = (body: ReactNode, tone?: "err" | "muted") =>
+    setLines((l) => [...l, { kind: "out", body, tone }]);
+
   const go = (path: string) => {
     router.push(ROUTES[path]);
     close();
@@ -196,8 +199,11 @@ export default function Terminal() {
         return out(`opening ${href}`, "muted");
       }
       case "email":
-        navigator.clipboard.writeText(EMAIL);
-        return out(`copied ${EMAIL} to clipboard`);
+        navigator.clipboard.writeText(EMAIL).then(
+          () => append(`copied ${EMAIL} to clipboard`),
+          () => append(`email: clipboard blocked. it's ${EMAIL}`, "err"),
+        );
+        return [];
       case "read": {
         const pick = READING[Math.floor(Math.random() * READING.length)];
         window.open(pick.url, "_blank", "noopener,noreferrer");

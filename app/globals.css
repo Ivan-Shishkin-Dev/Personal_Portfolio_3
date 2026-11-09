@@ -85,6 +85,8 @@ code {
   text-align: left;
   cursor: pointer;
 }
+.copy-link { user-select: text; }
+.copy-note { color: var(--muted); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
 
 /* ── Top bar (breadcrumb + terminal launcher) ── */
@@ -324,7 +326,7 @@ code {
 .properties > div {
   display: grid;
   grid-template-columns: 140px minmax(0, 1fr);
-  align-items: baseline;
+  align-items: start;
   gap: 8px;
   padding: 4px 0;
 }
