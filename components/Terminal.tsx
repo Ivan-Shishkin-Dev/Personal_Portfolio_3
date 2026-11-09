@@ -6,6 +6,7 @@ import { sections } from "@/content/sections";
 import { contacts } from "@/content/contacts";
 import { consumed } from "@/content/consumed";
 import { entries } from "@/content/entries";
+import { sendFeedback } from "./sendFeedback";
 
 export const OPEN_TERMINAL = "terminal:open";
 
@@ -40,6 +41,8 @@ const COMMANDS: [string, string][] = [
   ["open <name>", `open ${Object.keys(LINKS).join(", ")}`],
   ["email", "copy my email address"],
   ["read", "open something random I've read or watched"],
+  ["grep <term>", "search everything I've read or watched"],
+  ["feedback <msg>", "send me anonymous feedback"],
   ["xkcd", "open the comic that explains me"],
   ["cowsay <msg>", "a cow says it"],
   ["clear", "clear the screen (ctrl+l)"],
@@ -106,6 +109,31 @@ function Prompt({ cwd }: { cwd: string }) {
   );
 }
 
+const LAST_VISIT_KEY = "terminal:last-visit";
+let lastVisitChecked = false;
+
+// What a login shell prints, but real: when this browser was last here.
+function previousVisit(): string | null {
+  if (lastVisitChecked) return null;
+  lastVisitChecked = true;
+  try {
+    const stored = Number(localStorage.getItem(LAST_VISIT_KEY));
+    localStorage.setItem(LAST_VISIT_KEY, String(Date.now()));
+    if (!stored) return null;
+    const when = new Date(stored).toLocaleString("en-US", {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+    return `Last login: ${when.replace(/,/g, "")} on ttys000`;
+  } catch {
+    return null;
+  }
+}
+
 const WELCOME: Line[] = [
   { kind: "out", body: "Type `help` to see what this terminal can do.", tone: "muted" },
 ];
@@ -129,6 +157,11 @@ export default function Terminal() {
     inputRef.current?.focus();
   };
   const close = () => dialogRef.current?.close();
+
+  useEffect(() => {
+    const login = previousVisit();
+    if (login) setLines((l) => [{ kind: "out", body: login, tone: "muted" }, ...l]);
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -182,7 +215,7 @@ export default function Terminal() {
           <span className="term-help">
             {COMMANDS.map(([name, desc]) => (
               <span key={name}>
-                <span className="term-cmd">{name.padEnd(13)}</span>
+                <span className="term-cmd">{name.padEnd(16)}</span>
                 <span className="term-muted">{desc}</span>
               </span>
             ))}
@@ -236,6 +269,19 @@ export default function Terminal() {
         window.open(pick.url, "_blank", "noopener,noreferrer");
         return out(`opening "${pick.title}"`, "muted");
       }
+      case "grep":
+        if (!arg) return out("usage: grep <term>", "err");
+        router.push(`/consumed-content?q=${encodeURIComponent(arg)}`);
+        close();
+        return [];
+      case "feedback":
+        if (!arg) return out("usage: feedback <message>", "err");
+        sendFeedback(arg).then((result) =>
+          result.ok
+            ? append("sent, anonymously. thanks for the note.")
+            : append(`feedback: ${result.error}`, "err"),
+        );
+        return out("sending...", "muted");
       case "xkcd":
         window.open("https://xkcd.com/356/", "_blank", "noopener,noreferrer");
         return out("opening xkcd 356: nerd sniping", "muted");
@@ -245,6 +291,10 @@ export default function Terminal() {
       case "nvim":
       case "vi":
         return out("you're already in my terminal. type :q to leave (it works here, promise)", "muted");
+      case "tmux":
+        return out("sessions should be nested with care, unset $TMUX to force", "muted");
+      case "whoami":
+        return out("a visitor. anonymous, like the feedback form.", "muted");
       case "sudo":
         return out("ivan is not in the sudoers file. This incident will be reported.", "err");
       case "rm":

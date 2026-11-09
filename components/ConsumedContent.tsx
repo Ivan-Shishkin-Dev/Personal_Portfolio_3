@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   consumed,
   categoryOf,
@@ -40,6 +41,16 @@ const PRESENT: string[] = CATEGORIES.filter((c) =>
   ENTRIES.some((e) => e.category === c),
 );
 
+// Reads ?q= (the terminal's grep lands here with one). Kept in its own Suspense
+// boundary so the list itself still renders into the static HTML.
+function QueryFromUrl({ onQuery }: { onQuery: (q: string) => void }) {
+  const q = useSearchParams().get("q");
+  useEffect(() => {
+    if (q !== null) onQuery(q);
+  }, [q, onQuery]);
+  return null;
+}
+
 export default function ConsumedContent() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState(ALL);
@@ -68,6 +79,9 @@ export default function ConsumedContent() {
 
   return (
     <>
+      <Suspense fallback={null}>
+        <QueryFromUrl onQuery={setQuery} />
+      </Suspense>
       <div className="consumed-tools">
         <input
           type="search"
