@@ -3,9 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import useFocusTrap from "./useFocusTrap";
-
-const ACCESS_KEY = "588824fa-09ac-46ae-ae60-a14808218451";
-const SUBJECT = "Anonymous feedback — ivanshishkin.com";
+import { sendFeedback } from "./sendFeedback";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -52,28 +50,13 @@ export default function FeedbackForm({ label = "Anonymous feedback" }: { label?:
     setStatus("sending");
     setError("");
 
-    const formData = new FormData();
-    formData.append("access_key", ACCESS_KEY);
-    formData.append("subject", SUBJECT);
-    formData.append("from_name", "Anonymous (ivanshishkin.com)");
-    formData.append("message", message);
-
-    try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
-      const data = await res.json();
-      if (data.success) {
-        setStatus("success");
-        setTimeout(close, 1800);
-      } else {
-        setStatus("error");
-        setError(data.message || "Something went wrong. Try again.");
-      }
-    } catch {
+    const result = await sendFeedback(message);
+    if (result.ok) {
+      setStatus("success");
+      setTimeout(close, 1800);
+    } else {
       setStatus("error");
-      setError("Network error. Try again.");
+      setError(result.error ?? "");
     }
   }
 

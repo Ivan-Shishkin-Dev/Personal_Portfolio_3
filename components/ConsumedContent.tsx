@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   consumed,
   categoryOf,
@@ -40,6 +41,16 @@ const PRESENT: string[] = CATEGORIES.filter((c) =>
   ENTRIES.some((e) => e.category === c),
 );
 
+// Reads ?q= (the terminal's grep lands here with one). Kept in its own Suspense
+// boundary so the list itself still renders into the static HTML.
+function QueryFromUrl({ onQuery }: { onQuery: (q: string) => void }) {
+  const q = useSearchParams().get("q");
+  useEffect(() => {
+    if (q !== null) onQuery(q);
+  }, [q, onQuery]);
+  return null;
+}
+
 export default function ConsumedContent() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState(ALL);
@@ -68,6 +79,9 @@ export default function ConsumedContent() {
 
   return (
     <>
+      <Suspense fallback={null}>
+        <QueryFromUrl onQuery={setQuery} />
+      </Suspense>
       <div className="consumed-tools">
         <input
           type="search"
@@ -79,6 +93,23 @@ export default function ConsumedContent() {
           autoComplete="off"
           spellCheck={false}
         />
+        {matchesQuery.length > 0 && (
+          <div className="consumed-diet" role="group" aria-label="Share of each medium">
+            {PRESENT.filter((name) => counts.get(name)).map((name) => (
+              <button
+                key={name}
+                type="button"
+                className={`consumed-diet-part${category !== ALL && name !== category ? " dim" : ""}`}
+                data-category={name}
+                style={{ flexGrow: counts.get(name) }}
+                title={`${name}: ${counts.get(name)}`}
+                aria-label={`${name}: ${counts.get(name)}`}
+                aria-pressed={name === category}
+                onClick={() => setCategory(name === category ? ALL : name)}
+              />
+            ))}
+          </div>
+        )}
         <div className="consumed-filters">
           {[ALL, ...PRESENT].map((name) => {
             const count = counts.get(name) ?? 0;

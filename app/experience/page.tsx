@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SectionLayout from "@/components/SectionLayout";
+import { sectionIcon } from "@/content/sections";
 import DllGallery from "@/components/DllGallery";
 import Toggle from "@/components/Toggle";
 import ExpandAll from "@/components/ExpandAll";
@@ -7,6 +8,7 @@ import ExpandAll from "@/components/ExpandAll";
 export const metadata: Metadata = {
   title: "Experience",
   description: "Jobs, internships, and volunteer work.",
+  icons: sectionIcon("experience"),
 };
 
 export default function ExperiencePage() {
@@ -30,12 +32,14 @@ export default function ExperiencePage() {
           <DllGallery />
         </Toggle>
         <Toggle
+          id="pacific-coast-installers"
           meta="Nov 2025 - present"
           title={<>Full Stack Engineer, <em><a href="https://www.pcii-usa.com/" target="_blank" rel="noopener noreferrer">Pacific Coast Industrial Installers</a></em></>}
         >
           <div className="body">Co-developing a $10K-funded mobile app that consolidates contractor verification, insurance, licensing, and safety certifications into a single platform, replacing multi-day back-and-forth with agents and phone calls.</div>
         </Toggle>
         <Toggle
+          id="arroyo-vista"
           meta="Aug 2025 - Sep 2026"
           title={<>Center Attendant, <em><a href="https://housing.uci.edu/arroyo-vista/" target="_blank" rel="noopener noreferrer">UCI Arroyo Vista Housing</a></em></>}
         >
@@ -43,6 +47,7 @@ export default function ExperiencePage() {
         </Toggle>
         <h2 className="group-label">Volunteering</h2>
         <Toggle
+          id="ai-safety-collective"
           meta="May 2026 - present"
           title={<>Executive Board, <em><a href="https://aisafetyuci.org/team" target="_blank" rel="noopener noreferrer">AI Safety Collective @ UCI</a></em></>}
         >
@@ -56,6 +61,7 @@ export default function ExperiencePage() {
           </div>
         </Toggle>
         <Toggle
+          id="notion"
           meta="Aug 2026 - present"
           title={<>Campus Leader, <em><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Notion</a></em></>}
         >
@@ -69,6 +75,7 @@ export default function ExperiencePage() {
           <div className="body">Oversaw housing operations for a 100+ member chapter, managing landlord, realtor, and student-group relationships across multiple properties.</div>
         </Toggle>
         <Toggle
+          id="project-art-start"
           meta="Oct 2022 - Oct 2024"
           title={<>Project Manager, <em>Project Art Start</em></>}
         >

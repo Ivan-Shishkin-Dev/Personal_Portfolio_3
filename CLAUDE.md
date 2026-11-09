@@ -14,11 +14,13 @@ Ivan Shishkin's personal portfolio — a UC Irvine CS student site styled like a
 
 ## Architecture
 
-The home page (`app/page.tsx`) is the merged home + about, laid out as a Notion page: the headshot as the page icon, the name as title, then a properties list read from `content/contacts.ts` — an entry with `copy` renders as a click-to-copy button (`CopyLink`), the rest as external links showing their `handle` — plus a Feedback row with the anonymous-feedback modal (`FeedbackForm`, posts to web3forms). The bio follows as prose with one 💡 callout.
+The home page (`app/page.tsx`) is the merged home + about, laid out as a Notion page: the headshot as the page icon, the name as title, then a properties list read from `content/contacts.ts` — an entry with `copy` renders as a click-to-copy button (`CopyLink`), the rest as external links showing their `handle` — plus a Feedback row with the anonymous-feedback modal (`FeedbackForm`, posts to web3forms). A TL;DR list and the terminal hint follow, then the bio as prose.
 
 Every sub-page is just `<SectionLayout slug="...">prose</SectionLayout>`. `SectionLayout` renders `Topbar` (sticky Notion breadcrumb + terminal launcher), `PageHead` (emoji icon and title — section pages have no subtitle), the children, `SiteNav`, and `SiteFooter`. `content/sections.ts` is the single source of truth for navigation order and icons.
 
-Entry lists on Experience, Projects, and Education use `Toggle` (with `ExpandAll` above them) — a native `<details>` that shows one line (title + dates) and expands to the full entry. `OpenHashTarget` in `SectionLayout` opens a toggle when a URL hash points at it (e.g. `/experience#digital-learning-lab`).
+Each page's emoji is also its favicon (`sectionIcon` / `emojiIcon` in `content/sections.ts`, set through that page's `metadata.icons`); home falls back to the headshot at `public/icon.png`. `SiteFooter` is a Notion-style "Last edited" line whose date is the latest commit's, read at build time in `next.config.ts` (`NEXT_PUBLIC_LAST_EDITED`). `app/not-found.tsx` answers like the terminal and suggests the nearest page (`NotFoundHint`).
+
+Entry lists on Experience, Projects, and Education use `Toggle` (with `ExpandAll` above them) — a native `<details>` that shows one line (title + dates) and expands to the full entry. `OpenHashTarget` in `SectionLayout` opens a toggle when a URL hash points at it (e.g. `/experience#digital-learning-lab`). Every toggle has an id: project ids come from `projectId` in `content/projects.tsx`, and the ids on `/experience` and `/education` are listed in `content/entries.ts` — add an entry in both places. A `meta` ending in "- present" renders as an "In progress" status pill plus "Since <start>".
 
 `Topbar` is a breadcrumb, not a nav menu: "Ivan Shishkin / <page>" is the way home. Section navigation is `SiteNav` at the bottom of every page — a Notion-style list of sub-page links (icon + title).
 
@@ -26,10 +28,11 @@ Entry lists on Experience, Projects, and Education use `Toggle` (with `ExpandAll
 
 `components/Terminal.tsx` is mounted once in `app/layout.tsx`, so its scrollback and history survive navigation. It is a native `<dialog>` opened by ⌘K / Ctrl+K, `/` (when not typing in a field), or the `>_` button in `Topbar` (`TerminalButton` dispatches the `terminal:open` window event).
 
-- The filesystem is derived, not hand-kept: `~` is home, each entry in `sections.ts` is a directory, and `~/education/consumed-content` maps to `/consumed-content` — so it only shows up when you `ls` inside education, keeping it out of the top-level listing.
+- The filesystem is derived, not hand-kept: `~` is home, each entry in `sections.ts` is a directory, and `~/education/consumed-content` maps to `/consumed-content` — so it only shows up when you `ls` inside education, keeping it out of the top-level listing. Each toggle id in `content/entries.ts` is a file in its section's directory; `cd` or `cat` on one navigates to it and opens it.
 - `cd` navigates with the router and closes the terminal; `cwd` comes from the current pathname.
+- Returning visitors get a real `Last login` line, from a timestamp in `localStorage`.
 - `open <name>` and `email` read from `content/contacts.ts`. New contacts with an `href` and `label` become `open` targets automatically.
-- Every command should *do* something (navigate, open, copy, close) or be a deliberate joke; no commands that just print static text. Listed in `help`: help, ls, cd, open, email, read (random `/consumed-content` entry), xkcd, cowsay, clear, exit. Hidden: vim/nvim/vi, :q/:q!/:wq, sudo, rm. Tab completes, ↑/↓ walk history, Ctrl+L clears, Ctrl+C cancels.
+- Every command should *do* something (navigate, open, copy, close) or be a deliberate joke; no commands that just print static text. Listed in `help`: help, ls, cd, open, email, read (random `/consumed-content` entry), grep (opens `/consumed-content?q=<term>`), feedback (posts through `sendFeedback`, the same endpoint as the modal), xkcd, cowsay, clear, exit. Hidden: cat, vim/nvim/vi, :q/:q!/:wq, tmux, whoami, sudo, rm. Tab completes, ↑/↓ walk history, Ctrl+L clears, Ctrl+C cancels.
 
 `/consumed-content` is the one exception. It composes `Topbar`/`PageHead`/`SiteNav`/`SiteFooter` itself rather than using `SectionLayout`, because `getSection` throws on any slug missing from `sections.ts` — and keeping it out of that file is what keeps it out of the nav. It is linked from two places only: the Self-Education link on `/education` and the reading bullet in the home TL;DR. It stays out of the nav on purpose. It is still in `sitemap.xml` and indexable.
 
@@ -37,7 +40,7 @@ Entry lists on Experience, Projects, and Education use `Toggle` (with `ExpandAll
 
 ## Consumed Content (`/consumed-content`)
 
-A searchable list of everything Ivan has read, watched, or listened to. `content/consumed.ts` holds the entries; `ConsumedContent.tsx` renders search, medium filter chips, and the rows.
+A searchable list of everything Ivan has read, watched, or listened to. `content/consumed.ts` holds the entries; `ConsumedContent.tsx` renders search, the reading diet bar (one segment per medium, sized by count), medium filter chips, and the rows. A `?q=` in the URL prefills the search.
 
 - **An entry is a title and a URL.** `category` (medium) and `source` are derived from the URL host via lookup tables, with optional per-entry overrides for when that guesses wrong — a book on Google Drive, a podcast episode hosted on YouTube.
 - **The file is in the order things were added; the page reverses it** so newest reads first. Append new entries to the bottom.

@@ -5,7 +5,7 @@ Personal portfolio for Ivan Shishkin. Live at https://ivanshishkin.com.
 ## Stack
 
 - Next.js 16 (App Router), React 19, TypeScript
-- `next/font/google` — Spectral, Inter, JetBrains Mono
+- `next/font/google` — Inter, JetBrains Mono
 - Plain CSS in `app/globals.css`
 - Vercel hosting
 
@@ -25,7 +25,7 @@ Push to `main`. Vercel auto-deploys.
 ## Edit content
 
 - Section copy (prose) — `app/<slug>/page.tsx`
-- Section order, numerals, Contents-list descriptions — `content/sections.ts`
+- Section order, icons, titles — `content/sections.ts`
 - Project entries — `content/projects.tsx` (blurbs accept inline JSX so prose can carry links)
 - Contact rows — `content/contacts.ts`
 
