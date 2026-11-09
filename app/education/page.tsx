@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
+import { sectionIcon } from "@/content/sections";
 import Toggle from "@/components/Toggle";
 import ExpandAll from "@/components/ExpandAll";
 
 export const metadata: Metadata = {
   title: "Education",
   description: "Main focus.",
+  icons: sectionIcon("education"),
 };
 
 export default function EducationPage() {

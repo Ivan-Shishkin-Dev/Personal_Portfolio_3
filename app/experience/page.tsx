@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import SectionLayout from "@/components/SectionLayout";
+import { sectionIcon } from "@/content/sections";
 import DllGallery from "@/components/DllGallery";
 import Toggle from "@/components/Toggle";
 import ExpandAll from "@/components/ExpandAll";
@@ -7,6 +8,7 @@ import ExpandAll from "@/components/ExpandAll";
 export const metadata: Metadata = {
   title: "Experience",
   description: "Jobs, internships, and volunteer work.",
+  icons: sectionIcon("experience"),
 };
 
 export default function ExperiencePage() {

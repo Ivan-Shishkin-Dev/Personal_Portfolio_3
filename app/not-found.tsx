@@ -4,9 +4,11 @@ import PageHead from "@/components/PageHead";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import Topbar from "@/components/Topbar";
+import { emojiIcon } from "@/content/sections";
 
 export const metadata: Metadata = {
   title: "Not found",
+  icons: emojiIcon("🫥"),
 };
 
 export default function NotFound() {

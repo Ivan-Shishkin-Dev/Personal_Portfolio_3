@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import SectionLayout from "@/components/SectionLayout";
+import { sectionIcon } from "@/content/sections";
 import Toggle from "@/components/Toggle";
 import ExpandAll from "@/components/ExpandAll";
 import { projects } from "@/content/projects";
@@ -10,6 +11,7 @@ import { projects } from "@/content/projects";
 export const metadata: Metadata = {
   title: "Projects",
   description: "Things I've built.",
+  icons: sectionIcon("projects"),
 };
 
 const isExternalHref = (href: string) => /^(https?:|mailto:)/.test(href);

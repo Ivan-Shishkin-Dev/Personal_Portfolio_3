@@ -4,10 +4,12 @@ import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import Topbar from "@/components/Topbar";
 import ConsumedContent from "@/components/ConsumedContent";
+import { emojiIcon } from "@/content/sections";
 
 export const metadata: Metadata = {
   title: "Consumed Content",
   description: "Everything I've read worth keeping — searchable, by source.",
+  icons: emojiIcon("📚"),
 };
 
 export default function ConsumedContentPage() {

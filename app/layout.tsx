@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Ivan Shishkin",
     type: "website",
   },
-  icons: { icon: "/icon.svg" },
+  icons: { icon: "/icon.png" },
 };
 
 export default function RootLayout({
