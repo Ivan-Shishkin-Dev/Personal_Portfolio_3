@@ -25,6 +25,9 @@
   --cat-papers: #0b6e99;
   --cat-essays: #6940a5;
   --cat-books: #d9730d;
+  --status-bg: #d3e5ef;
+  --status-ink: #183347;
+  --status-dot: #5b97bd;
   --maxw: 760px;
   --gap: 60px;
 }
@@ -679,6 +682,24 @@ article h2,
   font-size: 0.875rem;
   color: var(--muted);
   white-space: nowrap;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 8px;
+  padding: 0 8px 0 7px;
+  border-radius: 10px;
+  background: var(--status-bg);
+  color: var(--status-ink);
+  line-height: 20px;
+}
+.status-pill::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--status-dot);
 }
 .toggle-body { padding: 12px 14px 16px 46px; }
 .toggle-body .body { margin-top: 0; }
