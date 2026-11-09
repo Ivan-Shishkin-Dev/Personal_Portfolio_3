@@ -1,6 +1,29 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+
+const CAPTIONS = [
+  "I see you looking closer lol",
+  "back again?",
+  "ok, now it's weird",
+  "at this point just email me",
+];
 
 export default function Headshot() {
+  const popoverRef = useRef<HTMLDivElement>(null);
+  const [opens, setOpens] = useState(0);
+
+  useEffect(() => {
+    const el = popoverRef.current;
+    if (!el) return;
+    const onToggle = (e: Event) => {
+      if ((e as ToggleEvent).newState === "open") setOpens((n) => n + 1);
+    };
+    el.addEventListener("toggle", onToggle);
+    return () => el.removeEventListener("toggle", onToggle);
+  }, []);
+
   return (
     <div className="home-figure">
       <button
@@ -18,7 +41,7 @@ export default function Headshot() {
           priority
         />
       </button>
-      <div id="headshot-large" popover="auto" className="headshot-large">
+      <div ref={popoverRef} id="headshot-large" popover="auto" className="headshot-large">
         <button
           type="button"
           aria-label="Close photo"
@@ -34,7 +57,7 @@ export default function Headshot() {
             quality={100}
             loading="eager"
           />
-          <span>I see you looking closer lol</span>
+          <span>{CAPTIONS[Math.min(Math.max(opens, 1), CAPTIONS.length) - 1]}</span>
         </button>
       </div>
     </div>
