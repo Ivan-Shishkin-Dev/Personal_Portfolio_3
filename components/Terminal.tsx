@@ -5,16 +5,25 @@ import { usePathname, useRouter } from "next/navigation";
 import { sections } from "@/content/sections";
 import { contacts } from "@/content/contacts";
 import { consumed } from "@/content/consumed";
+import { entries } from "@/content/entries";
 
 export const OPEN_TERMINAL = "terminal:open";
 
 const HOME = "~";
+
+// Each toggle on a section page is a file in that section's directory.
+const FILES: Record<string, string> = Object.fromEntries(
+  Object.entries(entries).flatMap(([slug, ids]) =>
+    ids.map((id) => [`${HOME}/${slug}/${id}`, `/${slug}#${id}`]),
+  ),
+);
 
 // /consumed-content lives under education here because the site only links it from there.
 const ROUTES: Record<string, string> = {
   [HOME]: "/",
   ...Object.fromEntries(sections.map((s) => [`${HOME}/${s.slug}`, `/${s.slug}`])),
   [`${HOME}/education/consumed-content`]: "/consumed-content",
+  ...FILES,
 };
 
 const LINKS = Object.fromEntries(
@@ -26,8 +35,8 @@ const READING = consumed.filter((c) => c.url);
 
 const COMMANDS: [string, string][] = [
   ["help", "list commands"],
-  ["ls [dir]", "list pages"],
-  ["cd <dir>", "go to a page (cd .. / cd ~)"],
+  ["ls [dir]", "list pages and their entries"],
+  ["cd <path>", "go to a page or open an entry (cd .. / cd ~)"],
   ["open <name>", `open ${Object.keys(LINKS).join(", ")}`],
   ["email", "copy my email address"],
   ["read", "open something random I've read or watched"],
@@ -152,7 +161,11 @@ export default function Terminal() {
     setLines((l) => [...l, { kind: "out", body, tone }]);
 
   const go = (path: string) => {
-    router.push(ROUTES[path]);
+    const route = ROUTES[path];
+    const [page, id] = route.split("#");
+    // On the same page a plain hash change is enough: OpenHashTarget hears it and opens the toggle.
+    if (id && page === pathname) window.location.hash = id;
+    else router.push(route);
     close();
   };
 
@@ -178,11 +191,18 @@ export default function Terminal() {
       case "ls": {
         const dir = arg ? resolve(cwd, arg) : cwd;
         if (!dir) return out(`ls: ${arg}: No such directory`, "err");
-        const dirs = childrenOf(dir);
-        if (!dirs.length) return out("(empty)", "muted");
+        if (dir in FILES) return out(dir.split("/").pop());
+        const names = childrenOf(dir);
+        if (!names.length) return out("(empty)", "muted");
         return out(
           <span className="term-ls">
-            {dirs.map((d) => <span key={d} className="term-dir">{d}/</span>)}
+            {names.map((n) =>
+              `${dir}/${n}` in FILES ? (
+                <span key={n}>{n}</span>
+              ) : (
+                <span key={n} className="term-dir">{n}/</span>
+              ),
+            )}
           </span>,
         );
       }
@@ -190,6 +210,13 @@ export default function Terminal() {
         const dir = resolve(cwd, arg);
         if (!dir) return out(`cd: no such page: ${arg}`, "err");
         if (dir !== cwd) go(dir);
+        return [];
+      }
+      case "cat": {
+        const file = resolve(cwd, arg);
+        if (!arg || !file) return out(`cat: ${arg || "missing file"}: No such file`, "err");
+        if (!(file in FILES)) return out(`cat: ${arg}: Is a directory`, "err");
+        go(file);
         return [];
       }
       case "open": {
@@ -254,10 +281,17 @@ export default function Terminal() {
       return;
     }
     const partial = rest.join(" ");
-    const options =
-      cmd === "open"
-        ? Object.keys(LINKS)
-        : childrenOf(cwd).map((d) => d + "/").concat("../");
+    let options: string[];
+    if (cmd === "open") {
+      options = Object.keys(LINKS);
+    } else {
+      const base = partial.slice(0, partial.lastIndexOf("/") + 1);
+      const dir = base ? resolve(cwd, base) : cwd;
+      options = dir
+        ? childrenOf(dir).map((n) => base + n + (`${dir}/${n}` in FILES ? "" : "/"))
+        : [];
+      if (!base) options.push("../");
+    }
     const hits = options.filter((o) => o.startsWith(partial));
     if (hits.length === 1) setInput(`${cmd} ${hits[0]}`);
     else if (hits.length > 1) {

@@ -6,7 +6,7 @@ import SectionLayout from "@/components/SectionLayout";
 import { sectionIcon } from "@/content/sections";
 import Toggle from "@/components/Toggle";
 import ExpandAll from "@/components/ExpandAll";
-import { projects } from "@/content/projects";
+import { projects, projectId } from "@/content/projects";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
             {projects[i - 1]?.group !== p.group && (
               <h2 className="group-label">{p.group}</h2>
             )}
-            <Toggle title={<ProjectTitle title={p.title} href={p.href} />} meta={p.year}>
+            <Toggle id={projectId(p)} title={<ProjectTitle title={p.title} href={p.href} />} meta={p.year}>
               <p className="blurb">{p.blurb}</p>
               {p.video && (
                 <video

@@ -16,7 +16,7 @@ export default function EducationPage() {
     <SectionLayout slug="education">
       <ExpandAll />
       <div className="toggles">
-        <Toggle meta="Aug 2024 - Jun 2028" title={<>B.S. in Computer Science, <em>UC Irvine</em></>}>
+        <Toggle id="uc-irvine" meta="Aug 2024 - Jun 2028" title={<>B.S. in Computer Science, <em>UC Irvine</em></>}>
           <div className="body">
             GPA 3.8 (Dean&apos;s Honors List, 6×).
             <ul>
@@ -27,7 +27,7 @@ export default function EducationPage() {
         </Toggle>
 
         <h2 className="group-label">School activities</h2>
-        <Toggle title={<><a href="https://sigmapi.org/" target="_blank" rel="noopener noreferrer">Sigma Pi</a> <span className="toggle-sub">Eta-Upsilon Chapter</span></>}>
+        <Toggle id="sigma-pi" title={<><a href="https://sigmapi.org/" target="_blank" rel="noopener noreferrer">Sigma Pi</a> <span className="toggle-sub">Eta-Upsilon Chapter</span></>}>
           <div className="body">
             <ul>
               <li>Served as the chapter&apos;s <Link href="/experience#director-of-housing">Director of Housing</Link>, managing properties and relationships for 100+ members.</li>
@@ -37,7 +37,7 @@ export default function EducationPage() {
             </ul>
           </div>
         </Toggle>
-        <Toggle title={<>Mentorship <span className="toggle-sub">CLAOC, OC Fellows, and ICS Student Council</span></>}>
+        <Toggle id="mentorship" title={<>Mentorship <span className="toggle-sub">CLAOC, OC Fellows, and ICS Student Council</span></>}>
           <div className="body">
             <ul>
               <li><a href="https://claoc.org/" target="_blank" rel="noopener noreferrer">CLAOC</a> + <a href="https://ocfellows.org/" target="_blank" rel="noopener noreferrer">OC Fellows</a> — a partnership between the CEO Leadership Alliance Orange County and Orange County Fellows, building a talent pipeline from universities to Orange County schools. Great experience, learned a lot.</li>
@@ -45,7 +45,7 @@ export default function EducationPage() {
             </ul>
           </div>
         </Toggle>
-        <Toggle title={<><a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer">BlueDot Impact</a> <span className="toggle-sub">AI safety courses</span></>}>
+        <Toggle id="bluedot" title={<><a href="https://bluedot.org/" target="_blank" rel="noopener noreferrer">BlueDot Impact</a> <span className="toggle-sub">AI safety courses</span></>}>
           <div className="body">
             <ul>
               <li><a href="https://bluedot.org/courses/future-of-ai" target="_blank" rel="noopener noreferrer">Future of AI</a> — 2 hours. Where AI is headed and the choices that come with it.</li>

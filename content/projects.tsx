@@ -20,6 +20,10 @@ const shot = (name: string, alt: string, width: number, height: number): Shot =>
   height,
 });
 
+export function projectId(p: Project): string {
+  return p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 export const projects: Project[] = [
   {
     title: "Science Inquiry Studio",
