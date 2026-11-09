@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PageHead from "@/components/PageHead";
 import SiteNav from "@/components/SiteNav";
 import SiteFooter from "@/components/SiteFooter";
 import Topbar from "@/components/Topbar";
+import NotFoundHint from "@/components/NotFoundHint";
 import { emojiIcon } from "@/content/sections";
 
 export const metadata: Metadata = {
@@ -18,10 +18,7 @@ export default function NotFound() {
       <main className="page" data-screen-label="404">
         <PageHead icon="🫥" title="Not found" sub="There is no page at this address." />
         <article>
-          <p>
-            Whatever you were looking for has moved or never existed. Head{" "}
-            <Link href="/">home</Link> and look around from there.
-          </p>
+          <NotFoundHint />
         </article>
         <SiteNav />
         <SiteFooter />
