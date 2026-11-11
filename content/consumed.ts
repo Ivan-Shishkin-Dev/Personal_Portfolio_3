@@ -1056,4 +1056,27 @@ export const consumed: ConsumedEntry[] = [
     url: "https://cset.georgetown.edu/article/ai-safety-evaluations-an-explainer/",
     author: "Jessica Ji",
   },
+  {
+    title: "Against SURA",
+    url: "https://www.lesswrong.com/posts/xikGZ8fuhdG6DApAo/against-sura",
+    author: "Scott Alexander",
+  },
+  {
+    title: "Which AI is the best liar?",
+    url: "https://www.youtube.com/watch?v=1NQwfImTseU",
+    author: "Dwarkesh Patel",
+    category: "Podcasts",
+  },
+  {
+    title: "What Robert Caro learned about power after studying it for 50 years",
+    url: "https://www.youtube.com/watch?v=f0J_EeW42Lo",
+    author: "Dwarkesh Patel",
+    category: "Podcasts",
+  },
+  {
+    title: "Tara Mac Aulay on the audacity to fix the world without asking permission",
+    url: "https://www.youtube.com/watch?v=-BYpk3Osmqk",
+    author: "80,000 Hours",
+    category: "Podcasts",
+  },
 ];
