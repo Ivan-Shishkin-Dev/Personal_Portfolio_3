@@ -1079,4 +1079,29 @@ export const consumed: ConsumedEntry[] = [
     author: "80,000 Hours",
     category: "Podcasts",
   },
+  {
+    title: "Escaping the Outside Criticism Trap",
+    url: "https://astralcodexten.substack.com/p/escaping-the-outside-criticism-trap",
+    author: "Scott Alexander",
+  },
+  {
+    title: "The Most Important Communication",
+    url: "https://sashachapin.substack.com/p/the-most-important-communication",
+    author: "Sasha Chapin",
+  },
+  {
+    title: "There Should Be General Managers",
+    url: "https://nanransohoff.substack.com/p/there-should-be-general-managers",
+    author: "Nan Ransohoff",
+  },
+  {
+    title: "Distributed vs Centralized Agents",
+    url: "https://mindthefuture.substack.com/p/distributed-vs-centralized-agents",
+    author: "Richard Ngo",
+  },
+  {
+    title: "You Need a Theory of Victory",
+    url: "https://jasonhausenloy.substack.com/p/you-need-a-theory-of-victory",
+    author: "Jason Hausenloy",
+  },
 ];
