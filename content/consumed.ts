@@ -1104,4 +1104,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://jasonhausenloy.substack.com/p/you-need-a-theory-of-victory",
     author: "Jason Hausenloy",
   },
+  {
+    title: "Chip Off The Old Block",
+    url: "https://www.astralcodexten.com/p/chip-off-the-old-block",
+    author: "Scott Alexander",
+  },
 ];
