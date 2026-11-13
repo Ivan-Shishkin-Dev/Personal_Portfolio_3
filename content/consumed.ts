@@ -1109,4 +1109,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.astralcodexten.com/p/chip-off-the-old-block",
     author: "Scott Alexander",
   },
+  {
+    title: "Some Painful Questions We Ask Ourselves",
+    url: "https://sashachapin.substack.com/p/some-painful-questions-we-ask-ourselves",
+    author: "Sasha Chapin & Cate Hall",
+  },
 ];
