@@ -1119,4 +1119,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://lawsen.substack.com/p/deferral-is-a-skill",
     author: "Alex Lawsen",
   },
+  {
+    title: "Shut Up About Slave Morality",
+    url: "https://benthams.substack.com/p/shut-up-about-slave-morality",
+    author: "Bentham's Bulldog",
+  },
 ];
