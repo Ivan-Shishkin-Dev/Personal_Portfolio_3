@@ -1114,4 +1114,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://sashachapin.substack.com/p/some-painful-questions-we-ask-ourselves",
     author: "Sasha Chapin & Cate Hall",
   },
+  {
+    title: "Deferral is a skill",
+    url: "https://lawsen.substack.com/p/deferral-is-a-skill",
+    author: "Alex Lawsen",
+  },
 ];
