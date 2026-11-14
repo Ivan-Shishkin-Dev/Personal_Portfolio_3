@@ -1135,4 +1135,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.astralcodexten.com/p/matt-yglesias-considered-as-the-nietzschean",
     author: "Scott Alexander",
   },
+  {
+    title: "Deceptively Aligned Mesa-Optimizers: It's Not Funny If I Have To Explain It",
+    url: "https://www.astralcodexten.com/p/deceptively-aligned-mesa-optimizers",
+    author: "Scott Alexander",
+  },
 ];
