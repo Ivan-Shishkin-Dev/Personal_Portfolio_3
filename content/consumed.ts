@@ -1124,4 +1124,10 @@ export const consumed: ConsumedEntry[] = [
     url: "https://benthams.substack.com/p/shut-up-about-slave-morality",
     author: "Bentham's Bulldog",
   },
+  {
+    title: "Recursive self-improvement has started",
+    url: "https://www.youtube.com/watch?v=1NHPDzpfR6Y",
+    author: "Dwarkesh Patel",
+    category: "Podcasts",
+  },
 ];
