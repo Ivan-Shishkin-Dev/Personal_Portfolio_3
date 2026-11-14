@@ -1130,4 +1130,9 @@ export const consumed: ConsumedEntry[] = [
     author: "Dwarkesh Patel",
     category: "Podcasts",
   },
+  {
+    title: "Matt Yglesias Considered As The Nietzschean Superman",
+    url: "https://www.astralcodexten.com/p/matt-yglesias-considered-as-the-nietzschean",
+    author: "Scott Alexander",
+  },
 ];
