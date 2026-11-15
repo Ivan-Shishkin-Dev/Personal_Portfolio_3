@@ -393,29 +393,26 @@ article h2,
 }
 
 /* ── Feedback form (anonymous) ──────────────── */
-.feedback-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: rgba(15, 15, 15, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-  cursor: pointer;
-  animation: portrait-lightbox-in .18s ease-out;
-}
 .feedback-frame {
-  position: relative;
   width: min(520px, 92vw);
   max-height: 86vh;
+  padding: 0;
+  border: 0;
   background: var(--bg);
+  color: var(--ink);
   border-radius: 8px;
   box-shadow: 0 0 0 1px rgba(15,15,15,.05), 0 5px 10px rgba(15,15,15,.1), 0 15px 40px rgba(15,15,15,.2);
-  padding: 32px 28px 24px;
-  cursor: default;
   overflow-y: auto;
 }
+.feedback-frame::backdrop {
+  background: rgba(15, 15, 15, 0.6);
+  cursor: pointer;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .feedback-frame[open],
+  .feedback-frame[open]::backdrop { animation: portrait-lightbox-in .18s ease-out; }
+}
+.feedback-panel { padding: 32px 28px 24px; }
 .feedback-close {
   position: absolute;
   top: 18px;

@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import useFocusTrap from "./useFocusTrap";
 import { sendFeedback } from "./sendFeedback";
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -13,9 +12,8 @@ export default function FeedbackForm({ label = "Anonymous feedback" }: { label?:
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
-  const frameRef = useRef<HTMLDivElement>(null);
-
-  useFocusTrap(open, frameRef);
+  const dialogRef = useRef<HTMLDialogElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -23,19 +21,24 @@ export default function FeedbackForm({ label = "Anonymous feedback" }: { label?:
 
   useEffect(() => {
     if (!open) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    document.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
     };
   }, [open]);
 
+  function show() {
+    dialogRef.current?.showModal();
+    textareaRef.current?.focus();
+    setOpen(true);
+  }
+
   function close() {
+    dialogRef.current?.close();
+  }
+
+  function onClose() {
     setOpen(false);
     setTimeout(() => {
       setMessage("");
@@ -65,25 +68,23 @@ export default function FeedbackForm({ label = "Anonymous feedback" }: { label?:
       <button
         type="button"
         className="feedback-trigger"
-        onClick={() => setOpen(true)}
+        onClick={show}
       >
         {label}
       </button>
 
-      {mounted && open &&
+      {mounted &&
         createPortal(
-          <div
-            className="feedback-overlay"
-            role="dialog"
-            aria-modal="true"
+          <dialog
+            ref={dialogRef}
+            className="feedback-frame"
             aria-label="Anonymous feedback"
-            onClick={close}
+            onClose={onClose}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) close();
+            }}
           >
-            <div
-              ref={frameRef}
-              className="feedback-frame"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="feedback-panel">
               <button
                 type="button"
                 className="feedback-close"
@@ -104,7 +105,7 @@ export default function FeedbackForm({ label = "Anonymous feedback" }: { label?:
                   <textarea
                     name="message"
                     required
-                    data-autofocus
+                    ref={textareaRef}
                     rows={6}
                     placeholder="Be honest. Nothing identifying is sent."
                     value={message}
@@ -130,7 +131,7 @@ export default function FeedbackForm({ label = "Anonymous feedback" }: { label?:
                 </form>
               )}
             </div>
-          </div>,
+          </dialog>,
           document.body,
         )}
     </>
