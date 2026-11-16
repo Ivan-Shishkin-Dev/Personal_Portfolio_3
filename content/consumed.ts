@@ -1145,4 +1145,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.astralcodexten.com/p/ai-company-employees-should-unionize",
     author: "Scott Alexander",
   },
+  {
+    title: "Concrete Advice For Living Better",
+    url: "https://benthams.substack.com/p/concrete-advice-for-living-better",
+    author: "Bentham's Bulldog",
+  },
 ];
