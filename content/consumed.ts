@@ -1140,4 +1140,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.astralcodexten.com/p/deceptively-aligned-mesa-optimizers",
     author: "Scott Alexander",
   },
+  {
+    title: "AI Company Employees Should Unionize",
+    url: "https://www.astralcodexten.com/p/ai-company-employees-should-unionize",
+    author: "Scott Alexander",
+  },
 ];
