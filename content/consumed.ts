@@ -1155,4 +1155,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://eriktorenberg.substack.com/p/take-asymmetric-bets",
     author: "Erik Torenberg",
   },
+  {
+    title: "Without hope of resolution",
+    url: "https://sashachapin.substack.com/p/without-hope-of-resolution",
+    author: "Sasha Chapin",
+  },
 ];
