@@ -1160,4 +1160,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://sashachapin.substack.com/p/without-hope-of-resolution",
     author: "Sasha Chapin",
   },
+  {
+    title: "God Help Us, Let's Try To Understand AI Monosemanticity",
+    url: "https://www.astralcodexten.com/p/god-help-us-lets-try-to-understand",
+    author: "Scott Alexander",
+  },
 ];
