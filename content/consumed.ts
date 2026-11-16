@@ -1150,4 +1150,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://benthams.substack.com/p/concrete-advice-for-living-better",
     author: "Bentham's Bulldog",
   },
+  {
+    title: "Take Asymmetric Bets",
+    url: "https://eriktorenberg.substack.com/p/take-asymmetric-bets",
+    author: "Erik Torenberg",
+  },
 ];
