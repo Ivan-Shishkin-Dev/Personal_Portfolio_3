@@ -1181,4 +1181,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.astralcodexten.com/p/ai-chip-regulation-is-not-a-dystopian",
     author: "Scott Alexander",
   },
+  {
+    title: "So You Want To Run A Microgrants Program",
+    url: "https://www.astralcodexten.com/p/so-you-want-to-run-a-microgrants",
+    author: "Scott Alexander",
+  },
 ];
