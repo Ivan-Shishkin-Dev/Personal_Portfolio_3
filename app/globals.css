@@ -774,11 +774,22 @@ article h2,
   color: var(--subtle);
 }
 
-/* The reading diet: one segment per medium, sized by how many pieces it holds. */
+.consumed-hours {
+  margin: 0 0 6px;
+  color: var(--muted);
+}
+.consumed-hours strong {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-right: 4px;
+}
+
+/* The reading diet: one segment per medium, sized by the estimated hours spent on it. */
 .consumed-diet {
   display: flex;
   gap: 2px;
-  margin-top: 14px;
+  margin-bottom: 16px;
 }
 .consumed-diet-part {
   --cat: var(--subtle);

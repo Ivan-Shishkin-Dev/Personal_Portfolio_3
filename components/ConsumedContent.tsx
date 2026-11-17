@@ -7,6 +7,7 @@ import {
   categoryOf,
   sourceOf,
   hostOf,
+  minutesOf,
   CATEGORIES,
   type ConsumedEntry,
 } from "@/content/consumed";
@@ -18,6 +19,7 @@ const ALL = "All";
 type IndexedEntry = ConsumedEntry & {
   category: string;
   label: string;
+  minutes: number;
   favicon: string | null;
   haystack: string;
 };
@@ -31,6 +33,7 @@ const ENTRIES: IndexedEntry[] = consumed.toReversed().map((entry) => {
     ...entry,
     category,
     label: source || entry.author || entry.title,
+    minutes: minutesOf(entry),
     favicon: FAVICON_HOSTS.has(host) ? `/favicons/${host}.png` : null,
     haystack:
       `${entry.title} ${entry.author ?? ""} ${source} ${category}`.toLowerCase(),
@@ -40,6 +43,13 @@ const ENTRIES: IndexedEntry[] = consumed.toReversed().map((entry) => {
 const PRESENT: string[] = CATEGORIES.filter((c) =>
   ENTRIES.some((e) => e.category === c),
 );
+
+function formatDuration(minutes: number): string {
+  if (minutes < 60) return `${Math.round(minutes)} min`;
+  const hours = minutes / 60;
+  const shown = hours < 10 ? Math.round(hours * 10) / 10 : Math.round(hours);
+  return `${shown} ${shown === 1 ? "hour" : "hours"}`;
+}
 
 // Reads ?q= (the terminal's grep lands here with one). Kept in its own Suspense
 // boundary so the list itself still renders into the static HTML.
@@ -69,6 +79,14 @@ export default function ConsumedContent() {
     return map;
   }, [matchesQuery]);
 
+  const minutes = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const e of matchesQuery) {
+      map.set(e.category, (map.get(e.category) ?? 0) + e.minutes);
+    }
+    return map;
+  }, [matchesQuery]);
+
   const results = useMemo(
     () =>
       category === ALL
@@ -83,6 +101,31 @@ export default function ConsumedContent() {
         <QueryFromUrl onQuery={setQuery} />
       </Suspense>
       <div className="consumed-tools">
+        {results.length > 0 && (
+          <p className="consumed-hours">
+            <strong>
+              ≈ {formatDuration(results.reduce((sum, e) => sum + e.minutes, 0))}
+            </strong>{" "}
+            across {results.length} {results.length === 1 ? "piece" : "pieces"}
+          </p>
+        )}
+        {matchesQuery.length > 0 && (
+          <div className="consumed-diet" role="group" aria-label="Estimated time spent on each medium">
+            {PRESENT.filter((name) => counts.get(name)).map((name) => (
+              <button
+                key={name}
+                type="button"
+                className={`consumed-diet-part${category !== ALL && name !== category ? " dim" : ""}`}
+                data-category={name}
+                style={{ flexGrow: minutes.get(name) }}
+                title={`${name}: ≈ ${formatDuration(minutes.get(name) ?? 0)}`}
+                aria-label={`${name}: about ${formatDuration(minutes.get(name) ?? 0)}`}
+                aria-pressed={name === category}
+                onClick={() => setCategory(name === category ? ALL : name)}
+              />
+            ))}
+          </div>
+        )}
         <input
           type="search"
           className="consumed-search"
@@ -93,23 +136,6 @@ export default function ConsumedContent() {
           autoComplete="off"
           spellCheck={false}
         />
-        {matchesQuery.length > 0 && (
-          <div className="consumed-diet" role="group" aria-label="Share of each medium">
-            {PRESENT.filter((name) => counts.get(name)).map((name) => (
-              <button
-                key={name}
-                type="button"
-                className={`consumed-diet-part${category !== ALL && name !== category ? " dim" : ""}`}
-                data-category={name}
-                style={{ flexGrow: counts.get(name) }}
-                title={`${name}: ${counts.get(name)}`}
-                aria-label={`${name}: ${counts.get(name)}`}
-                aria-pressed={name === category}
-                onClick={() => setCategory(name === category ? ALL : name)}
-              />
-            ))}
-          </div>
-        )}
         <div className="consumed-filters">
           {[ALL, ...PRESENT].map((name) => {
             const count = counts.get(name) ?? 0;

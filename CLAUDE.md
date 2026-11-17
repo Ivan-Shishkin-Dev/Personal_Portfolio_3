@@ -40,11 +40,12 @@ Entry lists on Experience, Projects, and Education use `Toggle` (with `ExpandAll
 
 ## Consumed Content (`/consumed-content`)
 
-A searchable list of everything Ivan has read, watched, or listened to. `content/consumed.ts` holds the entries; `ConsumedContent.tsx` renders search, the reading diet bar (one segment per medium, sized by count), medium filter chips, and the rows. A `?q=` in the URL prefills the search.
+A searchable list of everything Ivan has read, watched, or listened to. `content/consumed.ts` holds the entries; `ConsumedContent.tsx` renders the estimated-hours total, the reading diet bar (one segment per medium, sized by estimated hours), search, medium filter chips, and the rows. A `?q=` in the URL prefills the search.
 
 - **An entry is a title and a URL.** `category` (medium) and `source` are derived from the URL host via lookup tables, with optional per-entry overrides for when that guesses wrong — a book on Google Drive, a podcast episode hosted on YouTube.
 - **The file is in the order things were added; the page reverses it** so newest reads first. Append new entries to the bottom.
 - **Adding entries means re-running `node scripts/fetch-favicons.mjs`.** It reads hosts straight out of `consumed.ts`, downloads one icon per host into `public/favicons/`, and regenerates `content/favicons.ts` — which is generated, so never edit it by hand.
+- **Hours are estimated, per entry, by `minutesOf`:** an entry's own `minutes` override, else the measurement in `content/durations.ts`, else a per-medium default (`MINUTES_BY_CATEGORY`). `node scripts/fetch-durations.mjs` regenerates `durations.ts` (YouTube length, or word count at 240 wpm) — generated, so never edit it by hand. Books and anything it can't fetch need a `minutes` override to beat the default.
 - Favicons are committed rather than hotlinked: no third-party requests from the page, and nothing breaks when a site redesigns. Hosts that can't be resolved fall back to a `SourceMonogram` tile.
 - The icon column answers *where a piece came from*, not what medium it is — medium lives in the filter chips and the `--cat-*` colour on the creator name. Don't mix the two questions in one column.
 
