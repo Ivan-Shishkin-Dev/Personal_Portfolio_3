@@ -1176,4 +1176,9 @@ export const consumed: ConsumedEntry[] = [
     author: "Dwarkesh Patel",
     category: "Podcasts",
   },
+  {
+    title: "AI Chip Regulation Is Not A Dystopian Surveillance State",
+    url: "https://www.astralcodexten.com/p/ai-chip-regulation-is-not-a-dystopian",
+    author: "Scott Alexander",
+  },
 ];
