@@ -1170,4 +1170,10 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.youtube.com/watch?v=9U-FdOWTxPw",
     author: "Nate Soares",
   },
+  {
+    title: "AIs might overthrow the government within a year – Paul Christiano",
+    url: "https://www.youtube.com/watch?v=SyHM5hNPAEo",
+    author: "Dwarkesh Patel",
+    category: "Podcasts",
+  },
 ];
