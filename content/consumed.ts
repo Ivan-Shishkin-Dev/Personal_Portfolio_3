@@ -1,5 +1,3 @@
-import { MINUTES_BY_URL } from "./durations";
-
 export const CATEGORIES = [
   "Papers",
   "Essays",
@@ -19,19 +17,6 @@ export type ConsumedEntry = {
   category?: Category;
   /** Overrides the source derived from the URL host. */
   source?: string;
-  /** Overrides the measured or per-medium estimate of time spent. */
-  minutes?: number;
-};
-
-// What a piece of each medium costs when scripts/fetch-durations.mjs has no
-// measurement for it.
-const MINUTES_BY_CATEGORY: Record<Category, number> = {
-  Papers: 45,
-  Essays: 12,
-  Books: 360,
-  Podcasts: 90,
-  Videos: 20,
-  Other: 10,
 };
 
 const CATEGORY_BY_HOST: Record<string, Category> = {
@@ -150,12 +135,6 @@ export function categoryOf(entry: ConsumedEntry): Category {
   const host = entry.url ? hostOf(entry.url) : "";
   if (!host) return "Books";
   return lookup(host, CATEGORY_BY_HOST) ?? "Essays";
-}
-
-export function minutesOf(entry: ConsumedEntry): number {
-  if (entry.minutes !== undefined) return entry.minutes;
-  const measured = entry.url ? MINUTES_BY_URL[entry.url] : undefined;
-  return measured ?? MINUTES_BY_CATEGORY[categoryOf(entry)];
 }
 
 export function sourceOf(entry: ConsumedEntry): string {
@@ -355,7 +334,6 @@ export const consumed: ConsumedEntry[] = [
     url: "https://drive.google.com/file/d/1nh-Km2J2C99s_LYxby-N53EnZgM2uXHZ/view",
     author: "Rutger Bregman",
     category: "Books",
-    minutes: 50,
     source: "PDF",
   },
   {
