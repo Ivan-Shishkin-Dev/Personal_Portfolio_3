@@ -1186,4 +1186,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.astralcodexten.com/p/so-you-want-to-run-a-microgrants",
     author: "Scott Alexander",
   },
+  {
+    title: 'Against "Stochastic Terrorism"',
+    url: "https://www.astralcodexten.com/p/against-stochastic-terrorism",
+    author: "Scott Alexander",
+  },
 ];
