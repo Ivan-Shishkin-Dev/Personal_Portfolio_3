@@ -1165,4 +1165,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.astralcodexten.com/p/god-help-us-lets-try-to-understand",
     author: "Scott Alexander",
   },
+  {
+    title: "Unfortunately, We Can't Just Unplug It",
+    url: "https://www.youtube.com/watch?v=9U-FdOWTxPw",
+    author: "Nate Soares",
+  },
 ];
