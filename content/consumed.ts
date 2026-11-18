@@ -1196,4 +1196,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.astralcodexten.com/p/varieties-of-discourseposting",
     author: "Scott Alexander",
   },
+  {
+    title: "SCHEME, SURA and that METR report",
+    url: "https://schememagazine.substack.com/p/scheme-sura-and-that-metr-report-835",
+    author: "Ben Norman, Joshua Landes & Harry Waterman",
+  },
 ];
