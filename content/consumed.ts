@@ -1191,4 +1191,9 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.astralcodexten.com/p/against-stochastic-terrorism",
     author: "Scott Alexander",
   },
+  {
+    title: "Varieties Of Discourseposting",
+    url: "https://www.astralcodexten.com/p/varieties-of-discourseposting",
+    author: "Scott Alexander",
+  },
 ];
