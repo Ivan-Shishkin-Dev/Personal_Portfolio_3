@@ -1201,4 +1201,14 @@ export const consumed: ConsumedEntry[] = [
     url: "https://schememagazine.substack.com/p/scheme-sura-and-that-metr-report-835",
     author: "Ben Norman, Joshua Landes & Harry Waterman",
   },
+  {
+    title: "The Psychopolitics Of Trauma",
+    url: "https://www.astralcodexten.com/p/the-psychopolitics-of-trauma",
+    author: "Scott Alexander",
+  },
+  {
+    title: "Why You Can’t Just Do Things",
+    url: "https://www.octopusyarn.com/p/why-you-cant-just-do-things",
+    author: "Octopusyarn",
+  },
 ];
