@@ -1211,4 +1211,15 @@ export const consumed: ConsumedEntry[] = [
     url: "https://www.octopusyarn.com/p/why-you-cant-just-do-things",
     author: "Octopusyarn",
   },
+  {
+    title: "Power-seeking agents will likely be developed",
+    url: "https://www.lesswrong.com/posts/CtnHpECuoq6eLL8fu/power-seeking-agents-will-likely-be-developed",
+    author: "Alec Harris",
+  },
+  {
+    title: "The Art of Living",
+    url: "https://books.google.com/books/about/The_Art_of_Living.html?id=J-xf7O2TZHIC",
+    author: "Epictetus (Sharon Lebell translation)",
+    category: "Books",
+  },
 ];
